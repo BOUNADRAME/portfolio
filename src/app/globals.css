@@ -1,0 +1,119 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+:root {
+  --font-cabinet: 'Space Grotesk', system-ui, sans-serif;
+  --font-satoshi: 'DM Sans', system-ui, sans-serif;
+  --font-jetbrains: 'JetBrains Mono', monospace;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-satoshi);
+  background: #0f0f1a;
+  color: #ececf2;
+  overflow-x: hidden;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #181825;
+}
+::-webkit-scrollbar-thumb {
+  background: #338dff33;
+  border-radius: 3px;
+}
+
+/* Grain overlay */
+.grain::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 100;
+}
+
+/* Glow effects */
+.glow-blue {
+  box-shadow: 0 0 60px rgba(51, 141, 255, 0.15);
+}
+
+.glow-text {
+  text-shadow: 0 0 40px rgba(51, 141, 255, 0.3);
+}
+
+/* Gradient mesh background */
+.mesh-gradient {
+  background:
+    radial-gradient(ellipse at 20% 50%, rgba(51, 141, 255, 0.08) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, rgba(19, 86, 225, 0.06) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 80%, rgba(20, 40, 87, 0.1) 0%, transparent 50%);
+}
+
+/* Section divider */
+.section-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(51, 141, 255, 0.2), transparent);
+}
+
+/* Tech badge */
+.tech-badge {
+  @apply px-3 py-1 text-xs font-mono rounded-full border transition-all duration-300;
+  border-color: rgba(51, 141, 255, 0.2);
+  background: rgba(51, 141, 255, 0.05);
+  color: #8ecdff;
+}
+.tech-badge:hover {
+  border-color: rgba(51, 141, 255, 0.5);
+  background: rgba(51, 141, 255, 0.1);
+}
+
+/* Project card */
+.project-card {
+  @apply relative rounded-2xl overflow-hidden transition-all duration-500;
+  background: linear-gradient(135deg, rgba(24, 24, 37, 0.8), rgba(24, 24, 37, 0.4));
+  border: 1px solid rgba(51, 141, 255, 0.1);
+  backdrop-filter: blur(10px);
+}
+.project-card:hover {
+  border-color: rgba(51, 141, 255, 0.3);
+  transform: translateY(-4px);
+  box-shadow: 0 20px 60px rgba(51, 141, 255, 0.1);
+}
+
+/* Stat card */
+.stat-card {
+  @apply p-6 rounded-xl text-center;
+  background: linear-gradient(135deg, rgba(24, 24, 37, 0.6), rgba(24, 24, 37, 0.3));
+  border: 1px solid rgba(51, 141, 255, 0.08);
+}
+
+/* Timeline */
+.timeline-dot {
+  @apply w-3 h-3 rounded-full border-2;
+  border-color: #338dff;
+  background: #0f0f1a;
+}
+.timeline-line {
+  @apply w-px h-full;
+  background: linear-gradient(180deg, #338dff, transparent);
+}
