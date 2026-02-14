@@ -4,7 +4,6 @@ import { useState } from 'react';
 import { personalInfo, stats, projects, expertise, experience } from '../data/portfolio';
 import { translations } from '../data/translations';
 import { useLanguage } from '../context/LanguageContext';
-import ThemeToggle from '../components/ThemeToggle';
 import LanguageToggle from '../components/LanguageToggle';
 
 // Base path for assets (empty in dev, /portfolio in production)
@@ -62,7 +61,6 @@ function Navbar() {
         </div>
 
         <div className="hidden md:flex items-center gap-3">
-          <ThemeToggle />
           <LanguageToggle />
           <a href="mailto:bounafode@gmail.com" className="flex items-center gap-2 px-4 py-2 bg-primary-600 hover:bg-primary-500 text-white text-sm rounded-lg transition-all duration-300">
             <IconComponent name="Send" /> {t.contactMe}
@@ -84,7 +82,6 @@ function Navbar() {
             </a>
           ))}
           <div className="flex items-center gap-3 pt-3">
-            <ThemeToggle />
             <LanguageToggle />
           </div>
         </div>
@@ -95,6 +92,9 @@ function Navbar() {
 
 // Hero Section
 function Hero() {
+  const { language } = useLanguage();
+  const t = translations[language];
+
   return (
     <section className="min-h-screen flex items-center justify-center mesh-gradient relative pt-16">
       <div className="absolute inset-0 overflow-hidden">
@@ -111,7 +111,7 @@ function Hero() {
               <div className="absolute -inset-4 bg-gradient-to-r from-primary-500/20 to-purple-500/20 rounded-3xl transform rotate-6 group-hover:rotate-12 transition-transform duration-500" />
               <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-3xl overflow-hidden border-2 border-primary-500/30 shadow-2xl transform group-hover:scale-105 transition-all duration-500">
                 <img
-                  src="/portfolio/images/photo.jpeg"
+                  src={`${basePath}/images/photo.jpeg`}
                   alt="Bouna Dramé"
                   className="w-full h-full object-cover"
                 />
@@ -137,9 +137,9 @@ function Hero() {
           <div className="flex-1 text-center lg:text-left">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary-500/20 bg-primary-500/5 text-primary-400 text-sm mb-6 animate-fade-in">
               <IconComponent name="MapPin" />
-              <span>{personalInfo.location}</span>
+              <span>{t.hero.location}</span>
               <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
-              <span className="text-green-400">Disponible</span>
+              <span className="text-green-400">{t.hero.available}</span>
             </div>
 
             <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-6 tracking-tight animate-slide-up">
@@ -147,16 +147,21 @@ function Hero() {
             </h1>
             <p className="font-display text-2xl md:text-3xl lg:text-4xl font-bold mb-6 animate-slide-up" style={{ animationDelay: '0.1s' }}>
               <span className="bg-gradient-to-r from-primary-400 via-purple-400 to-primary-500 bg-clip-text text-transparent">
-                {personalInfo.subtitle}
+                {t.hero.subtitle}
               </span>
             </p>
             <p className="text-dark-300 text-lg md:text-xl max-w-2xl mx-auto lg:mx-0 mb-10 leading-relaxed animate-slide-up" style={{ animationDelay: '0.2s' }}>
-              {personalInfo.bio}
+              {t.hero.bio}
             </p>
 
             {/* Stats en ligne */}
             <div className="flex flex-wrap justify-center lg:justify-start gap-6 mb-10 animate-slide-up" style={{ animationDelay: '0.3s' }}>
-              {stats.map((s, i) => (
+              {[
+                { value: "7+", label: t.stats.experience },
+                { value: "18M", label: t.stats.habitants },
+                { value: "270M+", label: t.stats.savings },
+                { value: "4", label: t.stats.countries },
+              ].map((s, i) => (
                 <div key={i} className="flex items-center gap-3 px-6 py-3 rounded-2xl bg-dark-900/50 border border-primary-500/10 hover:border-primary-500/30 transition-all duration-300 group">
                   <div className="text-center">
                     <div className="font-display text-3xl md:text-4xl font-bold text-white glow-text group-hover:scale-110 transition-transform duration-300">{s.value}</div>
@@ -169,10 +174,10 @@ function Hero() {
             {/* CTA */}
             <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-4 animate-slide-up" style={{ animationDelay: '0.4s' }}>
               <a href="#contact" className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-primary-600 to-primary-500 hover:from-primary-500 hover:to-primary-600 text-white text-lg font-semibold rounded-xl transition-all duration-300 glow-blue transform hover:scale-105">
-                <IconComponent name="Send" /> Me contacter
+                <IconComponent name="Send" /> {t.hero.ctaContact}
               </a>
               <a href="#projets" className="inline-flex items-center justify-center gap-2 px-8 py-4 border border-primary-500/30 hover:bg-primary-500/10 text-white text-lg font-semibold rounded-xl transition-all duration-300 transform hover:scale-105">
-                Voir mes projets
+                {t.hero.ctaProjects}
               </a>
             </div>
           </div>
@@ -189,15 +194,17 @@ function Hero() {
 // Projects Section
 function Projects() {
   const [active, setActive] = useState(null);
+  const { language } = useLanguage();
+  const t = translations[language];
 
   return (
     <section id="projets" className="py-24 px-6">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
-          <p className="text-primary-500 font-mono text-sm mb-3 tracking-widest uppercase animate-fade-in">Portfolio</p>
-          <h2 className="font-display text-4xl md:text-6xl font-bold text-white mb-4 animate-slide-up">Projets Majeurs</h2>
+          <p className="text-primary-500 font-mono text-sm mb-3 tracking-widest uppercase animate-fade-in">{t.projects.sectionLabel}</p>
+          <h2 className="font-display text-4xl md:text-6xl font-bold text-white mb-4 animate-slide-up">{t.projects.title}</h2>
           <p className="text-dark-400 text-lg max-w-2xl mx-auto animate-slide-up" style={{ animationDelay: '0.1s' }}>
-            Découvrez mes réalisations qui ont impacté des millions de personnes
+            {t.projects.subtitle}
           </p>
         </div>
 
@@ -228,7 +235,7 @@ function Projects() {
                       </h3>
                       {project.isConfidential && (
                         <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs text-amber-400 border border-amber-400/30 bg-amber-400/10">
-                          <IconComponent name="Lock" /> Confidentiel
+                          <IconComponent name="Lock" /> {t.projects.confidential}
                         </span>
                       )}
                       <span
@@ -269,14 +276,14 @@ function Projects() {
                       <div className="p-6 rounded-xl bg-dark-950/50 border border-primary-500/10">
                         <h4 className="text-sm font-mono text-primary-400 uppercase tracking-wider mb-3 flex items-center gap-2">
                           <span className="w-6 h-0.5" style={{ background: project.color }} />
-                          Défi
+                          {t.projects.challenge}
                         </h4>
                         <p className="text-dark-300 leading-relaxed">{project.challenge}</p>
                       </div>
                       <div className="p-6 rounded-xl bg-dark-950/50 border border-primary-500/10">
                         <h4 className="text-sm font-mono text-primary-400 uppercase tracking-wider mb-3 flex items-center gap-2">
                           <span className="w-6 h-0.5" style={{ background: project.color }} />
-                          Solution
+                          {t.projects.solution}
                         </h4>
                         <p className="text-dark-300 leading-relaxed">{project.solution}</p>
                       </div>
@@ -284,7 +291,7 @@ function Projects() {
                     <div className="p-6 rounded-xl bg-dark-950/50 border border-primary-500/10">
                       <h4 className="text-sm font-mono text-primary-400 uppercase tracking-wider mb-4 flex items-center gap-2">
                         <span className="w-6 h-0.5" style={{ background: project.color }} />
-                        Impact Mesurable
+                        {t.projects.impact}
                       </h4>
                       <ul className="grid md:grid-cols-2 gap-3">
                         {project.impact.map((item, i) => (
@@ -308,14 +315,14 @@ function Projects() {
                   >
                     {active === project.id ? (
                       <>
-                        <span>Réduire</span>
+                        <span>{t.projects.reduce}</span>
                         <svg className="w-4 h-4 rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                         </svg>
                       </>
                     ) : (
                       <>
-                        <span>Voir les détails</span>
+                        <span>{t.projects.seeDetails}</span>
                         <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                         </svg>
@@ -334,6 +341,9 @@ function Projects() {
 
 // Expertise Section
 function Expertise() {
+  const { language } = useLanguage();
+  const t = translations[language];
+
   return (
     <section id="expertise" className="py-24 px-6 mesh-gradient relative overflow-hidden">
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -343,12 +353,12 @@ function Expertise() {
 
       <div className="max-w-6xl mx-auto relative z-10">
         <div className="text-center mb-16">
-          <p className="text-primary-500 font-mono text-sm mb-3 tracking-widest uppercase">Compétences</p>
+          <p className="text-primary-500 font-mono text-sm mb-3 tracking-widest uppercase">{t.expertise.sectionLabel}</p>
           <h2 className="font-display text-4xl md:text-6xl font-bold text-white mb-4">
-            Expertise <span className="bg-gradient-to-r from-primary-400 to-purple-400 bg-clip-text text-transparent">Technique</span>
+            {t.expertise.title.split(' ')[0]} <span className="bg-gradient-to-r from-primary-400 to-purple-400 bg-clip-text text-transparent">{t.expertise.title.split(' ').slice(1).join(' ')}</span>
           </h2>
           <p className="text-dark-400 text-lg max-w-2xl mx-auto">
-            Technologies de pointe pour des solutions robustes et scalables
+            {t.expertise.subtitle}
           </p>
         </div>
 
@@ -386,16 +396,19 @@ function Expertise() {
 
 // Experience Timeline
 function Timeline() {
+  const { language } = useLanguage();
+  const t = translations[language];
+
   return (
     <section id="parcours" className="py-24 px-6">
       <div className="max-w-5xl mx-auto">
         <div className="text-center mb-16">
-          <p className="text-primary-500 font-mono text-sm mb-3 tracking-widest uppercase">Parcours</p>
+          <p className="text-primary-500 font-mono text-sm mb-3 tracking-widest uppercase">{t.timeline.sectionLabel}</p>
           <h2 className="font-display text-4xl md:text-6xl font-bold text-white mb-4">
-            Mon <span className="bg-gradient-to-r from-primary-400 to-purple-400 bg-clip-text text-transparent">Parcours</span>
+            {t.timeline.title.split(' ')[0]} <span className="bg-gradient-to-r from-primary-400 to-purple-400 bg-clip-text text-transparent">{t.timeline.title.split(' ').slice(1).join(' ')}</span>
           </h2>
           <p className="text-dark-400 text-lg max-w-2xl mx-auto">
-            7+ années à concevoir des solutions innovantes pour des institutions majeures
+            {t.timeline.subtitle}
           </p>
         </div>
 
@@ -457,6 +470,9 @@ function Timeline() {
 
 // Contact Section
 function Contact() {
+  const { language } = useLanguage();
+  const t = translations[language];
+
   return (
     <section id="contact" className="py-24 px-6 mesh-gradient relative overflow-hidden">
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -465,13 +481,12 @@ function Contact() {
       </div>
 
       <div className="max-w-4xl mx-auto text-center relative z-10">
-        <p className="text-primary-500 font-mono text-sm mb-3 tracking-widest uppercase">Contact</p>
+        <p className="text-primary-500 font-mono text-sm mb-3 tracking-widest uppercase">{t.contact.sectionLabel}</p>
         <h2 className="font-display text-4xl md:text-6xl font-bold text-white mb-6">
-          Travaillons <span className="bg-gradient-to-r from-primary-400 to-purple-400 bg-clip-text text-transparent">ensemble</span>
+          {t.contact.title.split(' ')[0]} <span className="bg-gradient-to-r from-primary-400 to-purple-400 bg-clip-text text-transparent">{t.contact.title.split(' ').slice(1).join(' ')}</span>
         </h2>
         <p className="text-dark-300 text-lg md:text-xl mb-12 leading-relaxed max-w-2xl mx-auto">
-          Disponible pour des missions de consultance, du développement de systèmes d'information,
-          et de l'assistance technique aux instituts statistiques.
+          {t.contact.subtitle}
         </p>
 
         {/* Contact cards */}
@@ -485,7 +500,7 @@ function Contact() {
               <div className="w-14 h-14 mx-auto mb-4 rounded-xl bg-primary-500/10 border border-primary-500/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                 <IconComponent name="Mail" />
               </div>
-              <h3 className="font-display text-lg font-semibold text-white mb-2">Email</h3>
+              <h3 className="font-display text-lg font-semibold text-white mb-2">{t.contact.email}</h3>
               <p className="text-primary-400 font-medium">{personalInfo.email}</p>
             </div>
           </a>
@@ -501,7 +516,7 @@ function Contact() {
                   <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
                 </svg>
               </div>
-              <h3 className="font-display text-lg font-semibold text-white mb-2">Téléphone</h3>
+              <h3 className="font-display text-lg font-semibold text-white mb-2">{t.contact.phone}</h3>
               <p className="text-primary-400 font-medium">{personalInfo.phone}</p>
             </div>
           </a>
@@ -539,6 +554,9 @@ function Contact() {
 
 // Footer
 function Footer() {
+  const { language } = useLanguage();
+  const t = translations[language];
+
   return (
     <footer className="py-12 px-6 border-t border-white/5 bg-dark-950/50 backdrop-blur-sm">
       <div className="max-w-6xl mx-auto">
@@ -547,7 +565,7 @@ function Footer() {
             <a href="#" className="font-display font-bold text-2xl text-white inline-block mb-2">
               B<span className="text-primary-500">.</span>D
             </a>
-            <p className="text-dark-400 text-sm">Architecte Full Stack | Expert Systèmes Statistiques</p>
+            <p className="text-dark-400 text-sm">{t.hero.subtitle}</p>
           </div>
 
           <div className="flex gap-4">
@@ -564,13 +582,13 @@ function Footer() {
         </div>
 
         <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-dark-500 text-sm">
-          <p>© {new Date().getFullYear()} Bouna Dramé. Tous droits réservés.</p>
+          <p>© {new Date().getFullYear()} Bouna Dramé. {t.footer.rights}</p>
           <p className="flex items-center gap-2">
-            Conçu et développé avec
+            {t.footer.madeWith}
             <svg className="w-4 h-4 text-red-500 animate-pulse" fill="currentColor" viewBox="0 0 20 20">
               <path fillRule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clipRule="evenodd" />
             </svg>
-            par mes soins
+            {t.footer.by}
           </p>
         </div>
       </div>

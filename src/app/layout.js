@@ -1,5 +1,4 @@
 import './globals.css'
-import { ThemeProvider } from '../context/ThemeContext'
 import { LanguageProvider } from '../context/LanguageContext'
 
 export const metadata = {
@@ -17,11 +16,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="fr" className="scroll-smooth">
       <body className="grain">
-        <ThemeProvider>
-          <LanguageProvider>
-            {children}
-          </LanguageProvider>
-        </ThemeProvider>
+        <LanguageProvider>
+          {children}
+        </LanguageProvider>
       </body>
     </html>
   )
