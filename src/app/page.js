@@ -1,8 +1,9 @@
 'use client';
 
 import { useState } from 'react';
-import { personalInfo, stats, projects, expertise, experience } from '../data/portfolio';
+import { personalInfo } from '../data/portfolio';
 import { translations } from '../data/translations';
+import { portfolioContent } from '../data/portfolioContent';
 import { useLanguage } from '../context/LanguageContext';
 import LanguageToggle from '../components/LanguageToggle';
 
@@ -196,6 +197,7 @@ function Projects() {
   const [active, setActive] = useState(null);
   const { language } = useLanguage();
   const t = translations[language];
+  const projects = portfolioContent[language].projects;
 
   return (
     <section id="projets" className="py-24 px-6">
@@ -343,6 +345,7 @@ function Projects() {
 function Expertise() {
   const { language } = useLanguage();
   const t = translations[language];
+  const expertise = portfolioContent[language].expertise;
 
   return (
     <section id="expertise" className="py-24 px-6 mesh-gradient relative overflow-hidden">
@@ -398,6 +401,7 @@ function Expertise() {
 function Timeline() {
   const { language } = useLanguage();
   const t = translations[language];
+  const experience = portfolioContent[language].experience;
 
   return (
     <section id="parcours" className="py-24 px-6">
