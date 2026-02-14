@@ -76,51 +76,87 @@ function Hero() {
   return (
     <section className="min-h-screen flex items-center justify-center mesh-gradient relative pt-16">
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary-500/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-primary-700/5 rounded-full blur-3xl" />
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary-500/5 rounded-full blur-3xl animate-pulse-slow" />
+        <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-primary-700/5 rounded-full blur-3xl animate-pulse-slow" style={{ animationDelay: '1s' }} />
+        <div className="absolute top-1/2 left-1/2 w-80 h-80 bg-purple-500/5 rounded-full blur-3xl animate-pulse-slow" style={{ animationDelay: '2s' }} />
       </div>
-      <div className="relative max-w-4xl mx-auto px-6 text-center">
-        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary-500/20 bg-primary-500/5 text-primary-400 text-sm mb-8">
-          <IconComponent name="MapPin" />
-          <span>{personalInfo.location}</span>
-          <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
-          <span className="text-green-400">Disponible</span>
-        </div>
-
-        <h1 className="font-display text-5xl md:text-7xl font-bold text-white mb-4 tracking-tight">
-          {personalInfo.name}
-        </h1>
-        <p className="font-display text-xl md:text-2xl text-primary-400 mb-6">
-          {personalInfo.subtitle}
-        </p>
-        <p className="text-dark-300 text-lg max-w-2xl mx-auto mb-12 leading-relaxed">
-          {personalInfo.bio}
-        </p>
-
-        {/* Stats */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto mb-12">
-          {stats.map((s, i) => (
-            <div key={i} className="stat-card">
-              <div className="font-display text-2xl md:text-3xl font-bold text-white glow-text">{s.value}</div>
-              <div className="text-dark-400 text-xs mt-1">{s.label}</div>
+      <div className="relative max-w-6xl mx-auto px-6">
+        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
+          {/* Photo profile avec effet 3D */}
+          <div className="relative group flex-shrink-0">
+            <div className="absolute -inset-1 bg-gradient-to-r from-primary-500 via-purple-500 to-primary-700 rounded-3xl blur-2xl opacity-30 group-hover:opacity-50 transition-opacity duration-500 animate-pulse-slow" />
+            <div className="relative">
+              <div className="absolute -inset-4 bg-gradient-to-r from-primary-500/20 to-purple-500/20 rounded-3xl transform rotate-6 group-hover:rotate-12 transition-transform duration-500" />
+              <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-3xl overflow-hidden border-2 border-primary-500/30 shadow-2xl transform group-hover:scale-105 transition-all duration-500">
+                <img
+                  src="/portfolio/images/photo.jpeg"
+                  alt="Bouna Dramé"
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-dark-950/80 via-transparent to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 p-6 transform translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+                  <div className="flex gap-3">
+                    <a href={personalInfo.github} target="_blank" rel="noopener" className="p-3 rounded-xl bg-dark-950/90 backdrop-blur-sm border border-primary-500/30 hover:bg-primary-500/20 text-white transition-all duration-300">
+                      <IconComponent name="Github" />
+                    </a>
+                    <a href={personalInfo.linkedin} target="_blank" rel="noopener" className="p-3 rounded-xl bg-dark-950/90 backdrop-blur-sm border border-primary-500/30 hover:bg-primary-500/20 text-white transition-all duration-300">
+                      <IconComponent name="Linkedin" />
+                    </a>
+                    <a href={`mailto:${personalInfo.email}`} className="p-3 rounded-xl bg-dark-950/90 backdrop-blur-sm border border-primary-500/30 hover:bg-primary-500/20 text-white transition-all duration-300">
+                      <IconComponent name="Mail" />
+                    </a>
+                  </div>
+                </div>
+              </div>
             </div>
-          ))}
+          </div>
+
+          {/* Contenu texte */}
+          <div className="flex-1 text-center lg:text-left">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary-500/20 bg-primary-500/5 text-primary-400 text-sm mb-6 animate-fade-in">
+              <IconComponent name="MapPin" />
+              <span>{personalInfo.location}</span>
+              <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
+              <span className="text-green-400">Disponible</span>
+            </div>
+
+            <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-6 tracking-tight animate-slide-up">
+              {personalInfo.name}
+            </h1>
+            <p className="font-display text-2xl md:text-3xl lg:text-4xl font-bold mb-6 animate-slide-up" style={{ animationDelay: '0.1s' }}>
+              <span className="bg-gradient-to-r from-primary-400 via-purple-400 to-primary-500 bg-clip-text text-transparent">
+                {personalInfo.subtitle}
+              </span>
+            </p>
+            <p className="text-dark-300 text-lg md:text-xl max-w-2xl mx-auto lg:mx-0 mb-10 leading-relaxed animate-slide-up" style={{ animationDelay: '0.2s' }}>
+              {personalInfo.bio}
+            </p>
+
+            {/* Stats en ligne */}
+            <div className="flex flex-wrap justify-center lg:justify-start gap-6 mb-10 animate-slide-up" style={{ animationDelay: '0.3s' }}>
+              {stats.map((s, i) => (
+                <div key={i} className="flex items-center gap-3 px-6 py-3 rounded-2xl bg-dark-900/50 border border-primary-500/10 hover:border-primary-500/30 transition-all duration-300 group">
+                  <div className="text-center">
+                    <div className="font-display text-3xl md:text-4xl font-bold text-white glow-text group-hover:scale-110 transition-transform duration-300">{s.value}</div>
+                    <div className="text-dark-400 text-xs mt-1 whitespace-nowrap">{s.label}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* CTA */}
+            <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-4 animate-slide-up" style={{ animationDelay: '0.4s' }}>
+              <a href="#contact" className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-primary-600 to-primary-500 hover:from-primary-500 hover:to-primary-600 text-white text-lg font-semibold rounded-xl transition-all duration-300 glow-blue transform hover:scale-105">
+                <IconComponent name="Send" /> Me contacter
+              </a>
+              <a href="#projets" className="inline-flex items-center justify-center gap-2 px-8 py-4 border border-primary-500/30 hover:bg-primary-500/10 text-white text-lg font-semibold rounded-xl transition-all duration-300 transform hover:scale-105">
+                Voir mes projets
+              </a>
+            </div>
+          </div>
         </div>
 
-        {/* Social links */}
-        <div className="flex justify-center gap-4">
-          <a href={personalInfo.github} target="_blank" rel="noopener" className="p-3 rounded-xl border border-white/10 hover:border-primary-500/30 hover:bg-primary-500/5 text-dark-400 hover:text-white transition-all duration-300">
-            <IconComponent name="Github" />
-          </a>
-          <a href={personalInfo.linkedin} target="_blank" rel="noopener" className="p-3 rounded-xl border border-white/10 hover:border-primary-500/30 hover:bg-primary-500/5 text-dark-400 hover:text-white transition-all duration-300">
-            <IconComponent name="Linkedin" />
-          </a>
-          <a href={`mailto:${personalInfo.email}`} className="p-3 rounded-xl border border-white/10 hover:border-primary-500/30 hover:bg-primary-500/5 text-dark-400 hover:text-white transition-all duration-300">
-            <IconComponent name="Mail" />
-          </a>
-        </div>
-
-        <a href="#projets" className="inline-block mt-16 text-dark-500 hover:text-primary-400 transition-colors animate-bounce">
+        <a href="#projets" className="absolute bottom-8 left-1/2 -translate-x-1/2 text-dark-500 hover:text-primary-400 transition-colors animate-bounce">
           <IconComponent name="ChevronDown" />
         </a>
       </div>
@@ -136,44 +172,69 @@ function Projects() {
     <section id="projets" className="py-24 px-6">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
-          <p className="text-primary-500 font-mono text-sm mb-3 tracking-widest uppercase">Portfolio</p>
-          <h2 className="font-display text-4xl md:text-5xl font-bold text-white">Projets Majeurs</h2>
+          <p className="text-primary-500 font-mono text-sm mb-3 tracking-widest uppercase animate-fade-in">Portfolio</p>
+          <h2 className="font-display text-4xl md:text-6xl font-bold text-white mb-4 animate-slide-up">Projets Majeurs</h2>
+          <p className="text-dark-400 text-lg max-w-2xl mx-auto animate-slide-up" style={{ animationDelay: '0.1s' }}>
+            Découvrez mes réalisations qui ont impacté des millions de personnes
+          </p>
         </div>
 
         <div className="space-y-8">
-          {projects.map((project) => (
+          {projects.map((project, idx) => (
             <div
               key={project.id}
-              className="project-card cursor-pointer"
+              className="project-card cursor-pointer group"
               onClick={() => setActive(active === project.id ? null : project.id)}
+              style={{ animationDelay: `${idx * 0.1}s` }}
             >
-              {/* Color accent bar */}
-              <div className="absolute top-0 left-0 w-1 h-full" style={{ background: project.color }} />
+              {/* Color accent bar with glow */}
+              <div
+                className="absolute top-0 left-0 w-1 h-full transition-all duration-500 group-hover:w-2"
+                style={{
+                  background: project.color,
+                  boxShadow: `0 0 20px ${project.color}40`
+                }}
+              />
 
               <div className="p-8 md:p-10">
                 {/* Header */}
-                <div className="flex flex-col md:flex-row md:items-center justify-between mb-4">
-                  <div>
-                    <div className="flex items-center gap-3 mb-2">
-                      <h3 className="font-display text-2xl font-bold text-white">{project.title}</h3>
+                <div className="flex flex-col md:flex-row md:items-start justify-between mb-4 gap-4">
+                  <div className="flex-1">
+                    <div className="flex items-center flex-wrap gap-3 mb-3">
+                      <h3 className="font-display text-2xl md:text-3xl font-bold text-white group-hover:text-primary-400 transition-colors duration-300">
+                        {project.title}
+                      </h3>
                       {project.isConfidential && (
-                        <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded text-xs text-amber-400 border border-amber-400/20 bg-amber-400/5">
+                        <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs text-amber-400 border border-amber-400/30 bg-amber-400/10">
                           <IconComponent name="Lock" /> Confidentiel
                         </span>
                       )}
+                      <span
+                        className="px-3 py-1 rounded-full text-xs font-mono border"
+                        style={{
+                          borderColor: `${project.color}40`,
+                          background: `${project.color}10`,
+                          color: project.color
+                        }}
+                      >
+                        {project.category}
+                      </span>
                     </div>
-                    <p className="text-primary-400 text-sm">{project.subtitle}</p>
-                  </div>
-                  <div className="mt-2 md:mt-0 flex items-center gap-4 text-dark-400 text-sm">
-                    <span>{project.client}</span>
-                    <span className="font-mono">{project.year}</span>
+                    <p className="text-primary-400 text-base md:text-lg font-medium mb-2">{project.subtitle}</p>
+                    <div className="flex items-center gap-4 text-dark-400 text-sm">
+                      <span className="flex items-center gap-1">
+                        <span className="w-1 h-1 rounded-full bg-primary-500" />
+                        {project.client}
+                      </span>
+                      <span className="font-mono">{project.year}</span>
+                    </div>
                   </div>
                 </div>
 
-                <p className="text-dark-300 leading-relaxed mb-4">{project.description}</p>
+                <p className="text-dark-300 leading-relaxed text-base md:text-lg mb-6">{project.description}</p>
 
                 {/* Technologies */}
-                <div className="flex flex-wrap gap-2 mb-2">
+                <div className="flex flex-wrap gap-2 mb-4">
                   {project.technologies.map((t) => (
                     <span key={t} className="tech-badge">{t}</span>
                   ))}
@@ -181,39 +242,64 @@ function Projects() {
 
                 {/* Expandable content */}
                 {active === project.id && (
-                  <div className="mt-8 pt-8 border-t border-white/5 space-y-6">
-                    <div>
-                      <h4 className="text-sm font-mono text-primary-400 uppercase tracking-wider mb-2">Défi</h4>
-                      <p className="text-dark-300 leading-relaxed">{project.challenge}</p>
+                  <div className="mt-8 pt-8 border-t border-white/10 space-y-8 animate-slide-up">
+                    <div className="grid md:grid-cols-2 gap-8">
+                      <div className="p-6 rounded-xl bg-dark-950/50 border border-primary-500/10">
+                        <h4 className="text-sm font-mono text-primary-400 uppercase tracking-wider mb-3 flex items-center gap-2">
+                          <span className="w-6 h-0.5" style={{ background: project.color }} />
+                          Défi
+                        </h4>
+                        <p className="text-dark-300 leading-relaxed">{project.challenge}</p>
+                      </div>
+                      <div className="p-6 rounded-xl bg-dark-950/50 border border-primary-500/10">
+                        <h4 className="text-sm font-mono text-primary-400 uppercase tracking-wider mb-3 flex items-center gap-2">
+                          <span className="w-6 h-0.5" style={{ background: project.color }} />
+                          Solution
+                        </h4>
+                        <p className="text-dark-300 leading-relaxed">{project.solution}</p>
+                      </div>
                     </div>
-                    <div>
-                      <h4 className="text-sm font-mono text-primary-400 uppercase tracking-wider mb-2">Solution</h4>
-                      <p className="text-dark-300 leading-relaxed">{project.solution}</p>
-                    </div>
-                    <div>
-                      <h4 className="text-sm font-mono text-primary-400 uppercase tracking-wider mb-2">Impact</h4>
-                      <ul className="space-y-2">
+                    <div className="p-6 rounded-xl bg-dark-950/50 border border-primary-500/10">
+                      <h4 className="text-sm font-mono text-primary-400 uppercase tracking-wider mb-4 flex items-center gap-2">
+                        <span className="w-6 h-0.5" style={{ background: project.color }} />
+                        Impact Mesurable
+                      </h4>
+                      <ul className="grid md:grid-cols-2 gap-3">
                         {project.impact.map((item, i) => (
-                          <li key={i} className="flex items-start gap-2 text-dark-300">
-                            <span className="mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: project.color }} />
-                            {item}
+                          <li key={i} className="flex items-start gap-3 text-dark-300">
+                            <span
+                              className="mt-1.5 w-2 h-2 rounded-full flex-shrink-0"
+                              style={{ background: project.color }}
+                            />
+                            <span>{item}</span>
                           </li>
                         ))}
                       </ul>
                     </div>
-
-                    {project.hasScreenshots && (
-                      <div className="mt-6 p-8 rounded-xl border border-dashed border-primary-500/20 bg-primary-500/5 text-center">
-                        <p className="text-primary-400 text-sm">📸 Captures d'écran disponibles sur demande</p>
-                        <p className="text-dark-500 text-xs mt-1">Remplacez ce bloc par vos images dans /public/images/</p>
-                      </div>
-                    )}
                   </div>
                 )}
 
                 {/* Click indicator */}
-                <div className="mt-4 text-center">
-                  <span className="text-dark-500 text-xs">{active === project.id ? '▲ Réduire' : '▼ Voir les détails'}</span>
+                <div className="mt-6 text-center">
+                  <button
+                    className="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-dark-500 hover:text-primary-400 hover:bg-primary-500/5 transition-all duration-300 text-sm font-medium"
+                  >
+                    {active === project.id ? (
+                      <>
+                        <span>Réduire</span>
+                        <svg className="w-4 h-4 rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                        </svg>
+                      </>
+                    ) : (
+                      <>
+                        <span>Voir les détails</span>
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                        </svg>
+                      </>
+                    )}
+                  </button>
                 </div>
               </div>
             </div>
@@ -227,26 +313,46 @@ function Projects() {
 // Expertise Section
 function Expertise() {
   return (
-    <section id="expertise" className="py-24 px-6 mesh-gradient">
-      <div className="max-w-6xl mx-auto">
+    <section id="expertise" className="py-24 px-6 mesh-gradient relative overflow-hidden">
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-1/3 right-1/4 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl animate-pulse-slow" />
+        <div className="absolute bottom-1/3 left-1/4 w-80 h-80 bg-primary-500/5 rounded-full blur-3xl animate-pulse-slow" style={{ animationDelay: '2s' }} />
+      </div>
+
+      <div className="max-w-6xl mx-auto relative z-10">
         <div className="text-center mb-16">
           <p className="text-primary-500 font-mono text-sm mb-3 tracking-widest uppercase">Compétences</p>
-          <h2 className="font-display text-4xl md:text-5xl font-bold text-white">Expertise Technique</h2>
+          <h2 className="font-display text-4xl md:text-6xl font-bold text-white mb-4">
+            Expertise <span className="bg-gradient-to-r from-primary-400 to-purple-400 bg-clip-text text-transparent">Technique</span>
+          </h2>
+          <p className="text-dark-400 text-lg max-w-2xl mx-auto">
+            Technologies de pointe pour des solutions robustes et scalables
+          </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {expertise.map((item) => (
-            <div key={item.category} className="p-6 rounded-2xl bg-dark-900/50 border border-white/5 hover:border-primary-500/20 transition-all duration-300">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="p-2 rounded-lg bg-primary-500/10 text-primary-400">
-                  <IconComponent name={item.icon} />
+          {expertise.map((item, idx) => (
+            <div
+              key={item.category}
+              className="group p-8 rounded-2xl bg-gradient-to-br from-dark-900/80 to-dark-950/80 border border-primary-500/10 hover:border-primary-500/30 transition-all duration-500 hover:transform hover:scale-105 hover:shadow-2xl relative overflow-hidden"
+              style={{ animationDelay: `${idx * 0.1}s` }}
+            >
+              <div className="absolute inset-0 bg-gradient-to-br from-primary-500/0 to-primary-500/0 group-hover:from-primary-500/5 group-hover:to-purple-500/5 transition-all duration-500" />
+
+              <div className="relative">
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="p-3 rounded-xl bg-gradient-to-br from-primary-500/20 to-purple-500/20 text-primary-400 group-hover:scale-110 transition-transform duration-300 border border-primary-500/20">
+                    <IconComponent name={item.icon} />
+                  </div>
+                  <h3 className="font-display text-xl font-bold text-white group-hover:text-primary-400 transition-colors duration-300">
+                    {item.category}
+                  </h3>
                 </div>
-                <h3 className="font-display font-semibold text-white">{item.category}</h3>
-              </div>
-              <div className="flex flex-wrap gap-2">
-                {item.skills.map((skill) => (
-                  <span key={skill} className="tech-badge">{skill}</span>
-                ))}
+                <div className="flex flex-wrap gap-2">
+                  {item.skills.map((skill) => (
+                    <span key={skill} className="tech-badge">{skill}</span>
+                  ))}
+                </div>
               </div>
             </div>
           ))}
@@ -260,28 +366,67 @@ function Expertise() {
 function Timeline() {
   return (
     <section id="parcours" className="py-24 px-6">
-      <div className="max-w-4xl mx-auto">
+      <div className="max-w-5xl mx-auto">
         <div className="text-center mb-16">
           <p className="text-primary-500 font-mono text-sm mb-3 tracking-widest uppercase">Parcours</p>
-          <h2 className="font-display text-4xl md:text-5xl font-bold text-white">Expérience</h2>
+          <h2 className="font-display text-4xl md:text-6xl font-bold text-white mb-4">
+            Mon <span className="bg-gradient-to-r from-primary-400 to-purple-400 bg-clip-text text-transparent">Parcours</span>
+          </h2>
+          <p className="text-dark-400 text-lg max-w-2xl mx-auto">
+            7+ années à concevoir des solutions innovantes pour des institutions majeures
+          </p>
         </div>
 
-        <div className="space-y-0">
-          {experience.map((exp, i) => (
-            <div key={i} className="flex gap-6 group">
-              {/* Timeline line */}
-              <div className="flex flex-col items-center">
-                <div className="timeline-dot group-hover:bg-primary-500 transition-colors duration-300" />
-                {i < experience.length - 1 && <div className="timeline-line flex-1 min-h-[80px]" />}
+        <div className="relative">
+          {/* Timeline vertical line */}
+          <div className="absolute left-8 top-0 bottom-0 w-px bg-gradient-to-b from-primary-500 via-purple-500 to-transparent hidden md:block" />
+
+          <div className="space-y-8">
+            {experience.map((exp, i) => (
+              <div
+                key={i}
+                className="relative group"
+                style={{ animationDelay: `${i * 0.1}s` }}
+              >
+                {/* Timeline dot */}
+                <div className="absolute left-8 top-6 w-4 h-4 -translate-x-1/2 rounded-full border-2 border-primary-500 bg-dark-950 group-hover:bg-primary-500 group-hover:scale-125 transition-all duration-300 z-10 hidden md:block" />
+
+                {/* Content card */}
+                <div className="md:ml-20 p-8 rounded-2xl bg-gradient-to-br from-dark-900/80 to-dark-950/80 border border-primary-500/10 hover:border-primary-500/30 transition-all duration-500 hover:transform hover:scale-[1.02] relative overflow-hidden group">
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary-500/0 to-primary-500/0 group-hover:from-primary-500/5 group-hover:to-purple-500/5 transition-all duration-500" />
+
+                  <div className="relative">
+                    <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-3 gap-2">
+                      <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary-500/10 border border-primary-500/20 text-primary-400 font-mono text-sm w-fit">
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                        </svg>
+                        {exp.period}
+                      </span>
+                    </div>
+                    <h3 className="font-display text-xl md:text-2xl font-bold text-white mb-2 group-hover:text-primary-400 transition-colors duration-300">
+                      {exp.title}
+                    </h3>
+                    <div className="flex flex-wrap items-center gap-3 text-dark-400">
+                      <span className="flex items-center gap-2">
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                        </svg>
+                        <span className="font-medium">{exp.company}</span>
+                      </span>
+                      <span className="flex items-center gap-2">
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>
+                        <span>{exp.location}</span>
+                      </span>
+                    </div>
+                  </div>
+                </div>
               </div>
-              {/* Content */}
-              <div className="pb-10">
-                <span className="font-mono text-xs text-primary-400">{exp.period}</span>
-                <h3 className="font-display text-lg font-semibold text-white mt-1">{exp.title}</h3>
-                <p className="text-dark-400 text-sm">{exp.company} — {exp.location}</p>
-              </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>
@@ -291,30 +436,78 @@ function Timeline() {
 // Contact Section
 function Contact() {
   return (
-    <section id="contact" className="py-24 px-6 mesh-gradient">
-      <div className="max-w-3xl mx-auto text-center">
+    <section id="contact" className="py-24 px-6 mesh-gradient relative overflow-hidden">
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-1/2 left-1/4 w-96 h-96 bg-primary-500/10 rounded-full blur-3xl animate-pulse-slow" />
+        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-purple-500/10 rounded-full blur-3xl animate-pulse-slow" style={{ animationDelay: '1.5s' }} />
+      </div>
+
+      <div className="max-w-4xl mx-auto text-center relative z-10">
         <p className="text-primary-500 font-mono text-sm mb-3 tracking-widest uppercase">Contact</p>
-        <h2 className="font-display text-4xl md:text-5xl font-bold text-white mb-6">Travaillons ensemble</h2>
-        <p className="text-dark-300 text-lg mb-12 leading-relaxed">
+        <h2 className="font-display text-4xl md:text-6xl font-bold text-white mb-6">
+          Travaillons <span className="bg-gradient-to-r from-primary-400 to-purple-400 bg-clip-text text-transparent">ensemble</span>
+        </h2>
+        <p className="text-dark-300 text-lg md:text-xl mb-12 leading-relaxed max-w-2xl mx-auto">
           Disponible pour des missions de consultance, du développement de systèmes d'information,
           et de l'assistance technique aux instituts statistiques.
         </p>
 
-        <div className="flex flex-col sm:flex-row justify-center gap-4 mb-12">
-          <a href={`mailto:${personalInfo.email}`} className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-primary-600 hover:bg-primary-500 text-white rounded-xl font-medium transition-all duration-300 glow-blue">
-            <IconComponent name="Mail" /> {personalInfo.email}
+        {/* Contact cards */}
+        <div className="grid md:grid-cols-2 gap-6 mb-12">
+          <a
+            href={`mailto:${personalInfo.email}`}
+            className="group relative p-8 rounded-2xl bg-gradient-to-br from-dark-900/80 to-dark-950/80 border border-primary-500/20 hover:border-primary-500/40 backdrop-blur-sm transition-all duration-500 hover:transform hover:scale-105"
+          >
+            <div className="absolute inset-0 bg-gradient-to-br from-primary-500/0 to-primary-500/0 group-hover:from-primary-500/10 group-hover:to-purple-500/10 rounded-2xl transition-all duration-500" />
+            <div className="relative">
+              <div className="w-14 h-14 mx-auto mb-4 rounded-xl bg-primary-500/10 border border-primary-500/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                <IconComponent name="Mail" />
+              </div>
+              <h3 className="font-display text-lg font-semibold text-white mb-2">Email</h3>
+              <p className="text-primary-400 font-medium">{personalInfo.email}</p>
+            </div>
           </a>
-          <a href={`tel:${personalInfo.phone.replace(/\s/g, '')}`} className="inline-flex items-center justify-center gap-2 px-8 py-4 border border-white/10 hover:border-primary-500/30 text-white rounded-xl font-medium transition-all duration-300">
-            {personalInfo.phone}
+
+          <a
+            href={`tel:${personalInfo.phone.replace(/\s/g, '')}`}
+            className="group relative p-8 rounded-2xl bg-gradient-to-br from-dark-900/80 to-dark-950/80 border border-primary-500/20 hover:border-primary-500/40 backdrop-blur-sm transition-all duration-500 hover:transform hover:scale-105"
+          >
+            <div className="absolute inset-0 bg-gradient-to-br from-primary-500/0 to-primary-500/0 group-hover:from-primary-500/10 group-hover:to-purple-500/10 rounded-2xl transition-all duration-500" />
+            <div className="relative">
+              <div className="w-14 h-14 mx-auto mb-4 rounded-xl bg-primary-500/10 border border-primary-500/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                </svg>
+              </div>
+              <h3 className="font-display text-lg font-semibold text-white mb-2">Téléphone</h3>
+              <p className="text-primary-400 font-medium">{personalInfo.phone}</p>
+            </div>
           </a>
         </div>
 
-        <div className="flex justify-center gap-6">
-          <a href={personalInfo.github} target="_blank" rel="noopener" className="text-dark-400 hover:text-white transition-colors">
+        {/* Social links */}
+        <div className="flex justify-center gap-4">
+          <a
+            href={personalInfo.github}
+            target="_blank"
+            rel="noopener"
+            className="p-4 rounded-xl bg-dark-900/50 border border-white/10 hover:border-primary-500/30 hover:bg-primary-500/10 text-dark-400 hover:text-white transition-all duration-300 transform hover:scale-110"
+          >
             <IconComponent name="Github" />
           </a>
-          <a href={personalInfo.linkedin} target="_blank" rel="noopener" className="text-dark-400 hover:text-white transition-colors">
+          <a
+            href={personalInfo.linkedin}
+            target="_blank"
+            rel="noopener"
+            className="p-4 rounded-xl bg-dark-900/50 border border-white/10 hover:border-primary-500/30 hover:bg-primary-500/10 text-dark-400 hover:text-white transition-all duration-300 transform hover:scale-110"
+          >
             <IconComponent name="Linkedin" />
+          </a>
+          <a
+            href={`mailto:${personalInfo.email}`}
+            className="p-4 rounded-xl bg-dark-900/50 border border-white/10 hover:border-primary-500/30 hover:bg-primary-500/10 text-dark-400 hover:text-white transition-all duration-300 transform hover:scale-110"
+          >
+            <IconComponent name="Mail" />
           </a>
         </div>
       </div>
@@ -325,10 +518,39 @@ function Contact() {
 // Footer
 function Footer() {
   return (
-    <footer className="py-8 px-6 border-t border-white/5">
-      <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-dark-500 text-sm">
-        <p>© {new Date().getFullYear()} Bouna Dramé. Tous droits réservés.</p>
-        <p>Conçu et développé par mes soins.</p>
+    <footer className="py-12 px-6 border-t border-white/5 bg-dark-950/50 backdrop-blur-sm">
+      <div className="max-w-6xl mx-auto">
+        <div className="flex flex-col md:flex-row justify-between items-center gap-6 mb-8">
+          <div className="text-center md:text-left">
+            <a href="#" className="font-display font-bold text-2xl text-white inline-block mb-2">
+              B<span className="text-primary-500">.</span>D
+            </a>
+            <p className="text-dark-400 text-sm">Architecte Full Stack | Expert Systèmes Statistiques</p>
+          </div>
+
+          <div className="flex gap-4">
+            <a href={personalInfo.github} target="_blank" rel="noopener" className="p-3 rounded-xl bg-dark-900/50 border border-white/10 hover:border-primary-500/30 hover:bg-primary-500/10 text-dark-400 hover:text-white transition-all duration-300">
+              <IconComponent name="Github" />
+            </a>
+            <a href={personalInfo.linkedin} target="_blank" rel="noopener" className="p-3 rounded-xl bg-dark-900/50 border border-white/10 hover:border-primary-500/30 hover:bg-primary-500/10 text-dark-400 hover:text-white transition-all duration-300">
+              <IconComponent name="Linkedin" />
+            </a>
+            <a href={`mailto:${personalInfo.email}`} className="p-3 rounded-xl bg-dark-900/50 border border-white/10 hover:border-primary-500/30 hover:bg-primary-500/10 text-dark-400 hover:text-white transition-all duration-300">
+              <IconComponent name="Mail" />
+            </a>
+          </div>
+        </div>
+
+        <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-dark-500 text-sm">
+          <p>© {new Date().getFullYear()} Bouna Dramé. Tous droits réservés.</p>
+          <p className="flex items-center gap-2">
+            Conçu et développé avec
+            <svg className="w-4 h-4 text-red-500 animate-pulse" fill="currentColor" viewBox="0 0 20 20">
+              <path fillRule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clipRule="evenodd" />
+            </svg>
+            par mes soins
+          </p>
+        </div>
       </div>
     </footer>
   );
