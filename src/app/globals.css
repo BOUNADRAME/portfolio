@@ -8,6 +8,28 @@
   --font-cabinet: 'Space Grotesk', system-ui, sans-serif;
   --font-satoshi: 'DM Sans', system-ui, sans-serif;
   --font-jetbrains: 'JetBrains Mono', monospace;
+
+  /* Dark theme colors (default) */
+  --bg-primary: #0f0f1a;
+  --bg-secondary: #181825;
+  --bg-tertiary: #1a1a2e;
+  --text-primary: #ececf2;
+  --text-secondary: #a0a0b0;
+  --text-tertiary: #6b6b7e;
+  --border-color: rgba(255, 255, 255, 0.05);
+  --border-hover: rgba(51, 141, 255, 0.3);
+}
+
+html.light {
+  /* Light theme colors */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8f9fa;
+  --bg-tertiary: #f0f1f3;
+  --text-primary: #1a1a2e;
+  --text-secondary: #4a5568;
+  --text-tertiary: #718096;
+  --border-color: rgba(0, 0, 0, 0.08);
+  --border-hover: rgba(51, 141, 255, 0.4);
 }
 
 * {
@@ -22,9 +44,10 @@ html {
 
 body {
   font-family: var(--font-satoshi);
-  background: #0f0f1a;
-  color: #ececf2;
+  background: var(--bg-primary);
+  color: var(--text-primary);
   overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Scrollbar */

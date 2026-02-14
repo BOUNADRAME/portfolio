@@ -2,6 +2,13 @@
 
 import { useState } from 'react';
 import { personalInfo, stats, projects, expertise, experience } from '../data/portfolio';
+import { translations } from '../data/translations';
+import { useLanguage } from '../context/LanguageContext';
+import ThemeToggle from '../components/ThemeToggle';
+import LanguageToggle from '../components/LanguageToggle';
+
+// Base path for assets (empty in dev, /portfolio in production)
+const basePath = process.env.NODE_ENV === 'production' ? '/portfolio' : '';
 
 // Icons as inline SVGs to avoid dependency issues
 const icons = {
@@ -29,35 +36,46 @@ const IconComponent = ({ name }) => {
 // Navigation
 function Navbar() {
   const [open, setOpen] = useState(false);
+  const { language } = useLanguage();
+  const t = translations[language].nav;
+
   const links = [
-    { href: '#projets', label: 'Projets' },
-    { href: '#expertise', label: 'Expertise' },
-    { href: '#parcours', label: 'Parcours' },
-    { href: '#contact', label: 'Contact' },
+    { href: '#projets', label: t.projects },
+    { href: '#expertise', label: t.expertise },
+    { href: '#parcours', label: t.journey },
+    { href: '#contact', label: t.contact },
   ];
 
   return (
     <nav className="fixed top-0 w-full z-50 backdrop-blur-xl bg-dark-950/70 border-b border-white/5">
-      <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between gap-4">
         <a href="#" className="font-display font-bold text-lg text-white">
           B<span className="text-primary-500">.</span>D
         </a>
-        <div className="hidden md:flex gap-8">
+
+        <div className="hidden lg:flex gap-8 flex-1 justify-center">
           {links.map(l => (
             <a key={l.href} href={l.href} className="text-sm text-dark-300 hover:text-white transition-colors duration-300">
               {l.label}
             </a>
           ))}
         </div>
-        <a href="mailto:bounafode@gmail.com" className="hidden md:flex items-center gap-2 px-4 py-2 bg-primary-600 hover:bg-primary-500 text-white text-sm rounded-lg transition-all duration-300">
-          <IconComponent name="Send" /> Me contacter
-        </a>
+
+        <div className="hidden md:flex items-center gap-3">
+          <ThemeToggle />
+          <LanguageToggle />
+          <a href="mailto:bounafode@gmail.com" className="flex items-center gap-2 px-4 py-2 bg-primary-600 hover:bg-primary-500 text-white text-sm rounded-lg transition-all duration-300">
+            <IconComponent name="Send" /> {t.contactMe}
+          </a>
+        </div>
+
         <button onClick={() => setOpen(!open)} className="md:hidden text-white">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
             {open ? <path d="M18 6 6 18M6 6l12 12"/> : <><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></>}
           </svg>
         </button>
       </div>
+
       {open && (
         <div className="md:hidden px-6 pb-4 space-y-3 bg-dark-950/95 border-b border-white/5">
           {links.map(l => (
@@ -65,6 +83,10 @@ function Navbar() {
               {l.label}
             </a>
           ))}
+          <div className="flex items-center gap-3 pt-3">
+            <ThemeToggle />
+            <LanguageToggle />
+          </div>
         </div>
       )}
     </nav>

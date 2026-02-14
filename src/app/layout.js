@@ -1,4 +1,6 @@
 import './globals.css'
+import { ThemeProvider } from '../context/ThemeContext'
+import { LanguageProvider } from '../context/LanguageContext'
 
 export const metadata = {
   title: 'Bouna Dramé — Ingénieur Logiciel Senior | Architecte Full Stack',
@@ -15,7 +17,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="fr" className="scroll-smooth">
       <body className="grain">
-        {children}
+        <ThemeProvider>
+          <LanguageProvider>
+            {children}
+          </LanguageProvider>
+        </ThemeProvider>
       </body>
     </html>
   )
