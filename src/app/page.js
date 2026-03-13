@@ -324,9 +324,7 @@ function Projects() {
                                 'dashboard.png',
                                 'login.png',
                                 'map-gps.png',
-                                'keywords.png',
-                                'Capture d\'écran 2026-03-13 à 14.10.37.png',
-                                'Capture d\'écran 2026-03-13 à 14.13.00.png'
+                                'keywords.png'
                               ],
                               'pisa': [
                                 'Acceuil.png',
@@ -347,7 +345,10 @@ function Projects() {
                               return (
                                 <div
                                   key={idx}
-                                  onClick={() => setLightbox(imagePath)}
+                                  onClick={(e) => {
+                                    e.stopPropagation();
+                                    setLightbox(imagePath);
+                                  }}
                                   className="group relative aspect-video overflow-hidden rounded-lg border border-primary-500/20 hover:border-primary-500/60 transition-all duration-300 cursor-pointer hover:z-10"
                                 >
                                   <img
