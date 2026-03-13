@@ -68,7 +68,12 @@ function Navbar() {
           </a>
         </div>
 
-        <button onClick={() => setOpen(!open)} className="md:hidden text-white">
+        <button
+          onClick={() => setOpen(!open)}
+          className="md:hidden text-white"
+          aria-label={open ? "Fermer le menu" : "Ouvrir le menu"}
+          aria-expanded={open}
+        >
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
             {open ? <path d="M18 6 6 18M6 6l12 12"/> : <><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></>}
           </svg>
@@ -174,10 +179,18 @@ function Hero() {
 
             {/* CTA */}
             <div className="flex flex-col sm:flex-row justify-center gap-3 animate-slide-up" style={{ animationDelay: '0.4s' }}>
-              <a href="#contact" className="inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-primary-600 hover:bg-primary-500 text-white text-sm font-medium rounded-lg transition-all duration-300 transform hover:scale-105">
+              <a
+                href="#contact"
+                className="inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-primary-600 hover:bg-primary-500 text-white text-sm font-medium rounded-lg transition-all duration-300 transform hover:scale-105"
+                aria-label="Accéder à la section contact"
+              >
                 <IconComponent name="Send" /> {t.hero.ctaContact}
               </a>
-              <a href="#projets" className="inline-flex items-center justify-center gap-2 px-5 py-2.5 border border-primary-500/30 hover:border-primary-500/50 hover:bg-primary-500/5 text-white text-sm font-medium rounded-lg transition-all duration-300 transform hover:scale-105">
+              <a
+                href="#projets"
+                className="inline-flex items-center justify-center gap-2 px-5 py-2.5 border border-primary-500/30 hover:border-primary-500/50 hover:bg-primary-500/5 text-white text-sm font-medium rounded-lg transition-all duration-300 transform hover:scale-105"
+                aria-label="Voir mes projets"
+              >
                 {t.hero.ctaProjects}
               </a>
             </div>
@@ -309,8 +322,27 @@ function Projects() {
                       </ul>
                     </div>
 
-                    {/* Screenshots - Now at the bottom */}
-                    {project.hasScreenshots && (
+                    {/* Confidential project notice */}
+                    {project.isConfidential && (
+                      <div className="p-6 rounded-xl bg-amber-500/5 border border-amber-500/20">
+                        <div className="flex items-start gap-3">
+                          <IconComponent name="Lock" />
+                          <div>
+                            <h4 className="text-sm font-mono text-amber-400 uppercase tracking-wider mb-2">
+                              {language === 'fr' ? 'Projet Confidentiel' : 'Confidential Project'}
+                            </h4>
+                            <p className="text-dark-300 text-sm leading-relaxed">
+                              {language === 'fr'
+                                ? 'Les captures d\'écran et certains détails techniques sont protégés par un accord de confidentialité. Démo disponible sur demande avec accord préalable du client.'
+                                : 'Screenshots and certain technical details are protected by a confidentiality agreement. Demo available upon request with prior client approval.'}
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    )}
+
+                    {/* Screenshots - Now at the bottom (only for non-confidential projects) */}
+                    {project.hasScreenshots && !project.isConfidential && (
                       <div className="pt-4">
                         <h4 className="text-sm font-mono text-primary-400 uppercase tracking-wider mb-4 flex items-center gap-2">
                           <span className="w-6 h-0.5" style={{ background: project.color }} />
