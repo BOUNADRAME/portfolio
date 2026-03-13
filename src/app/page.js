@@ -156,28 +156,28 @@ function Hero() {
             </p>
 
             {/* Stats en ligne */}
-            <div className="flex overflow-x-auto justify-start lg:justify-start gap-4 md:gap-6 mb-10 animate-slide-up pb-2 scrollbar-hide" style={{ animationDelay: '0.3s' }}>
+            <div className="flex overflow-x-auto justify-start lg:justify-start gap-3 md:gap-4 mb-10 animate-slide-up pb-2 scrollbar-hide" style={{ animationDelay: '0.3s' }}>
               {[
                 { value: "7+", label: t.stats.experience },
-                { value: "18M", label: t.stats.habitants },
-                { value: "270M+", label: t.stats.savings },
+                { value: "10+", label: t.stats.projects },
+                { value: "15+", label: t.stats.technologies },
                 { value: "4", label: t.stats.countries },
               ].map((s, i) => (
-                <div key={i} className="flex items-center gap-3 px-4 md:px-6 py-3 rounded-2xl bg-dark-900/50 border border-primary-500/10 hover:border-primary-500/30 transition-all duration-300 group flex-shrink-0">
+                <div key={i} className="flex items-center gap-2 px-3 md:px-5 py-2.5 rounded-xl bg-dark-900/50 border border-primary-500/10 hover:border-primary-500/30 transition-all duration-300 group flex-shrink-0">
                   <div className="text-center">
-                    <div className="font-display text-2xl md:text-3xl lg:text-4xl font-bold text-white glow-text group-hover:scale-110 transition-transform duration-300">{s.value}</div>
-                    <div className="text-dark-400 text-xs mt-1 whitespace-nowrap">{s.label}</div>
+                    <div className="font-display text-xl md:text-2xl lg:text-3xl font-bold text-white glow-text group-hover:scale-110 transition-transform duration-300">{s.value}</div>
+                    <div className="text-dark-400 text-xs mt-0.5 whitespace-nowrap">{s.label}</div>
                   </div>
                 </div>
               ))}
             </div>
 
             {/* CTA */}
-            <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-4 animate-slide-up" style={{ animationDelay: '0.4s' }}>
-              <a href="#contact" className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-primary-600 to-primary-500 hover:from-primary-500 hover:to-primary-600 text-white text-lg font-semibold rounded-xl transition-all duration-300 glow-blue transform hover:scale-105">
+            <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-3 animate-slide-up" style={{ animationDelay: '0.4s' }}>
+              <a href="#contact" className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-primary-600 hover:bg-primary-500 text-white font-medium rounded-lg transition-all duration-300 transform hover:scale-105">
                 <IconComponent name="Send" /> {t.hero.ctaContact}
               </a>
-              <a href="#projets" className="inline-flex items-center justify-center gap-2 px-8 py-4 border border-primary-500/30 hover:bg-primary-500/10 text-white text-lg font-semibold rounded-xl transition-all duration-300 transform hover:scale-105">
+              <a href="#projets" className="inline-flex items-center justify-center gap-2 px-6 py-3 border border-primary-500/30 hover:border-primary-500/50 hover:bg-primary-500/5 text-white font-medium rounded-lg transition-all duration-300 transform hover:scale-105">
                 {t.hero.ctaProjects}
               </a>
             </div>

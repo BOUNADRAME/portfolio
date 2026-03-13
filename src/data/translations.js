@@ -17,8 +17,8 @@ export const translations = {
     },
     stats: {
       experience: "Années d'expérience",
-      habitants: 'Habitants recensés (PIGOR)',
-      savings: 'FCFA économisés (SEDAS)',
+      projects: 'Projets livrés',
+      technologies: 'Technologies',
       countries: "Pays d'intervention",
     },
     projects: {
@@ -73,8 +73,8 @@ export const translations = {
     },
     stats: {
       experience: 'Years of experience',
-      habitants: 'People censused (PIGOR)',
-      savings: 'FCFA saved (SEDAS)',
+      projects: 'Delivered projects',
+      technologies: 'Technologies',
       countries: 'Countries of operation',
     },
     projects: {
