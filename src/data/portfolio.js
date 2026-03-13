@@ -19,6 +19,33 @@ export const stats = [
 
 export const projects = [
   {
+    id: "kairos-sensemaking",
+    title: "KATS — Kairos Terrain Sensemaking",
+    subtitle: "Plateforme IA d'Analyse Sémantique Terrain & Rapports de Résilience",
+    client: "STATINFO (Sénégal) — Projet USAID Post-Départ",
+    year: "Fév. — Mars 2026",
+    category: "IA & Data Science Terrain",
+    description: "Système intelligent d'analyse sémantique des observations terrain avec enrichissement IA multi-modal (texte + audio + images). Collecte mobile offline-first via CSPro, analyse de sentiment par IA générative (Claude Haiku 4.5), profils de résilience automatisés, et génération dynamique de rapports de sensemaking PDF pour les décideurs USAID. Architecture cloud multi-provider IA avec gestion avancée des breakouts CSPro via webhooks.",
+    challenge: "L'USAID (post-départ Sénégal) avait besoin de transformer les évaluations terrain qualitatives des producteurs agricoles en insights actionnables pour les décideurs. Les observations brutes (texte, audio, images) collectées sur mobile nécessitaient une analyse sémantique contextualisée, une classification automatique en profils de résilience (RESILIENT/INTERMÉDIAIRE/VULNERABLE), et une synthèse narrative intelligente — le tout avec des contraintes d'offline-first, d'explicabilité, et de validation humaine obligatoire.",
+    solution: "Développement complet d'une stack enterprise-grade : backend Spring Boot 3.5 (Java 25) + API REST sécurisée JWT, intégration multi-provider IA (Claude Haiku 4.5, Gemini Flash, OpenAI GPT-4o-mini, Ollama local) via Strategy Pattern, frontend Next.js 16 avec cartographie interactive Leaflet, et mobile Android offline-first. Système avancé de gestion des breakouts CSPro via webhooks PHP custom, scheduler dynamique configurable à chaud pour jobs planifiés par dictionnaire, et génération automatique de rapports de sensemaking PDF avec analyse thématique (nuages de mots tri-grammes, patterns, actions prioritaires). Monitoring logs temps réel via SSE, internationalisation backend-first FR/EN, et audit de sécurité complet (OWASP Top 10, HTTPS, RBAC).",
+    impact: [
+      "214+ observations enrichies avec 3 niveaux d'analyse : sentiment (POSITIF/NEUTRE/NÉGATIF), confiance IA (0-1), profil de résilience automatisé",
+      "Génération automatique de rapports narratifs IA : Thèmes dominants, Constats clés, Actions prioritaires, Recommandations court/moyen terme",
+      "Analyse multi-modale : texte brut + transcription audio (clavier/voix FR/EN) + images terrain via Claude Vision API",
+      "Coût IA optimisé 73% : bascule Claude → Gemini Flash réduit de $72 à $20 pour 300K messages (pilot 5 mois)",
+      "Cartographie interactive filtrable : GPS, sentiment, profil, genre, classe d'âge, statut social, événements/sessions/sites",
+      "Architecture offline-first + sync idempotente CSPro → PostgreSQL via webhooks custom (zéro crontab manuel)",
+      "Scheduler dynamique : gestion de 10+ jobs breakout configurables à chaud (cron, activation, paramètres) via REST API",
+      "Monitoring avancé : logs temps réel SSE avec parsing Symfony, filtres niveau/recherche, rotation auto 7j",
+      "Support multi-provider IA : switch Claude/Gemini/OpenAI/Ollama en 1 variable (.env) grâce au Strategy Pattern",
+      "Sécurité enterprise : JWT RBAC, audit trail complet, conformité OWASP Top 10, protection CSRF/XSS/injection SQL",
+    ],
+    technologies: ["Spring Boot 3.5", "Java 25", "PostgreSQL 16", "Flyway", "Claude AI (Haiku 4.5)", "Gemini Flash 2.0", "OpenAI GPT-4o-mini", "Ollama", "Next.js 16", "React 19", "TypeScript", "React Query", "Leaflet", "CSPro", "CSWeb", "Webhooks PHP", "Docker", "PDFBox 3.0", "JWT", "SSE", "Anthropic API"],
+    hasScreenshots: true,
+    isConfidential: true,
+    color: "#8b5cf6",
+  },
+  {
     id: "sedas",
     title: "SEDAS",
     subtitle: "Plateforme Open Data Statistique",
@@ -124,7 +151,7 @@ export const projects = [
     title: "PISA",
     subtitle: "Plateforme Intégrée de Suivi des Activités",
     client: "WVLO — World Vision Liaison Office, Sénégal",
-    year: "2023-2024",
+    year: "Oct. 2025 — Fév. 2026",
     category: "Santé Publique",
     description: "Système complet de suivi des activités terrain du Projet WVLO, couvrant la planification, l'exécution et la validation des activités de santé communautaire à travers les districts sanitaires et postes de santé. Plateforme web + application mobile Flutter offline-first.",
     challenge: "Coordonner les activités de santé communautaire à travers plusieurs districts sanitaires avec des agents en zones à connectivité limitée. Les processus manuels rendaient impossible le suivi centralisé en temps réel.",
@@ -136,7 +163,7 @@ export const projects = [
       "Tableau de bord temps réel pour les décideurs",
     ],
     technologies: ["Symfony 6.4", "API Platform 3.1", "PostgreSQL", "Flutter", "JWT", "TailwindCSS", "PhpSpreadsheet", "DomPDF"],
-    hasScreenshots: false,
+    hasScreenshots: true,
     isConfidential: true,
     color: "#06b6d4",
   },
@@ -183,6 +210,11 @@ export const projects = [
 ];
 
 export const expertise = [
+  {
+    category: "IA & Machine Learning",
+    icon: "Brain",
+    skills: ["Claude AI", "Gemini", "OpenAI", "Ollama", "NLP", "Sentiment Analysis", "Multi-Provider Architecture"],
+  },
   {
     category: "Systèmes Statistiques",
     icon: "BarChart3",
