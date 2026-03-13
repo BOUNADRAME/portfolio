@@ -306,7 +306,7 @@ export const certifications = [
 export const testimonials = [
   {
     id: 1,
-    name: "Dr. Aboubacar Sédikh Bèye",
+    name: "Directeur Général",
     role: "Directeur Général",
     company: "ANSD — Agence Nationale de la Statistique et de la Démographie",
     text: "Bouna a joué un rôle déterminant dans la modernisation de nos systèmes d'information. Sa conception de SEDAS a positionné l'ANSD comme institution pionnière en Afrique francophone pour la diffusion de données statistiques SDMX 3.0. Son expertise technique et sa capacité à traduire des besoins complexes en solutions robustes sont remarquables.",
@@ -314,7 +314,7 @@ export const testimonials = [
   },
   {
     id: 2,
-    name: "Sarah Johnson",
+    name: "Program Manager",
     role: "Program Manager",
     company: "USAID West Africa",
     text: "The KATS platform Bouna developed for our post-departure monitoring exceeded all expectations. His multi-modal AI solution transformed how we analyze field data, cutting analysis time by 70% while providing deeper insights. His ability to work with limited connectivity constraints and deliver enterprise-grade security is impressive.",
@@ -322,7 +322,7 @@ export const testimonials = [
   },
   {
     id: 3,
-    name: "Marie-Claire Ndong",
+    name: "Coordinatrice de Projet",
     role: "Coordinatrice de Projet",
     company: "World Vision Liaison Office Sénégal",
     text: "La plateforme PISA développée par Bouna a révolutionné notre suivi des activités de santé communautaire. L'application mobile offline-first permet à nos agents terrain de travailler efficacement même dans les zones les plus reculées. Le tableau de bord en temps réel nous donne enfin la visibilité nécessaire pour piloter nos interventions.",
