@@ -8,6 +8,15 @@ export const metadata = {
   authors: [{ name: 'Bouna Dramé' }],
   creator: 'Bouna Dramé',
   publisher: 'Bouna Dramé',
+  icons: {
+    icon: [
+      { url: '/portfolio/icon.svg', type: 'image/svg+xml' },
+      { url: '/portfolio/favicon.ico', sizes: '32x32' },
+    ],
+    apple: [
+      { url: '/portfolio/apple-icon.svg', type: 'image/svg+xml' },
+    ],
+  },
   robots: {
     index: true,
     follow: true,
