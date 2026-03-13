@@ -173,11 +173,11 @@ function Hero() {
             </div>
 
             {/* CTA */}
-            <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-3 animate-slide-up" style={{ animationDelay: '0.4s' }}>
-              <a href="#contact" className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-primary-600 hover:bg-primary-500 text-white font-medium rounded-lg transition-all duration-300 transform hover:scale-105">
+            <div className="flex flex-col sm:flex-row justify-center gap-3 animate-slide-up" style={{ animationDelay: '0.4s' }}>
+              <a href="#contact" className="inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-primary-600 hover:bg-primary-500 text-white text-sm font-medium rounded-lg transition-all duration-300 transform hover:scale-105">
                 <IconComponent name="Send" /> {t.hero.ctaContact}
               </a>
-              <a href="#projets" className="inline-flex items-center justify-center gap-2 px-6 py-3 border border-primary-500/30 hover:border-primary-500/50 hover:bg-primary-500/5 text-white font-medium rounded-lg transition-all duration-300 transform hover:scale-105">
+              <a href="#projets" className="inline-flex items-center justify-center gap-2 px-5 py-2.5 border border-primary-500/30 hover:border-primary-500/50 hover:bg-primary-500/5 text-white text-sm font-medium rounded-lg transition-all duration-300 transform hover:scale-105">
                 {t.hero.ctaProjects}
               </a>
             </div>
@@ -195,6 +195,7 @@ function Hero() {
 // Projects Section
 function Projects() {
   const [active, setActive] = useState(null);
+  const [lightbox, setLightbox] = useState(null);
   const { language } = useLanguage();
   const t = translations[language];
   const projects = portfolioContent[language].projects;
@@ -341,17 +342,29 @@ function Projects() {
                               ]
                             };
                             const projectScreenshots = screenshots[project.id] || [];
-                            return projectScreenshots.map((filename, idx) => (
-                              <div key={idx} className="group relative aspect-video overflow-hidden rounded-lg border border-primary-500/20 hover:border-primary-500/60 transition-all duration-300 cursor-pointer hover:z-10">
-                                <img
-                                  src={`${basePath}/projects/${project.id}/${filename}`}
-                                  alt={`${project.title} - Screenshot ${idx + 1}`}
-                                  className="w-full h-full object-cover transition-all duration-300 group-hover:scale-150 group-hover:shadow-2xl"
-                                  loading="lazy"
-                                />
-                                <div className="absolute inset-0 bg-gradient-to-t from-dark-950/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
-                              </div>
-                            ));
+                            return projectScreenshots.map((filename, idx) => {
+                              const imagePath = `${basePath}/projects/${project.id}/${encodeURIComponent(filename)}`;
+                              return (
+                                <div
+                                  key={idx}
+                                  onClick={() => setLightbox(imagePath)}
+                                  className="group relative aspect-video overflow-hidden rounded-lg border border-primary-500/20 hover:border-primary-500/60 transition-all duration-300 cursor-pointer hover:z-10"
+                                >
+                                  <img
+                                    src={imagePath}
+                                    alt={`${project.title} - Screenshot ${idx + 1}`}
+                                    className="w-full h-full object-cover transition-all duration-300 group-hover:scale-110"
+                                    loading="lazy"
+                                  />
+                                  <div className="absolute inset-0 bg-gradient-to-t from-dark-950/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+                                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+                                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+                                    </svg>
+                                  </div>
+                                </div>
+                              );
+                            });
                           })()}
                         </div>
                       </div>
@@ -385,6 +398,29 @@ function Projects() {
             </div>
           ))}
         </div>
+
+        {/* Lightbox Modal */}
+        {lightbox && (
+          <div
+            className="fixed inset-0 z-50 bg-black/95 flex items-center justify-center p-4 animate-fade-in"
+            onClick={() => setLightbox(null)}
+          >
+            <button
+              className="absolute top-4 right-4 text-white hover:text-primary-400 transition-colors p-2 rounded-lg hover:bg-white/10"
+              onClick={() => setLightbox(null)}
+            >
+              <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+            <img
+              src={lightbox}
+              alt="Screenshot agrandie"
+              className="max-w-full max-h-full object-contain rounded-lg"
+              onClick={(e) => e.stopPropagation()}
+            />
+          </div>
+        )}
       </div>
     </section>
   );
