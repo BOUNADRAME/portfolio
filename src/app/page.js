@@ -274,6 +274,55 @@ function Projects() {
                 {/* Expandable content */}
                 {active === project.id && (
                   <div className="mt-8 pt-8 border-t border-white/10 space-y-8 animate-slide-up">
+                    {/* Screenshots */}
+                    {project.hasScreenshots && (
+                      <div className="mb-8">
+                        <h4 className="text-sm font-mono text-primary-400 uppercase tracking-wider mb-4 flex items-center gap-2">
+                          <span className="w-6 h-0.5" style={{ background: project.color }} />
+                          {language === 'fr' ? 'Captures d\'écran' : 'Screenshots'}
+                        </h4>
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                          {(() => {
+                            // Define screenshots for each project
+                            const screenshots = {
+                              'kairos-sensemaking': [
+                                'dashboard.png',
+                                'login.png',
+                                'map-gps.png',
+                                'keywords.png',
+                                'Capture d\'écran 2026-03-13 à 14.10.37.png',
+                                'Capture d\'écran 2026-03-13 à 14.13.00.png'
+                              ],
+                              'pisa': [
+                                'Acceuil.png',
+                                'tableau_bord_vue_ensemble.png',
+                                'Activites_dialogues.png',
+                                'tableau_bord_dialogue.png',
+                                'activites.png',
+                                'workplan.png',
+                                'tableau_bord_activite_operationnelle.png',
+                                'tableau_bord_participant.png',
+                                'Administration.png',
+                                'Rapporter.png'
+                              ]
+                            };
+                            const projectScreenshots = screenshots[project.id] || [];
+                            return projectScreenshots.map((filename, idx) => (
+                              <div key={idx} className="group relative overflow-hidden rounded-xl border border-primary-500/20 hover:border-primary-500/40 transition-all duration-300">
+                                <img
+                                  src={`${basePath}/projects/${project.id}/${filename}`}
+                                  alt={`${project.title} - Screenshot ${idx + 1}`}
+                                  className="w-full h-auto object-cover transition-transform duration-300 group-hover:scale-105"
+                                  loading="lazy"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-dark-950/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                              </div>
+                            ));
+                          })()}
+                        </div>
+                      </div>
+                    )}
+
                     <div className="grid md:grid-cols-2 gap-8">
                       <div className="p-6 rounded-xl bg-dark-950/50 border border-primary-500/10">
                         <h4 className="text-sm font-mono text-primary-400 uppercase tracking-wider mb-3 flex items-center gap-2">
