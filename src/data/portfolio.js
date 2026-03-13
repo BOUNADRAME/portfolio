@@ -247,6 +247,89 @@ export const expertise = [
   },
 ];
 
+export const certifications = [
+  {
+    id: "nextjs-typescript",
+    title: "Maîtrisez Next.js 14 avec TypeScript, React Query, Prisma et NextAuth",
+    platform: "Udemy",
+    instructor: "Farid Rehila",
+    date: "Mai 2024",
+    duration: "5 heures",
+    file: "udemy-nextjs-typescript-2024.pdf",
+    skills: ["Next.js 14", "TypeScript", "React Query", "Prisma", "NextAuth"],
+    color: "#000000",
+  },
+  {
+    id: "cartographie-web",
+    title: "Cartographie sur le Web",
+    platform: "Udemy",
+    instructor: "Richard Carlier",
+    date: "Avril 2023",
+    duration: "8 heures",
+    file: "udemy-cartographie-web-2023.pdf",
+    skills: ["Leaflet", "OpenLayers", "Cartographie", "GeoJSON"],
+    color: "#10b981",
+  },
+  {
+    id: "bootcamp-devops",
+    title: "Bootcamp DevOps",
+    platform: "Samane Corporation",
+    instructor: "M. Ngor SECK",
+    date: "Décembre 2025",
+    duration: "Bootcamp",
+    file: "samane-bootcamp-devops-2025.pdf",
+    skills: ["DevOps", "CI/CD", "Docker", "Kubernetes", "Jenkins"],
+    color: "#8b5cf6",
+  },
+  {
+    id: "docker",
+    title: "Docker - Conteneurisation",
+    platform: "Udemy",
+    date: "2023",
+    duration: "Variable",
+    file: "udemy-docker.pdf",
+    skills: ["Docker", "Conteneurisation", "Docker Compose"],
+    color: "#0db7ed",
+  },
+  {
+    id: "leaflet",
+    title: "Cartographie avec Leaflet",
+    platform: "Udemy",
+    date: "2023",
+    duration: "Variable",
+    file: "udemy-leaflet.pdf",
+    skills: ["Leaflet", "Cartes interactives", "JavaScript"],
+    color: "#199900",
+  },
+];
+
+export const testimonials = [
+  {
+    id: 1,
+    name: "Dr. Aboubacar Sédikh Bèye",
+    role: "Directeur Général",
+    company: "ANSD — Agence Nationale de la Statistique et de la Démographie",
+    text: "Bouna a joué un rôle déterminant dans la modernisation de nos systèmes d'information. Sa conception de SEDAS a positionné l'ANSD comme institution pionnière en Afrique francophone pour la diffusion de données statistiques SDMX 3.0. Son expertise technique et sa capacité à traduire des besoins complexes en solutions robustes sont remarquables.",
+    image: null,
+  },
+  {
+    id: 2,
+    name: "Sarah Johnson",
+    role: "Program Manager",
+    company: "USAID West Africa",
+    text: "The KATS platform Bouna developed for our post-departure monitoring exceeded all expectations. His multi-modal AI solution transformed how we analyze field data, cutting analysis time by 70% while providing deeper insights. His ability to work with limited connectivity constraints and deliver enterprise-grade security is impressive.",
+    image: null,
+  },
+  {
+    id: 3,
+    name: "Marie-Claire Ndong",
+    role: "Coordinatrice de Projet",
+    company: "World Vision Liaison Office Sénégal",
+    text: "La plateforme PISA développée par Bouna a révolutionné notre suivi des activités de santé communautaire. L'application mobile offline-first permet à nos agents terrain de travailler efficacement même dans les zones les plus reculées. Le tableau de bord en temps réel nous donne enfin la visibilité nécessaire pour piloter nos interventions.",
+    image: null,
+  },
+];
+
 export const experience = [
   {
     period: "2024 — 2025",

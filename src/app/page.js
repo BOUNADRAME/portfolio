@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { personalInfo } from '../data/portfolio';
+import { personalInfo, certifications, testimonials } from '../data/portfolio';
 import { translations } from '../data/translations';
 import { portfolioContent } from '../data/portfolioContent';
 import { useLanguage } from '../context/LanguageContext';
@@ -26,6 +26,8 @@ const icons = {
   Cloud: () => <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg>,
   MapPinLg: () => <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>,
   Send: () => <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>,
+  Download: () => <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>,
+  Brain: () => <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96.44 2.5 2.5 0 0 1-2.96-3.08 3 3 0 0 1-.34-5.58 2.5 2.5 0 0 1 1.32-4.24 2.5 2.5 0 0 1 1.98-3A2.5 2.5 0 0 1 9.5 2Z"/><path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96.44 2.5 2.5 0 0 0 2.96-3.08 3 3 0 0 0 .34-5.58 2.5 2.5 0 0 0-1.32-4.24 2.5 2.5 0 0 0-1.98-3A2.5 2.5 0 0 0 14.5 2Z"/></svg>,
 };
 
 const IconComponent = ({ name }) => {
@@ -102,7 +104,7 @@ function Hero() {
   const t = translations[language];
 
   return (
-    <section className="min-h-screen flex items-center justify-center mesh-gradient relative pt-16">
+    <section className="min-h-[85vh] flex items-center justify-center mesh-gradient relative pt-16 pb-12">
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary-500/5 rounded-full blur-3xl animate-pulse-slow" />
         <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-primary-700/5 rounded-full blur-3xl animate-pulse-slow" style={{ animationDelay: '1s' }} />
@@ -178,10 +180,18 @@ function Hero() {
             </div>
 
             {/* CTA */}
-            <div className="flex flex-col sm:flex-row justify-center gap-3 animate-slide-up" style={{ animationDelay: '0.4s' }}>
+            <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-3 animate-slide-up" style={{ animationDelay: '0.4s' }}>
+              <a
+                href={`${basePath}/cv/CV_BOUNA_DRAME.pdf`}
+                download
+                className="inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-primary-600 hover:bg-primary-500 text-white text-sm font-medium rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg shadow-primary-500/20"
+                aria-label="Télécharger le CV"
+              >
+                <IconComponent name="Download" /> {t.hero.ctaDownloadCV || 'Télécharger CV'}
+              </a>
               <a
                 href="#contact"
-                className="inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-primary-600 hover:bg-primary-500 text-white text-sm font-medium rounded-lg transition-all duration-300 transform hover:scale-105"
+                className="inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-dark-800 hover:bg-dark-700 border border-primary-500/30 text-white text-sm font-medium rounded-lg transition-all duration-300 transform hover:scale-105"
                 aria-label="Accéder à la section contact"
               >
                 <IconComponent name="Send" /> {t.hero.ctaContact}
@@ -197,7 +207,7 @@ function Hero() {
           </div>
         </div>
 
-        <a href="#projets" className="absolute bottom-8 left-1/2 -translate-x-1/2 text-dark-500 hover:text-primary-400 transition-colors animate-bounce">
+        <a href="#projets" className="absolute bottom-4 left-1/2 -translate-x-1/2 text-dark-500 hover:text-primary-400 transition-colors animate-bounce">
           <IconComponent name="ChevronDown" />
         </a>
       </div>
@@ -214,7 +224,7 @@ function Projects() {
   const projects = portfolioContent[language].projects;
 
   return (
-    <section id="projets" className="py-24 px-6">
+    <section id="projets" className="py-16 px-6">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <p className="text-primary-500 font-mono text-sm mb-3 tracking-widest uppercase animate-fade-in">{t.projects.sectionLabel}</p>
@@ -515,6 +525,125 @@ function Expertise() {
   );
 }
 
+// Certifications Section
+function Certifications() {
+  const [lightbox, setLightbox] = useState(null);
+  const { language } = useLanguage();
+  const t = translations[language];
+
+  return (
+    <section id="certifications" className="py-16 px-6">
+      <div className="max-w-6xl mx-auto">
+        <div className="text-center mb-16">
+          <p className="text-primary-500 font-mono text-sm mb-3 tracking-widest uppercase">{t.certifications.sectionLabel}</p>
+          <h2 className="font-display text-4xl md:text-6xl font-bold text-white mb-4">
+            {t.certifications.title.split(' ')[0]} <span className="bg-gradient-to-r from-primary-400 to-purple-400 bg-clip-text text-transparent">{t.certifications.title.split(' ').slice(1).join(' ')}</span>
+          </h2>
+          <p className="text-dark-400 text-lg max-w-2xl mx-auto">
+            {t.certifications.subtitle}
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {certifications.map((cert, idx) => (
+            <div
+              key={cert.id}
+              className="group relative p-6 rounded-2xl bg-gradient-to-br from-dark-900/80 to-dark-950/80 border border-primary-500/10 hover:border-primary-500/30 transition-all duration-500 hover:transform hover:scale-105 cursor-pointer overflow-hidden"
+              style={{ animationDelay: `${idx * 0.1}s` }}
+              onClick={() => setLightbox(`${basePath}/certificats/${cert.file}`)}
+            >
+              {/* Color accent */}
+              <div
+                className="absolute top-0 left-0 w-full h-1 transition-all duration-500"
+                style={{ background: cert.color }}
+              />
+
+              <div className="absolute inset-0 bg-gradient-to-br from-primary-500/0 to-primary-500/0 group-hover:from-primary-500/5 group-hover:to-purple-500/5 transition-all duration-500" />
+
+              <div className="relative">
+                {/* Platform badge */}
+                <div className="flex items-center justify-between mb-4">
+                  <span className="px-3 py-1 rounded-full text-xs font-mono bg-primary-500/10 border border-primary-500/20 text-primary-400">
+                    {cert.platform}
+                  </span>
+                  <svg className="w-5 h-5 text-dark-500 group-hover:text-primary-400 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                  </svg>
+                </div>
+
+                <h3 className="font-display text-lg font-bold text-white mb-3 group-hover:text-primary-400 transition-colors duration-300 line-clamp-2">
+                  {cert.title}
+                </h3>
+
+                {cert.instructor && (
+                  <p className="text-dark-400 text-sm mb-3">
+                    <span className="text-dark-500">Par</span> {cert.instructor}
+                  </p>
+                )}
+
+                <div className="flex items-center gap-4 text-dark-400 text-xs mb-4">
+                  <span className="flex items-center gap-1">
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                    </svg>
+                    {cert.date}
+                  </span>
+                  <span className="flex items-center gap-1">
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    {cert.duration}
+                  </span>
+                </div>
+
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {cert.skills.slice(0, 3).map((skill) => (
+                    <span key={skill} className="tech-badge text-xs">{skill}</span>
+                  ))}
+                  {cert.skills.length > 3 && (
+                    <span className="tech-badge text-xs">+{cert.skills.length - 3}</span>
+                  )}
+                </div>
+
+                <button className="w-full mt-2 py-2 px-4 rounded-lg bg-primary-500/10 hover:bg-primary-500/20 border border-primary-500/20 hover:border-primary-500/40 text-primary-400 text-sm font-medium transition-all duration-300 flex items-center justify-center gap-2">
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                  </svg>
+                  {t.certifications.viewCertificate}
+                </button>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Lightbox Modal for PDF */}
+        {lightbox && (
+          <div
+            className="fixed inset-0 z-50 bg-black/95 flex items-center justify-center p-4 animate-fade-in"
+            onClick={() => setLightbox(null)}
+          >
+            <button
+              className="absolute top-4 right-4 text-white hover:text-primary-400 transition-colors p-2 rounded-lg hover:bg-white/10"
+              onClick={() => setLightbox(null)}
+            >
+              <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+            <iframe
+              src={lightbox}
+              className="w-full h-full max-w-5xl max-h-[90vh] bg-white rounded-lg"
+              onClick={(e) => e.stopPropagation()}
+            />
+          </div>
+        )}
+      </div>
+    </section>
+  );
+}
+
 // Experience Timeline
 function Timeline() {
   const { language } = useLanguage();
@@ -590,6 +719,67 @@ function Timeline() {
   );
 }
 
+// Testimonials Section
+function Testimonials() {
+  const { language } = useLanguage();
+  const t = translations[language];
+
+  return (
+    <section id="temoignages" className="py-16 px-6">
+      <div className="max-w-6xl mx-auto">
+        <div className="text-center mb-16">
+          <p className="text-primary-500 font-mono text-sm mb-3 tracking-widest uppercase">{t.testimonials.sectionLabel}</p>
+          <h2 className="font-display text-4xl md:text-6xl font-bold text-white mb-4">
+            {t.testimonials.title}
+          </h2>
+          <p className="text-dark-400 text-lg max-w-2xl mx-auto">
+            {t.testimonials.subtitle}
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {testimonials.map((testimonial, idx) => (
+            <div
+              key={testimonial.id}
+              className="group relative p-8 rounded-2xl bg-gradient-to-br from-dark-900/80 to-dark-950/80 border border-primary-500/10 hover:border-primary-500/30 transition-all duration-500 overflow-hidden"
+              style={{ animationDelay: `${idx * 0.1}s` }}
+            >
+              <div className="absolute inset-0 bg-gradient-to-br from-primary-500/0 to-primary-500/0 group-hover:from-primary-500/5 group-hover:to-purple-500/5 transition-all duration-500" />
+
+              <div className="relative">
+                {/* Quote icon */}
+                <div className="mb-6 opacity-20">
+                  <svg className="w-12 h-12 text-primary-400" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                  </svg>
+                </div>
+
+                {/* Testimonial text */}
+                <p className="text-dark-300 leading-relaxed mb-8 text-sm">
+                  "{testimonial.text}"
+                </p>
+
+                {/* Author info */}
+                <div className="pt-6 border-t border-white/10">
+                  <h4 className="font-display text-lg font-semibold text-white mb-1">
+                    {testimonial.name}
+                  </h4>
+                  <p className="text-primary-400 text-sm font-medium mb-1">
+                    {testimonial.role}
+                  </p>
+                  <p className="text-dark-500 text-xs">
+                    {testimonial.company}
+                  </p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 // Contact Section
 function Contact() {
   const { language } = useLanguage();
@@ -641,6 +831,18 @@ function Contact() {
               <h3 className="font-display text-lg font-semibold text-white mb-2">{t.contact.phone}</h3>
               <p className="text-primary-400 font-medium">{personalInfo.phone}</p>
             </div>
+          </a>
+        </div>
+
+        {/* Download CV Button */}
+        <div className="mb-8">
+          <a
+            href={`${basePath}/cv/CV_BOUNA_DRAME.pdf`}
+            download
+            className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-primary-600 to-purple-600 hover:from-primary-500 hover:to-purple-500 text-white font-semibold rounded-xl transition-all duration-300 transform hover:scale-105 shadow-xl shadow-primary-500/20"
+          >
+            <IconComponent name="Download" />
+            <span>{t.contact.downloadCV || 'Télécharger mon CV'}</span>
           </a>
         </div>
 
@@ -729,7 +931,11 @@ export default function Home() {
       <div className="section-divider" />
       <Expertise />
       <div className="section-divider" />
+      <Certifications />
+      <div className="section-divider" />
       <Timeline />
+      <div className="section-divider" />
+      <Testimonials />
       <div className="section-divider" />
       <Contact />
       <Footer />
