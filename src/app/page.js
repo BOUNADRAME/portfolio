@@ -156,16 +156,16 @@ function Hero() {
             </p>
 
             {/* Stats en ligne */}
-            <div className="flex flex-wrap justify-center lg:justify-start gap-6 mb-10 animate-slide-up" style={{ animationDelay: '0.3s' }}>
+            <div className="flex overflow-x-auto justify-start lg:justify-start gap-4 md:gap-6 mb-10 animate-slide-up pb-2 scrollbar-hide" style={{ animationDelay: '0.3s' }}>
               {[
                 { value: "7+", label: t.stats.experience },
                 { value: "18M", label: t.stats.habitants },
                 { value: "270M+", label: t.stats.savings },
                 { value: "4", label: t.stats.countries },
               ].map((s, i) => (
-                <div key={i} className="flex items-center gap-3 px-6 py-3 rounded-2xl bg-dark-900/50 border border-primary-500/10 hover:border-primary-500/30 transition-all duration-300 group">
+                <div key={i} className="flex items-center gap-3 px-4 md:px-6 py-3 rounded-2xl bg-dark-900/50 border border-primary-500/10 hover:border-primary-500/30 transition-all duration-300 group flex-shrink-0">
                   <div className="text-center">
-                    <div className="font-display text-3xl md:text-4xl font-bold text-white glow-text group-hover:scale-110 transition-transform duration-300">{s.value}</div>
+                    <div className="font-display text-2xl md:text-3xl lg:text-4xl font-bold text-white glow-text group-hover:scale-110 transition-transform duration-300">{s.value}</div>
                     <div className="text-dark-400 text-xs mt-1 whitespace-nowrap">{s.label}</div>
                   </div>
                 </div>
@@ -274,55 +274,6 @@ function Projects() {
                 {/* Expandable content */}
                 {active === project.id && (
                   <div className="mt-8 pt-8 border-t border-white/10 space-y-8 animate-slide-up">
-                    {/* Screenshots */}
-                    {project.hasScreenshots && (
-                      <div className="mb-8">
-                        <h4 className="text-sm font-mono text-primary-400 uppercase tracking-wider mb-4 flex items-center gap-2">
-                          <span className="w-6 h-0.5" style={{ background: project.color }} />
-                          {language === 'fr' ? 'Captures d\'écran' : 'Screenshots'}
-                        </h4>
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                          {(() => {
-                            // Define screenshots for each project
-                            const screenshots = {
-                              'kairos-sensemaking': [
-                                'dashboard.png',
-                                'login.png',
-                                'map-gps.png',
-                                'keywords.png',
-                                'Capture d\'écran 2026-03-13 à 14.10.37.png',
-                                'Capture d\'écran 2026-03-13 à 14.13.00.png'
-                              ],
-                              'pisa': [
-                                'Acceuil.png',
-                                'tableau_bord_vue_ensemble.png',
-                                'Activites_dialogues.png',
-                                'tableau_bord_dialogue.png',
-                                'activites.png',
-                                'workplan.png',
-                                'tableau_bord_activite_operationnelle.png',
-                                'tableau_bord_participant.png',
-                                'Administration.png',
-                                'Rapporter.png'
-                              ]
-                            };
-                            const projectScreenshots = screenshots[project.id] || [];
-                            return projectScreenshots.map((filename, idx) => (
-                              <div key={idx} className="group relative overflow-hidden rounded-xl border border-primary-500/20 hover:border-primary-500/40 transition-all duration-300">
-                                <img
-                                  src={`${basePath}/projects/${project.id}/${filename}`}
-                                  alt={`${project.title} - Screenshot ${idx + 1}`}
-                                  className="w-full h-auto object-cover transition-transform duration-300 group-hover:scale-105"
-                                  loading="lazy"
-                                />
-                                <div className="absolute inset-0 bg-gradient-to-t from-dark-950/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                              </div>
-                            ));
-                          })()}
-                        </div>
-                      </div>
-                    )}
-
                     <div className="grid md:grid-cols-2 gap-8">
                       <div className="p-6 rounded-xl bg-dark-950/50 border border-primary-500/10">
                         <h4 className="text-sm font-mono text-primary-400 uppercase tracking-wider mb-3 flex items-center gap-2">
@@ -356,6 +307,55 @@ function Projects() {
                         ))}
                       </ul>
                     </div>
+
+                    {/* Screenshots - Now at the bottom */}
+                    {project.hasScreenshots && (
+                      <div className="pt-4">
+                        <h4 className="text-sm font-mono text-primary-400 uppercase tracking-wider mb-4 flex items-center gap-2">
+                          <span className="w-6 h-0.5" style={{ background: project.color }} />
+                          {language === 'fr' ? 'Captures d\'écran' : 'Screenshots'}
+                        </h4>
+                        <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-2">
+                          {(() => {
+                            // Define screenshots for each project
+                            const screenshots = {
+                              'kairos-sensemaking': [
+                                'dashboard.png',
+                                'login.png',
+                                'map-gps.png',
+                                'keywords.png',
+                                'Capture d\'écran 2026-03-13 à 14.10.37.png',
+                                'Capture d\'écran 2026-03-13 à 14.13.00.png'
+                              ],
+                              'pisa': [
+                                'Acceuil.png',
+                                'tableau_bord_vue_ensemble.png',
+                                'Activites_dialogues.png',
+                                'tableau_bord_dialogue.png',
+                                'activites.png',
+                                'workplan.png',
+                                'tableau_bord_activite_operationnelle.png',
+                                'tableau_bord_participant.png',
+                                'Administration.png',
+                                'Rapporter.png'
+                              ]
+                            };
+                            const projectScreenshots = screenshots[project.id] || [];
+                            return projectScreenshots.map((filename, idx) => (
+                              <div key={idx} className="group relative aspect-video overflow-hidden rounded-lg border border-primary-500/20 hover:border-primary-500/60 transition-all duration-300 cursor-pointer hover:z-10">
+                                <img
+                                  src={`${basePath}/projects/${project.id}/${filename}`}
+                                  alt={`${project.title} - Screenshot ${idx + 1}`}
+                                  className="w-full h-full object-cover transition-all duration-300 group-hover:scale-150 group-hover:shadow-2xl"
+                                  loading="lazy"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-dark-950/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+                              </div>
+                            ));
+                          })()}
+                        </div>
+                      </div>
+                    )}
                   </div>
                 )}
 
