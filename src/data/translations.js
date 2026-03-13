@@ -49,7 +49,7 @@ export const translations = {
     },
     testimonials: {
       sectionLabel: 'Recommandations',
-      title: 'Ce qu'ils disent de moi',
+      title: 'Ce qu\'ils disent de moi',
       subtitle: 'Retours de clients et partenaires',
     },
     timeline: {
