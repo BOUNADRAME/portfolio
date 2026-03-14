@@ -1,5 +1,6 @@
 import './globals.css'
 import { LanguageProvider } from '../context/LanguageContext'
+import GoogleAnalytics from '../components/GoogleAnalytics'
 
 export const metadata = {
   title: 'Bouna Dramé — Architecte Full Stack | Expert Systèmes Statistiques SDMX 3.0',
@@ -32,11 +33,21 @@ export const metadata = {
     locale: 'fr_FR',
     alternateLocale: ['en_US'],
     siteName: 'Portfolio Bouna Dramé',
+    url: 'https://bounadrame.github.io/portfolio',
+    images: [
+      {
+        url: '/portfolio/images/photo.jpeg',
+        width: 1200,
+        height: 630,
+        alt: 'Bouna Dramé - Architecte Full Stack',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Bouna Dramé — Architecte Full Stack',
     description: 'Expert systèmes statistiques SDMX 3.0 | Consultant international',
+    images: ['/portfolio/images/photo.jpeg'],
   },
   verification: {
     google: 'your-google-verification-code', // À remplacer par votre code Google Search Console
@@ -44,9 +55,13 @@ export const metadata = {
 }
 
 export default function RootLayout({ children }) {
+  // Remplace par ton ID Google Analytics (format: G-XXXXXXXXXX)
+  const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
+
   return (
     <html lang="fr" className="scroll-smooth">
       <body className="grain">
+        {GA_MEASUREMENT_ID && <GoogleAnalytics measurementId={GA_MEASUREMENT_ID} />}
         <LanguageProvider>
           {children}
         </LanguageProvider>
