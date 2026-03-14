@@ -158,7 +158,7 @@ function Hero() {
                 {t.hero.subtitle}
               </span>
             </p>
-            <p className="text-dark-300 text-base sm:text-lg md:text-xl max-w-2xl mx-auto lg:mx-0 mb-6 sm:mb-10 leading-relaxed animate-slide-up px-2 sm:px-0" style={{ animationDelay: '0.2s' }}>
+            <p className="text-dark-300 text-sm sm:text-base md:text-lg lg:text-xl max-w-2xl mx-auto lg:mx-0 mb-6 sm:mb-10 leading-relaxed animate-slide-up px-4 sm:px-2 lg:px-0" style={{ animationDelay: '0.2s' }}>
               {t.hero.bio}
             </p>
 
@@ -180,19 +180,20 @@ function Hero() {
             </div>
 
             {/* CTA */}
-            <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-2 sm:gap-3 animate-slide-up px-2 sm:px-0" style={{ animationDelay: '0.4s' }}>
+            <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-2 sm:gap-3 animate-slide-up px-4 sm:px-2 lg:px-0" style={{ animationDelay: '0.4s' }}>
               <a
                 href={`${basePath}/cv/CV_BOUNA_DRAME.pdf`}
                 download
-                className="inline-flex items-center justify-center gap-2 px-4 sm:px-5 py-2.5 sm:py-3 bg-primary-600 hover:bg-primary-500 text-white text-sm sm:text-base font-medium rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg shadow-primary-500/20"
+                className="inline-flex items-center justify-center gap-2 px-4 py-2.5 sm:px-5 sm:py-3 bg-primary-600 hover:bg-primary-500 text-white text-xs sm:text-sm font-medium rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg shadow-primary-500/20 whitespace-nowrap"
                 aria-label="Télécharger le CV"
               >
                 <IconComponent name="Download" />
-                <span>{t.hero.ctaDownloadCV || 'Télécharger CV'}</span>
+                <span className="hidden sm:inline">{t.hero.ctaDownloadCV || 'Télécharger CV'}</span>
+                <span className="sm:hidden">CV</span>
               </a>
               <a
                 href="#contact"
-                className="inline-flex items-center justify-center gap-2 px-4 sm:px-5 py-2.5 sm:py-3 bg-dark-800 hover:bg-dark-700 border border-primary-500/30 text-white text-sm sm:text-base font-medium rounded-lg transition-all duration-300 transform hover:scale-105"
+                className="inline-flex items-center justify-center gap-2 px-4 py-2.5 sm:px-5 sm:py-3 bg-dark-800 hover:bg-dark-700 border border-primary-500/30 text-white text-xs sm:text-sm font-medium rounded-lg transition-all duration-300 transform hover:scale-105 whitespace-nowrap"
                 aria-label="Accéder à la section contact"
               >
                 <IconComponent name="Send" />
@@ -200,7 +201,7 @@ function Hero() {
               </a>
               <a
                 href="#projets"
-                className="inline-flex items-center justify-center gap-2 px-4 sm:px-5 py-2.5 sm:py-3 border border-primary-500/30 hover:border-primary-500/50 hover:bg-primary-500/5 text-white text-sm sm:text-base font-medium rounded-lg transition-all duration-300 transform hover:scale-105"
+                className="inline-flex items-center justify-center gap-2 px-4 py-2.5 sm:px-5 sm:py-3 border border-primary-500/30 hover:border-primary-500/50 hover:bg-primary-500/5 text-white text-xs sm:text-sm font-medium rounded-lg transition-all duration-300 transform hover:scale-105 whitespace-nowrap"
                 aria-label="Voir mes projets"
               >
                 <span>{t.hero.ctaProjects}</span>
