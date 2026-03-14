@@ -338,15 +338,17 @@ function Projects() {
                     {project.isConfidential && (
                       <div className="p-6 rounded-xl bg-amber-500/5 border border-amber-500/20">
                         <div className="flex items-start gap-3">
-                          <IconComponent name="Lock" />
-                          <div>
-                            <h4 className="text-sm font-mono text-amber-400 uppercase tracking-wider mb-2">
+                          <div className="p-2 rounded-lg bg-amber-500/10 text-amber-400 flex-shrink-0">
+                            <IconComponent name="Lock" />
+                          </div>
+                          <div className="flex-1">
+                            <h4 className="text-sm font-mono text-amber-400 uppercase tracking-wider mb-2 font-semibold">
                               {language === 'fr' ? 'Projet Confidentiel' : 'Confidential Project'}
                             </h4>
                             <p className="text-dark-300 text-sm leading-relaxed">
                               {language === 'fr'
-                                ? 'Les captures d\'écran et certains détails techniques sont protégés par un accord de confidentialité. Démo disponible sur demande avec accord préalable du client.'
-                                : 'Screenshots and certain technical details are protected by a confidentiality agreement. Demo available upon request with prior client approval.'}
+                                ? 'Les captures d\'écran et certains détails techniques sont protégés par un accord de confidentialité. Les informations présentées ont été validées pour diffusion publique.'
+                                : 'Screenshots and certain technical details are protected by a confidentiality agreement. The information presented has been validated for public disclosure.'}
                             </p>
                           </div>
                         </div>
