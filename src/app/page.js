@@ -158,22 +158,22 @@ function Hero() {
                 {t.hero.subtitle}
               </span>
             </p>
-            <p className="text-dark-300 text-sm sm:text-base md:text-lg lg:text-xl max-w-2xl mx-auto lg:mx-0 mb-6 sm:mb-10 leading-relaxed animate-slide-up px-4 sm:px-2 lg:px-0" style={{ animationDelay: '0.2s' }}>
+            <p className="text-dark-300 text-xs sm:text-sm md:text-base lg:text-lg max-w-2xl mx-auto lg:mx-0 mb-6 sm:mb-10 leading-relaxed animate-slide-up px-6 sm:px-4 lg:px-0" style={{ animationDelay: '0.2s' }}>
               {t.hero.bio}
             </p>
 
             {/* Stats en ligne */}
-            <div className="flex overflow-x-auto justify-center lg:justify-start gap-2 sm:gap-3 md:gap-4 mb-6 sm:mb-10 animate-slide-up pb-2 scrollbar-hide px-2 sm:px-0" style={{ animationDelay: '0.3s' }}>
+            <div className="flex overflow-x-auto justify-center lg:justify-start gap-2 sm:gap-3 md:gap-4 mb-6 sm:mb-10 animate-slide-up pb-2 scrollbar-hide px-4 sm:px-2 lg:px-0 -mx-2 sm:mx-0" style={{ animationDelay: '0.3s' }}>
               {[
                 { value: "7+", label: t.stats.experience },
                 { value: "10+", label: t.stats.projects },
                 { value: "15+", label: t.stats.technologies },
                 { value: "4", label: t.stats.countries },
               ].map((s, i) => (
-                <div key={i} className="flex items-center gap-2 px-3 sm:px-4 md:px-5 py-2 sm:py-2.5 rounded-lg sm:rounded-xl bg-dark-900/50 border border-primary-500/10 hover:border-primary-500/30 transition-all duration-300 group flex-shrink-0 min-w-[90px] sm:min-w-0">
+                <div key={i} className="flex items-center gap-1 px-2 sm:px-3 md:px-4 py-2 sm:py-2.5 rounded-lg sm:rounded-xl bg-dark-900/50 border border-primary-500/10 hover:border-primary-500/30 transition-all duration-300 group flex-shrink-0 first:ml-2 last:mr-2 sm:first:ml-0 sm:last:mr-0">
                   <div className="text-center w-full">
-                    <div className="font-display text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-white glow-text group-hover:scale-110 transition-transform duration-300">{s.value}</div>
-                    <div className="text-dark-400 text-[10px] sm:text-xs mt-0.5 whitespace-nowrap">{s.label}</div>
+                    <div className="font-display text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-white glow-text group-hover:scale-110 transition-transform duration-300">{s.value}</div>
+                    <div className="text-dark-400 text-[9px] sm:text-[10px] md:text-xs mt-0.5 whitespace-nowrap">{s.label}</div>
                   </div>
                 </div>
               ))}
