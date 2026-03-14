@@ -104,20 +104,20 @@ function Hero() {
   const t = translations[language];
 
   return (
-    <section className="min-h-[85vh] flex items-center justify-center mesh-gradient relative pt-16 pb-12">
+    <section className="min-h-[90vh] md:min-h-[85vh] flex items-center justify-center mesh-gradient relative pt-20 md:pt-16 pb-16 md:pb-12">
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary-500/5 rounded-full blur-3xl animate-pulse-slow" />
         <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-primary-700/5 rounded-full blur-3xl animate-pulse-slow" style={{ animationDelay: '1s' }} />
         <div className="absolute top-1/2 left-1/2 w-80 h-80 bg-purple-500/5 rounded-full blur-3xl animate-pulse-slow" style={{ animationDelay: '2s' }} />
       </div>
-      <div className="relative max-w-6xl mx-auto px-6">
-        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
+      <div className="relative max-w-6xl mx-auto px-4 sm:px-6">
+        <div className="flex flex-col lg:flex-row items-center gap-8 md:gap-12 lg:gap-16">
           {/* Photo profile avec effet 3D */}
-          <div className="relative group flex-shrink-0">
+          <div className="relative group flex-shrink-0 w-full sm:w-auto flex justify-center">
             <div className="absolute -inset-1 bg-gradient-to-r from-primary-500 via-purple-500 to-primary-700 rounded-3xl blur-2xl opacity-30 group-hover:opacity-50 transition-opacity duration-500 animate-pulse-slow" />
             <div className="relative">
               <div className="absolute -inset-4 bg-gradient-to-r from-primary-500/20 to-purple-500/20 rounded-3xl transform rotate-6 group-hover:rotate-12 transition-transform duration-500" />
-              <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-3xl overflow-hidden border-2 border-primary-500/30 shadow-2xl transform group-hover:scale-105 transition-all duration-500">
+              <div className="relative w-56 h-56 sm:w-64 sm:h-64 md:w-80 md:h-80 rounded-3xl overflow-hidden border-2 border-primary-500/30 shadow-2xl transform group-hover:scale-105 transition-all duration-500">
                 <img
                   src={`${basePath}/images/photo.jpeg`}
                   alt="Bouna Dramé"
@@ -142,66 +142,68 @@ function Hero() {
           </div>
 
           {/* Contenu texte */}
-          <div className="flex-1 text-center lg:text-left">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary-500/20 bg-primary-500/5 text-primary-400 text-sm mb-6 animate-fade-in">
+          <div className="flex-1 text-center lg:text-left w-full">
+            <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-2 rounded-full border border-primary-500/20 bg-primary-500/5 text-primary-400 text-xs sm:text-sm mb-4 sm:mb-6 animate-fade-in">
               <IconComponent name="MapPin" />
-              <span>{t.hero.location}</span>
+              <span className="whitespace-nowrap">{t.hero.location}</span>
               <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
-              <span className="text-green-400">{t.hero.available}</span>
+              <span className="text-green-400 whitespace-nowrap">{t.hero.available}</span>
             </div>
 
-            <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-6 tracking-tight animate-slide-up">
+            <h1 className="font-display text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-4 sm:mb-6 tracking-tight animate-slide-up">
               {personalInfo.name}
             </h1>
-            <p className="font-display text-2xl md:text-3xl lg:text-4xl font-bold mb-6 animate-slide-up" style={{ animationDelay: '0.1s' }}>
+            <p className="font-display text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-4 sm:mb-6 animate-slide-up" style={{ animationDelay: '0.1s' }}>
               <span className="bg-gradient-to-r from-primary-400 via-purple-400 to-primary-500 bg-clip-text text-transparent">
                 {t.hero.subtitle}
               </span>
             </p>
-            <p className="text-dark-300 text-lg md:text-xl max-w-2xl mx-auto lg:mx-0 mb-10 leading-relaxed animate-slide-up" style={{ animationDelay: '0.2s' }}>
+            <p className="text-dark-300 text-base sm:text-lg md:text-xl max-w-2xl mx-auto lg:mx-0 mb-6 sm:mb-10 leading-relaxed animate-slide-up px-2 sm:px-0" style={{ animationDelay: '0.2s' }}>
               {t.hero.bio}
             </p>
 
             {/* Stats en ligne */}
-            <div className="flex overflow-x-auto justify-start lg:justify-start gap-3 md:gap-4 mb-10 animate-slide-up pb-2 scrollbar-hide" style={{ animationDelay: '0.3s' }}>
+            <div className="flex overflow-x-auto justify-center lg:justify-start gap-2 sm:gap-3 md:gap-4 mb-6 sm:mb-10 animate-slide-up pb-2 scrollbar-hide px-2 sm:px-0" style={{ animationDelay: '0.3s' }}>
               {[
                 { value: "7+", label: t.stats.experience },
                 { value: "10+", label: t.stats.projects },
                 { value: "15+", label: t.stats.technologies },
                 { value: "4", label: t.stats.countries },
               ].map((s, i) => (
-                <div key={i} className="flex items-center gap-2 px-3 md:px-5 py-2.5 rounded-xl bg-dark-900/50 border border-primary-500/10 hover:border-primary-500/30 transition-all duration-300 group flex-shrink-0">
-                  <div className="text-center">
-                    <div className="font-display text-xl md:text-2xl lg:text-3xl font-bold text-white glow-text group-hover:scale-110 transition-transform duration-300">{s.value}</div>
-                    <div className="text-dark-400 text-xs mt-0.5 whitespace-nowrap">{s.label}</div>
+                <div key={i} className="flex items-center gap-2 px-3 sm:px-4 md:px-5 py-2 sm:py-2.5 rounded-lg sm:rounded-xl bg-dark-900/50 border border-primary-500/10 hover:border-primary-500/30 transition-all duration-300 group flex-shrink-0 min-w-[90px] sm:min-w-0">
+                  <div className="text-center w-full">
+                    <div className="font-display text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-white glow-text group-hover:scale-110 transition-transform duration-300">{s.value}</div>
+                    <div className="text-dark-400 text-[10px] sm:text-xs mt-0.5 whitespace-nowrap">{s.label}</div>
                   </div>
                 </div>
               ))}
             </div>
 
             {/* CTA */}
-            <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-3 animate-slide-up" style={{ animationDelay: '0.4s' }}>
+            <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-2 sm:gap-3 animate-slide-up px-2 sm:px-0" style={{ animationDelay: '0.4s' }}>
               <a
                 href={`${basePath}/cv/CV_BOUNA_DRAME.pdf`}
                 download
-                className="inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-primary-600 hover:bg-primary-500 text-white text-sm font-medium rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg shadow-primary-500/20"
+                className="inline-flex items-center justify-center gap-2 px-4 sm:px-5 py-2.5 sm:py-3 bg-primary-600 hover:bg-primary-500 text-white text-sm sm:text-base font-medium rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg shadow-primary-500/20"
                 aria-label="Télécharger le CV"
               >
-                <IconComponent name="Download" /> {t.hero.ctaDownloadCV || 'Télécharger CV'}
+                <IconComponent name="Download" />
+                <span>{t.hero.ctaDownloadCV || 'Télécharger CV'}</span>
               </a>
               <a
                 href="#contact"
-                className="inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-dark-800 hover:bg-dark-700 border border-primary-500/30 text-white text-sm font-medium rounded-lg transition-all duration-300 transform hover:scale-105"
+                className="inline-flex items-center justify-center gap-2 px-4 sm:px-5 py-2.5 sm:py-3 bg-dark-800 hover:bg-dark-700 border border-primary-500/30 text-white text-sm sm:text-base font-medium rounded-lg transition-all duration-300 transform hover:scale-105"
                 aria-label="Accéder à la section contact"
               >
-                <IconComponent name="Send" /> {t.hero.ctaContact}
+                <IconComponent name="Send" />
+                <span>{t.hero.ctaContact}</span>
               </a>
               <a
                 href="#projets"
-                className="inline-flex items-center justify-center gap-2 px-5 py-2.5 border border-primary-500/30 hover:border-primary-500/50 hover:bg-primary-500/5 text-white text-sm font-medium rounded-lg transition-all duration-300 transform hover:scale-105"
+                className="inline-flex items-center justify-center gap-2 px-4 sm:px-5 py-2.5 sm:py-3 border border-primary-500/30 hover:border-primary-500/50 hover:bg-primary-500/5 text-white text-sm sm:text-base font-medium rounded-lg transition-all duration-300 transform hover:scale-105"
                 aria-label="Voir mes projets"
               >
-                {t.hero.ctaProjects}
+                <span>{t.hero.ctaProjects}</span>
               </a>
             </div>
           </div>
@@ -224,12 +226,12 @@ function Projects() {
   const projects = portfolioContent[language].projects;
 
   return (
-    <section id="projets" className="py-16 px-6">
+    <section id="projets" className="py-12 sm:py-16 px-4 sm:px-6">
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16">
-          <p className="text-primary-500 font-mono text-sm mb-3 tracking-widest uppercase animate-fade-in">{t.projects.sectionLabel}</p>
-          <h2 className="font-display text-4xl md:text-6xl font-bold text-white mb-4 animate-slide-up">{t.projects.title}</h2>
-          <p className="text-dark-400 text-lg max-w-2xl mx-auto animate-slide-up" style={{ animationDelay: '0.1s' }}>
+        <div className="text-center mb-12 sm:mb-16">
+          <p className="text-primary-500 font-mono text-xs sm:text-sm mb-3 tracking-widest uppercase animate-fade-in">{t.projects.sectionLabel}</p>
+          <h2 className="font-display text-3xl sm:text-4xl md:text-6xl font-bold text-white mb-4 animate-slide-up px-4">{t.projects.title}</h2>
+          <p className="text-dark-400 text-base sm:text-lg max-w-2xl mx-auto animate-slide-up px-4" style={{ animationDelay: '0.1s' }}>
             {t.projects.subtitle}
           </p>
         </div>
@@ -251,12 +253,12 @@ function Projects() {
                 }}
               />
 
-              <div className="p-8 md:p-10">
+              <div className="p-6 sm:p-8 md:p-10">
                 {/* Header */}
                 <div className="flex flex-col md:flex-row md:items-start justify-between mb-4 gap-4">
                   <div className="flex-1">
-                    <div className="flex items-center flex-wrap gap-3 mb-3">
-                      <h3 className="font-display text-2xl md:text-3xl font-bold text-white group-hover:text-primary-400 transition-colors duration-300">
+                    <div className="flex items-center flex-wrap gap-2 sm:gap-3 mb-3">
+                      <h3 className="font-display text-xl sm:text-2xl md:text-3xl font-bold text-white group-hover:text-primary-400 transition-colors duration-300">
                         {project.title}
                       </h3>
                       {project.isConfidential && (
@@ -476,19 +478,19 @@ function Expertise() {
   const expertise = portfolioContent[language].expertise;
 
   return (
-    <section id="expertise" className="py-24 px-6 mesh-gradient relative overflow-hidden">
+    <section id="expertise" className="py-12 sm:py-16 md:py-24 px-4 sm:px-6 mesh-gradient relative overflow-hidden">
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/3 right-1/4 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl animate-pulse-slow" />
         <div className="absolute bottom-1/3 left-1/4 w-80 h-80 bg-primary-500/5 rounded-full blur-3xl animate-pulse-slow" style={{ animationDelay: '2s' }} />
       </div>
 
       <div className="max-w-6xl mx-auto relative z-10">
-        <div className="text-center mb-16">
-          <p className="text-primary-500 font-mono text-sm mb-3 tracking-widest uppercase">{t.expertise.sectionLabel}</p>
-          <h2 className="font-display text-4xl md:text-6xl font-bold text-white mb-4">
+        <div className="text-center mb-12 sm:mb-16">
+          <p className="text-primary-500 font-mono text-xs sm:text-sm mb-3 tracking-widest uppercase">{t.expertise.sectionLabel}</p>
+          <h2 className="font-display text-3xl sm:text-4xl md:text-6xl font-bold text-white mb-4 px-4">
             {t.expertise.title.split(' ')[0]} <span className="bg-gradient-to-r from-primary-400 to-purple-400 bg-clip-text text-transparent">{t.expertise.title.split(' ').slice(1).join(' ')}</span>
           </h2>
-          <p className="text-dark-400 text-lg max-w-2xl mx-auto">
+          <p className="text-dark-400 text-base sm:text-lg max-w-2xl mx-auto px-4">
             {t.expertise.subtitle}
           </p>
         </div>
@@ -532,14 +534,14 @@ function Certifications() {
   const t = translations[language];
 
   return (
-    <section id="certifications" className="py-16 px-6">
+    <section id="certifications" className="py-12 sm:py-16 px-4 sm:px-6">
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16">
-          <p className="text-primary-500 font-mono text-sm mb-3 tracking-widest uppercase">{t.certifications.sectionLabel}</p>
-          <h2 className="font-display text-4xl md:text-6xl font-bold text-white mb-4">
+        <div className="text-center mb-12 sm:mb-16">
+          <p className="text-primary-500 font-mono text-xs sm:text-sm mb-3 tracking-widest uppercase">{t.certifications.sectionLabel}</p>
+          <h2 className="font-display text-3xl sm:text-4xl md:text-6xl font-bold text-white mb-4 px-4">
             {t.certifications.title.split(' ')[0]} <span className="bg-gradient-to-r from-primary-400 to-purple-400 bg-clip-text text-transparent">{t.certifications.title.split(' ').slice(1).join(' ')}</span>
           </h2>
-          <p className="text-dark-400 text-lg max-w-2xl mx-auto">
+          <p className="text-dark-400 text-base sm:text-lg max-w-2xl mx-auto px-4">
             {t.certifications.subtitle}
           </p>
         </div>
@@ -651,14 +653,14 @@ function Timeline() {
   const experience = portfolioContent[language].experience;
 
   return (
-    <section id="parcours" className="py-24 px-6">
+    <section id="parcours" className="py-12 sm:py-16 md:py-24 px-4 sm:px-6">
       <div className="max-w-5xl mx-auto">
-        <div className="text-center mb-16">
-          <p className="text-primary-500 font-mono text-sm mb-3 tracking-widest uppercase">{t.timeline.sectionLabel}</p>
-          <h2 className="font-display text-4xl md:text-6xl font-bold text-white mb-4">
+        <div className="text-center mb-12 sm:mb-16">
+          <p className="text-primary-500 font-mono text-xs sm:text-sm mb-3 tracking-widest uppercase">{t.timeline.sectionLabel}</p>
+          <h2 className="font-display text-3xl sm:text-4xl md:text-6xl font-bold text-white mb-4 px-4">
             {t.timeline.title.split(' ')[0]} <span className="bg-gradient-to-r from-primary-400 to-purple-400 bg-clip-text text-transparent">{t.timeline.title.split(' ').slice(1).join(' ')}</span>
           </h2>
-          <p className="text-dark-400 text-lg max-w-2xl mx-auto">
+          <p className="text-dark-400 text-base sm:text-lg max-w-2xl mx-auto px-4">
             {t.timeline.subtitle}
           </p>
         </div>
@@ -725,14 +727,14 @@ function Testimonials() {
   const t = translations[language];
 
   return (
-    <section id="temoignages" className="py-16 px-6">
+    <section id="temoignages" className="py-12 sm:py-16 px-4 sm:px-6">
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16">
-          <p className="text-primary-500 font-mono text-sm mb-3 tracking-widest uppercase">{t.testimonials.sectionLabel}</p>
-          <h2 className="font-display text-4xl md:text-6xl font-bold text-white mb-4">
+        <div className="text-center mb-12 sm:mb-16">
+          <p className="text-primary-500 font-mono text-xs sm:text-sm mb-3 tracking-widest uppercase">{t.testimonials.sectionLabel}</p>
+          <h2 className="font-display text-3xl sm:text-4xl md:text-6xl font-bold text-white mb-4 px-4">
             {t.testimonials.title}
           </h2>
-          <p className="text-dark-400 text-lg max-w-2xl mx-auto">
+          <p className="text-dark-400 text-base sm:text-lg max-w-2xl mx-auto px-4">
             {t.testimonials.subtitle}
           </p>
         </div>
@@ -786,18 +788,18 @@ function Contact() {
   const t = translations[language];
 
   return (
-    <section id="contact" className="py-24 px-6 mesh-gradient relative overflow-hidden">
+    <section id="contact" className="py-12 sm:py-16 md:py-24 px-4 sm:px-6 mesh-gradient relative overflow-hidden">
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/2 left-1/4 w-96 h-96 bg-primary-500/10 rounded-full blur-3xl animate-pulse-slow" />
         <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-purple-500/10 rounded-full blur-3xl animate-pulse-slow" style={{ animationDelay: '1.5s' }} />
       </div>
 
       <div className="max-w-4xl mx-auto text-center relative z-10">
-        <p className="text-primary-500 font-mono text-sm mb-3 tracking-widest uppercase">{t.contact.sectionLabel}</p>
-        <h2 className="font-display text-4xl md:text-6xl font-bold text-white mb-6">
+        <p className="text-primary-500 font-mono text-xs sm:text-sm mb-3 tracking-widest uppercase">{t.contact.sectionLabel}</p>
+        <h2 className="font-display text-3xl sm:text-4xl md:text-6xl font-bold text-white mb-6 px-4">
           {t.contact.title.split(' ')[0]} <span className="bg-gradient-to-r from-primary-400 to-purple-400 bg-clip-text text-transparent">{t.contact.title.split(' ').slice(1).join(' ')}</span>
         </h2>
-        <p className="text-dark-300 text-lg md:text-xl mb-12 leading-relaxed max-w-2xl mx-auto">
+        <p className="text-dark-300 text-base sm:text-lg md:text-xl mb-8 sm:mb-12 leading-relaxed max-w-2xl mx-auto px-4">
           {t.contact.subtitle}
         </p>
 
@@ -882,9 +884,9 @@ function Footer() {
   const t = translations[language];
 
   return (
-    <footer className="py-12 px-6 border-t border-white/5 bg-dark-950/50 backdrop-blur-sm">
+    <footer className="py-8 sm:py-12 px-4 sm:px-6 border-t border-white/5 bg-dark-950/50 backdrop-blur-sm">
       <div className="max-w-6xl mx-auto">
-        <div className="flex flex-col md:flex-row justify-between items-center gap-6 mb-8">
+        <div className="flex flex-col md:flex-row justify-between items-center gap-6 mb-6 sm:mb-8">
           <div className="text-center md:text-left">
             <a href="#" className="font-display font-bold text-2xl text-white inline-block mb-2">
               B<span className="text-primary-500">.</span>D
