@@ -7,6 +7,7 @@ import { portfolioContent } from '../data/portfolioContent';
 import { useLanguage } from '../context/LanguageContext';
 import LanguageToggle from '../components/LanguageToggle';
 import ContactForm from '../components/ContactForm';
+import { trackProjectView, trackCVDownload, trackSocialClick, trackCertificationView, trackScreenshotView } from '../utils/analytics';
 
 // Base path for assets (empty in dev, /portfolio in production)
 const basePath = process.env.NODE_ENV === 'production' ? '/portfolio' : '';
@@ -127,13 +128,13 @@ function Hero() {
                 <div className="absolute inset-0 bg-gradient-to-t from-dark-950/80 via-transparent to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-6 transform translate-y-full group-hover:translate-y-0 transition-transform duration-500">
                   <div className="flex gap-3">
-                    <a href={personalInfo.github} target="_blank" rel="noopener" className="p-3 rounded-xl bg-dark-950/90 backdrop-blur-sm border border-primary-500/30 hover:bg-primary-500/20 text-white transition-all duration-300">
+                    <a href={personalInfo.github} target="_blank" rel="noopener" onClick={() => trackSocialClick('github', 'hero')} className="p-3 rounded-xl bg-dark-950/90 backdrop-blur-sm border border-primary-500/30 hover:bg-primary-500/20 text-white transition-all duration-300">
                       <IconComponent name="Github" />
                     </a>
-                    <a href={personalInfo.linkedin} target="_blank" rel="noopener" className="p-3 rounded-xl bg-dark-950/90 backdrop-blur-sm border border-primary-500/30 hover:bg-primary-500/20 text-white transition-all duration-300">
+                    <a href={personalInfo.linkedin} target="_blank" rel="noopener" onClick={() => trackSocialClick('linkedin', 'hero')} className="p-3 rounded-xl bg-dark-950/90 backdrop-blur-sm border border-primary-500/30 hover:bg-primary-500/20 text-white transition-all duration-300">
                       <IconComponent name="Linkedin" />
                     </a>
-                    <a href={`mailto:${personalInfo.email}`} className="p-3 rounded-xl bg-dark-950/90 backdrop-blur-sm border border-primary-500/30 hover:bg-primary-500/20 text-white transition-all duration-300">
+                    <a href={`mailto:${personalInfo.email}`} onClick={() => trackSocialClick('email', 'hero')} className="p-3 rounded-xl bg-dark-950/90 backdrop-blur-sm border border-primary-500/30 hover:bg-primary-500/20 text-white transition-all duration-300">
                       <IconComponent name="Mail" />
                     </a>
                   </div>
@@ -185,6 +186,7 @@ function Hero() {
               <a
                 href={`${basePath}/cv/CV_BOUNA_DRAME.pdf`}
                 download
+                onClick={() => trackCVDownload('hero')}
                 className="inline-flex items-center justify-center gap-2 px-4 py-2.5 sm:px-5 sm:py-3 bg-primary-600 hover:bg-primary-500 text-white text-xs sm:text-sm font-medium rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg shadow-primary-500/20 whitespace-nowrap"
                 aria-label="Télécharger le CV"
               >
@@ -243,7 +245,13 @@ function Projects() {
             <div
               key={project.id}
               className="project-card cursor-pointer group"
-              onClick={() => setActive(active === project.id ? null : project.id)}
+              onClick={() => {
+                const newActive = active === project.id ? null : project.id;
+                setActive(newActive);
+                if (newActive) {
+                  trackProjectView(project.id, project.title);
+                }
+              }}
               style={{ animationDelay: `${idx * 0.1}s` }}
             >
               {/* Color accent bar with glow */}
@@ -556,7 +564,10 @@ function Certifications() {
               key={cert.id}
               className="group relative p-6 rounded-2xl bg-gradient-to-br from-dark-900/80 to-dark-950/80 border border-primary-500/10 hover:border-primary-500/30 transition-all duration-500 hover:transform hover:scale-105 cursor-pointer overflow-hidden"
               style={{ animationDelay: `${idx * 0.1}s` }}
-              onClick={() => setLightbox(`${basePath}/certificats/${cert.file}`)}
+              onClick={() => {
+                setLightbox(`${basePath}/certificats/${cert.file}`);
+                trackCertificationView(cert.id, cert.title);
+              }}
             >
               {/* Color accent */}
               <div
@@ -850,6 +861,7 @@ function Contact() {
           <a
             href={`${basePath}/cv/CV_BOUNA_DRAME.pdf`}
             download
+            onClick={() => trackCVDownload('contact')}
             className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-primary-600 to-purple-600 hover:from-primary-500 hover:to-purple-500 text-white font-semibold rounded-xl transition-all duration-300 transform hover:scale-105 shadow-xl shadow-primary-500/20"
           >
             <IconComponent name="Download" />
