@@ -3,3 +3,12 @@ node_modules/
 out/
 .DS_Store
 *.log
+
+# Environment variables (sensitive data)
+.env
+.env.local
+.env.production.local
+.env.development.local
+
+# Analytics credentials (contains sensitive IDs and links)
+ANALYTICS_CREDENTIALS.md
