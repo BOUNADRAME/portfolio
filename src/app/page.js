@@ -6,6 +6,7 @@ import { translations } from '../data/translations';
 import { portfolioContent } from '../data/portfolioContent';
 import { useLanguage } from '../context/LanguageContext';
 import LanguageToggle from '../components/LanguageToggle';
+import ContactForm from '../components/ContactForm';
 
 // Base path for assets (empty in dev, /portfolio in production)
 const basePath = process.env.NODE_ENV === 'production' ? '/portfolio' : '';
@@ -837,6 +838,11 @@ function Contact() {
               <p className="text-primary-400 font-medium">{personalInfo.phone}</p>
             </div>
           </a>
+        </div>
+
+        {/* Contact Form */}
+        <div className="mb-12">
+          <ContactForm language={language} />
         </div>
 
         {/* Download CV Button */}
