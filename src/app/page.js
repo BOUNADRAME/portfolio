@@ -852,7 +852,7 @@ function Contact() {
         </div>
 
         {/* Contact Form */}
-        <div className="mb-12">
+        <div className="mb-12 text-left">
           <ContactForm language={language} />
         </div>
 
