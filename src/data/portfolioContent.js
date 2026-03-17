@@ -16,7 +16,7 @@ export const portfolioContent = {
           "Création d'une plateforme Dockerisée open source avec CLI d'automatisation, architecture multi-bases (PostgreSQL, MySQL, SQL Server) optimisée pour l'analytique, breakout sélectif par dictionnaire (traitement individuel au lieu de global), webhooks pour workflows automatisés, monitoring temps réel, et documentation exhaustive. API REST avec OAuth2 pour intégrations tierces. **Philosophie open source** : démocratiser l'accès aux outils de recensement modernes pour tous les instituts statistiques, éliminer les barrières techniques et financières, et créer une communauté autour de CSPro en Afrique francophone.",
         impact: [
           "⚡ Gains de performance majeurs en production (traitement et breakout optimisés)",
-          "🚀 Temps de setup réduit de 95% : 5 minutes au lieu de 2-3 jours grâce à Docker",
+          "🚀 Temps de setup drastiquement réduit : 5 minutes au lieu de 2-3 jours grâce à Docker",
           "🌍 Validé en production sur plusieurs recensements nationaux en Afrique de l'Ouest",
           "🔓 Support multi-bases : PostgreSQL, MySQL, SQL Server (vs MySQL uniquement)",
           "🎯 Breakout sélectif : traitement par dictionnaire au lieu de global (gain de performance majeur)",
@@ -50,16 +50,16 @@ export const portfolioContent = {
         year: "Fév. — Mars 2026",
         category: "IA & Data Science Terrain",
         description:
-          "Plateforme IA d'analyse terrain multi-modale (texte, audio, images) pour l'USAID. Collecte mobile offline, analyse automatique de sentiment et génération de rapports PDF de résilience pour les décideurs. Intégration de 4 providers IA (Claude, Gemini, OpenAI, Ollama) avec réduction de coûts de 73%.",
+          "Plateforme IA d'analyse terrain multi-modale (texte, audio, images) pour l'USAID. Collecte mobile offline, analyse automatique de sentiment et génération de rapports PDF de résilience pour les décideurs. Intégration de 4 providers IA (Claude, Gemini, OpenAI, Ollama) avec optimisation significative des coûts.",
         challenge:
           "Transformer les évaluations terrain qualitatives de producteurs agricoles en insights actionnables pour l'USAID. Besoin d'analyser automatiquement des observations multi-modales, classer les profils de résilience et générer des synthèses narratives, tout en respectant les contraintes d'offline-first et de validation humaine.",
         solution:
           "Stack enterprise : Spring Boot 3.4 (Java 23) + Next.js 16 + mobile Android offline. Intégration de 4 providers IA via Strategy Pattern pour flexibilité et optimisation des coûts. Cartographie interactive Leaflet, génération automatique de rapports PDF avec analyse thématique, et scheduler dynamique pour les tâches planifiées. Sécurité renforcée (JWT, RBAC, OWASP Top 10).",
         impact: [
-          "214+ observations enrichies avec 3 niveaux d'analyse : sentiment (POSITIF/NEUTRE/NÉGATIF), confiance IA (0-1), profil de résilience automatisé",
+          "Nombreuses observations enrichies avec 3 niveaux d'analyse : sentiment (POSITIF/NEUTRE/NÉGATIF), confiance IA (0-1), profil de résilience automatisé",
           "Génération automatique de rapports narratifs IA : Thèmes dominants, Constats clés, Actions prioritaires, Recommandations court/moyen terme",
           "Analyse multi-modale : texte brut + transcription audio (clavier/voix FR/EN) + images terrain via Claude Vision API",
-          "Coût IA optimisé 73% : bascule Claude → Gemini Flash réduit de $72 à $20 pour 300K messages (pilot 5 mois)",
+          "Optimisation significative des coûts IA via bascule stratégique Claude → Gemini Flash selon les besoins",
           "Cartographie interactive filtrable : GPS, sentiment, profil, genre, classe d'âge, statut social, événements/sessions/sites",
           "Architecture offline-first + sync idempotente CSPro → PostgreSQL via webhooks custom (zéro crontab manuel)",
           "Scheduler dynamique : gestion de 10+ jobs breakout configurables à chaud (cron, activation, paramètres) via REST API",
@@ -175,7 +175,7 @@ export const portfolioContent = {
         solution:
           "Conception et implémentation d'une nouvelle architecture microservices. Intégration des systèmes tiers via APIs REST, mise en place d'une authentification LDAP centralisée, et déploiement avec Docker pour une meilleure scalabilité.",
         impact: [
-          "+100% de scalabilité grâce à l'architecture microservices",
+          "Scalabilité significativement améliorée grâce à l'architecture microservices",
           "Intégration réussie des systèmes Telus et Marxim",
           "350+ utilisateurs authentifiés via LDAP",
           "Déploiement Docker pour une maintenance simplifiée",
@@ -302,7 +302,7 @@ export const portfolioContent = {
           "Migration réussie de l'historique complet, continuité d'activité sans rupture",
           "Plusieurs agences sur la même plateforme en toute confidentialité",
           "Génération instantanée de documents légaux professionnels",
-          "Temps de chargement divisé par 2, requêtes SQL réduites de 100+ à 15",
+          "Optimisation significative des performances et des requêtes SQL",
         ],
         technologies: [
           "Symfony 6.4",
@@ -481,7 +481,7 @@ export const portfolioContent = {
           "Creation of a Dockerized open source platform with automation CLI, multi-database architecture (PostgreSQL, MySQL, SQL Server) optimized for analytics, selective dictionary breakout (individual processing instead of global), webhooks for automated workflows, real-time monitoring, and comprehensive documentation. REST API with OAuth2 for third-party integrations. **Open source philosophy**: democratize access to modern census tools for all statistical institutes, eliminate technical and financial barriers, and build a community around CSPro in francophone Africa.",
         impact: [
           "⚡ Major performance gains in production (optimized processing and breakout)",
-          "🚀 95% setup time reduction: 5 minutes instead of 2-3 days thanks to Docker",
+          "🚀 Setup time drastically reduced: 5 minutes instead of 2-3 days thanks to Docker",
           "🌍 Production validated across multiple national censuses in West Africa",
           "🔓 Multi-database support: PostgreSQL, MySQL, SQL Server (vs MySQL only)",
           "🎯 Selective breakout: dictionary-based processing instead of global (major performance gain)",
@@ -515,16 +515,16 @@ export const portfolioContent = {
         year: "Feb. — Mar. 2026",
         category: "AI & Field Data Science",
         description:
-          "Intelligent semantic analysis system for field observations with multi-modal AI enrichment (text + audio + images). Offline-first mobile collection via CSPro, generative AI sentiment analysis (Claude Haiku 4.5), automated resilience profiling, and dynamic PDF sensemaking report generation for USAID decision-makers. Cloud multi-provider AI architecture with advanced CSPro breakout management via webhooks.",
+          "AI platform for multi-modal field analysis (text, audio, images) for USAID. Offline mobile collection, automatic sentiment analysis and PDF resilience report generation for decision-makers. Integration of 4 AI providers (Claude, Gemini, OpenAI, Ollama) with significant cost optimization.",
         challenge:
           "USAID (post-departure Senegal) needed to transform qualitative field evaluations from agricultural producers into actionable insights for decision-makers. Raw observations (text, audio, images) collected on mobile required contextualized semantic analysis, automatic classification into resilience profiles (RESILIENT/INTERMEDIATE/VULNERABLE), and intelligent narrative synthesis — all with offline-first, explainability, and mandatory human validation constraints.",
         solution:
           "Complete development of enterprise-grade stack: Spring Boot 3.4 backend (Java 23) + JWT-secured REST API, multi-provider AI integration (Claude Haiku 4.5, Gemini Flash, OpenAI GPT-4o-mini, local Ollama) via Strategy Pattern, Next.js 16 frontend with Leaflet interactive mapping, and offline-first Android mobile. Advanced CSPro breakout management system via custom PHP webhooks, hot-configurable dynamic scheduler for dictionary-based scheduled jobs, and automatic PDF sensemaking report generation with thematic analysis (tri-gram word clouds, patterns, priority actions). Real-time log monitoring via SSE, backend-first FR/EN internationalization, and complete security audit (OWASP Top 10, HTTPS, RBAC).",
         impact: [
-          "214+ observations enriched with 3 analysis levels: sentiment (POSITIVE/NEUTRAL/NEGATIVE), AI confidence (0-1), automated resilience profile",
+          "Numerous observations enriched with 3 analysis levels: sentiment (POSITIVE/NEUTRAL/NEGATIVE), AI confidence (0-1), automated resilience profile",
           "Automatic AI narrative report generation: Dominant themes, Key findings, Priority actions, Short/medium-term recommendations",
           "Multi-modal analysis: raw text + audio transcription (keyboard/voice FR/EN) + field images via Claude Vision API",
-          "73% optimized AI cost: Claude → Gemini Flash switch reduced from $72 to $20 for 300K messages (5-month pilot)",
+          "Significant AI cost optimization via strategic Claude → Gemini Flash switch based on needs",
           "Filterable interactive mapping: GPS, sentiment, profile, gender, age class, social status, events/sessions/sites",
           "Offline-first architecture + idempotent CSPro → PostgreSQL sync via custom webhooks (zero manual crontab)",
           "Dynamic scheduler: 10+ breakout jobs hot-configurable (cron, activation, parameters) via REST API",
@@ -640,7 +640,7 @@ export const portfolioContent = {
         solution:
           "Design and implementation of new microservices architecture. Third-party system integration via REST APIs, centralized LDAP authentication setup, and Docker deployment for better scalability.",
         impact: [
-          "+100% scalability through microservices architecture",
+          "Significantly improved scalability through microservices architecture",
           "Successful Telus and Marxim system integration",
           "350+ users authenticated via LDAP",
           "Docker deployment for simplified maintenance",
@@ -766,7 +766,7 @@ export const portfolioContent = {
           "Successful migration of complete history, uninterrupted business continuity",
           "Multiple agencies on the same platform in full confidentiality",
           "Instant generation of professional legal documents",
-          "Loading time halved, SQL queries reduced from 100+ to 15",
+          "Significant performance and SQL query optimization",
         ],
         technologies: [
           "Symfony 6.4",
