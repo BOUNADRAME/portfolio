@@ -287,16 +287,34 @@ function Projects() {
                           <IconComponent name="Lock" /> {t.projects.confidential}
                         </span>
                       )}
-                      <span
-                        className="px-3 py-1 rounded-full text-xs font-mono border"
-                        style={{
-                          borderColor: `${project.color}40`,
-                          background: `${project.color}10`,
-                          color: project.color
-                        }}
-                      >
-                        {project.category}
-                      </span>
+                      {project.category.includes('•') ? (
+                        <>
+                          {project.category.split('•').map((badge, idx) => (
+                            <span
+                              key={idx}
+                              className="px-3 py-1 rounded-full text-xs font-mono border"
+                              style={{
+                                borderColor: idx === 0 ? '#10b98140' : '#f59e0b40',
+                                background: idx === 0 ? '#10b98110' : '#f59e0b10',
+                                color: idx === 0 ? '#10b981' : '#f59e0b'
+                              }}
+                            >
+                              {badge.trim()}
+                            </span>
+                          ))}
+                        </>
+                      ) : (
+                        <span
+                          className="px-3 py-1 rounded-full text-xs font-mono border"
+                          style={{
+                            borderColor: `${project.color}40`,
+                            background: `${project.color}10`,
+                            color: project.color
+                          }}
+                        >
+                          {project.category}
+                        </span>
+                      )}
                     </div>
                     <p className="text-primary-400 text-base md:text-lg font-medium mb-2">{project.subtitle}</p>
                     <div className="flex items-center gap-4 text-dark-400 text-sm">
