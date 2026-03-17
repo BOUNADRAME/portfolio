@@ -211,8 +211,7 @@ export const portfolioContent = {
       {
         id: "pigor",
         title: "PIGOR",
-        subtitle:
-          "Plateforme Intégrée de Gestion des Opérations du Recensement",
+        subtitle: "Plateforme de Gestion du Recensement National",
         client: "ANSD — Sénégal",
         year: "2021-2024",
         category: "Recensement National",
@@ -309,7 +308,7 @@ export const portfolioContent = {
       {
         id: "gendarmerie",
         title: "Incidents Routiers",
-        subtitle: "Système Temps Réel pour la Gendarmerie Nationale",
+        subtitle: "Signalement et Coordination Temps Réel",
         client: "Gendarmerie Nationale — Sénégal",
         year: "2023",
         category: "Sécurité Publique",
@@ -663,7 +662,7 @@ export const portfolioContent = {
       {
         id: "pigor",
         title: "PIGOR",
-        subtitle: "Integrated Census Operations Management Platform",
+        subtitle: "National Census Management Platform",
         client: "ANSD — Senegal",
         year: "2021-2024",
         category: "National Census",
@@ -760,7 +759,7 @@ export const portfolioContent = {
       {
         id: "gendarmerie",
         title: "Traffic Incidents",
-        subtitle: "Real-Time System for National Gendarmerie",
+        subtitle: "Real-Time Reporting and Coordination",
         client: "National Gendarmerie — Senegal",
         year: "2023",
         category: "Public Safety",
