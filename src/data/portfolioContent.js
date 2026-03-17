@@ -48,7 +48,7 @@ export const portfolioContent = {
           "Plateforme IA d'Analyse Sémantique Terrain & Rapports de Résilience",
         client: "STATINFO (Sénégal) — Projet USAID Post-Départ",
         year: "Fév. — Mars 2026",
-        category: "IA & Data Science Terrain",
+        category: "IA & Data Science",
         description:
           "Plateforme IA multi-modale d'analyse terrain pour l'USAID. Analyse automatique de sentiment et génération de rapports de résilience pour décideurs. Architecture multi-provider IA optimisée (Claude, Gemini, OpenAI, Ollama).",
         challenge:
@@ -499,7 +499,7 @@ export const portfolioContent = {
           "AI Platform for Semantic Field Analysis & Resilience Reports",
         client: "STATINFO (Senegal) — USAID Post-Departure Project",
         year: "Feb. — Mar. 2026",
-        category: "AI & Field Data Science",
+        category: "AI & Data Science",
         description:
           "Multi-modal AI platform for field analysis for USAID. Automatic sentiment analysis and resilience report generation for decision-makers. Optimized multi-provider AI architecture (Claude, Gemini, OpenAI, Ollama).",
         challenge:
