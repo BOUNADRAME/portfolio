@@ -221,15 +221,16 @@ export const portfolioContent = {
         year: "2025",
         category: "AgriTech",
         description:
-          "Plateforme SaaS multi-tenant pour la digitalisation complète de la chaîne de valeur agricole sénégalaise, connectant producteurs, exportateurs et autorités publiques.",
+          "Plateforme SaaS multi-tenant pour la digitalisation complète de la chaîne de valeur agricole sénégalaise, connectant producteurs, exportateurs et autorités publiques. WebMapping avec cartographie interactive Leaflet des producteurs et parcelles agricoles.",
         challenge:
           "La chaîne de valeur agricole sénégalaise manquait d'outils numériques pour connecter les producteurs aux marchés internationaux et assurer la traçabilité des produits certifiés.",
         solution:
-          "Développement d'une marketplace agricole avec système de commandes temps réel, chat WebSocket pour la négociation, certification DVP pour les exportations, dashboards BI et cartographie interactive des producteurs et parcelles.",
+          "Développement d'une marketplace agricole avec système de commandes temps réel, chat WebSocket pour la négociation, certification DVP pour les exportations, dashboards BI et cartographie interactive Leaflet des producteurs et parcelles géolocalisées.",
         impact: [
           "500+ producteurs connectés aux marchés d'exportation",
           "Négociation en temps réel via chat WebSocket",
           "Traçabilité complète pour les cultures certifiées",
+          "Cartographie interactive des producteurs et parcelles agricoles",
           "Digitalisation de la chaîne agricole sénégalaise",
         ],
         technologies: [
@@ -238,6 +239,7 @@ export const portfolioContent = {
           "WebSocket",
           "Next.js 15",
           "TypeScript",
+          "Leaflet",
           "Docker",
         ],
         color: "#8b5cf6",
@@ -643,15 +645,16 @@ export const portfolioContent = {
         year: "2025",
         category: "AgriTech",
         description:
-          "Multi-tenant SaaS platform for complete digitalization of Senegal's agricultural value chain, connecting producers, exporters and public authorities.",
+          "Multi-tenant SaaS platform for complete digitalization of Senegal's agricultural value chain, connecting producers, exporters and public authorities. WebMapping with interactive Leaflet cartography of producers and agricultural plots.",
         challenge:
           "Senegal's agricultural value chain lacked digital tools to connect producers to international markets and ensure certified product traceability.",
         solution:
-          "Agricultural marketplace development with real-time order system, WebSocket chat for negotiation, DVP certification for exports, BI dashboards and interactive mapping of producers and plots.",
+          "Agricultural marketplace development with real-time order system, WebSocket chat for negotiation, DVP certification for exports, BI dashboards and interactive Leaflet mapping of geolocated producers and plots.",
         impact: [
           "500+ producers connected to export markets",
           "Real-time negotiation via WebSocket chat",
           "Complete traceability for certified crops",
+          "Interactive mapping of producers and agricultural plots",
           "Digitalization of Senegalese agricultural chain",
         ],
         technologies: [
@@ -660,6 +663,7 @@ export const portfolioContent = {
           "WebSocket",
           "Next.js 15",
           "TypeScript",
+          "Leaflet",
           "Docker",
         ],
         color: "#8b5cf6",
