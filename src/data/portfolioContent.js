@@ -2,6 +2,46 @@ export const portfolioContent = {
   fr: {
     projects: [
       {
+        id: "csweb-community",
+        title: "CSWeb Community Platform",
+        subtitle: "Modernisation Open Source du Serveur Web Officiel CSPro",
+        client: "Projet Open Source Personnel — Production en Afrique de l'Ouest",
+        year: "2024-2025",
+        category: "Open Source • Beta Production",
+        description:
+          "Plateforme open source de modernisation de CSWeb (serveur web officiel de CSPro pour les recensements). Réduit le temps de setup de 2-3 jours à 5 minutes via Docker. Validée en production sur 3 recensements nationaux (Sénégal, Gambie, Guinée) avec 3.2M questionnaires traités en 6h au lieu de 48h.",
+        challenge:
+          "Le CSWeb vanilla nécessitait 2-3 jours de configuration manuelle, supportait uniquement MySQL, et traitait les données globalement (48h pour 3.2M questionnaires lors du recensement Sénégal RGPH5). Les équipes techniques des instituts statistiques africains rencontraient des difficultés majeures de déploiement sans documentation moderne, créant une barrière à l'adoption de CSPro dans la région.",
+        solution:
+          "Création d'une plateforme Dockerisée open source avec CLI d'automatisation, architecture multi-bases (PostgreSQL, MySQL, SQL Server) optimisée pour l'analytique, breakout sélectif par dictionnaire (traitement individuel au lieu de global), webhooks pour workflows automatisés, monitoring temps réel, et documentation exhaustive. API REST avec OAuth2 pour intégrations tierces. **Philosophie open source** : démocratiser l'accès aux outils de recensement modernes pour tous les instituts statistiques, éliminer les barrières techniques et financières, et créer une communauté autour de CSPro en Afrique francophone.",
+        impact: [
+          "⚡ 3.2 millions de questionnaires traités en 6h (vs 48h avec CSWeb vanilla) lors du RGPH5 Sénégal — amélioration de 8x",
+          "🚀 Temps de setup réduit de 95% : 5 minutes au lieu de 2-3 jours grâce à Docker",
+          "🌍 Validé en production sur 3 recensements nationaux (Sénégal, Gambie, Guinée)",
+          "🔓 Support multi-bases : PostgreSQL, MySQL, SQL Server (vs MySQL uniquement)",
+          "🎯 Breakout sélectif : traitement par dictionnaire au lieu de global (gain de performance majeur)",
+          "📚 Documentation moderne complète avec guides de déploiement pour instituts statistiques",
+          "🔌 Architecture event-driven avec webhooks pour automatisation des workflows",
+          "🌐 Contribution open source à l'écosystème CSPro — démo publique : bounadrame.github.io/pg_csweb8_latest_2026",
+        ],
+        technologies: [
+          "Docker",
+          "PostgreSQL",
+          "MySQL",
+          "SQL Server",
+          "CSPro",
+          "CSWeb",
+          "OAuth2",
+          "REST API",
+          "CLI",
+          "Webhooks",
+          "Bash",
+          "Linux",
+        ],
+        color: "#3b82f6",
+        demoUrl: "https://bounadrame.github.io/pg_csweb8_latest_2026/",
+      },
+      {
         id: "kairos-sensemaking",
         title: "KATS — Kairos Terrain Sensemaking",
         subtitle:
@@ -14,7 +54,7 @@ export const portfolioContent = {
         challenge:
           "Transformer les évaluations terrain qualitatives de producteurs agricoles en insights actionnables pour l'USAID. Besoin d'analyser automatiquement des observations multi-modales, classer les profils de résilience et générer des synthèses narratives, tout en respectant les contraintes d'offline-first et de validation humaine.",
         solution:
-          "Stack enterprise : Spring Boot 3.5 (Java 25) + Next.js 16 + mobile Android offline. Intégration de 4 providers IA via Strategy Pattern pour flexibilité et optimisation des coûts. Cartographie interactive Leaflet, génération automatique de rapports PDF avec analyse thématique, et scheduler dynamique pour les tâches planifiées. Sécurité renforcée (JWT, RBAC, OWASP Top 10).",
+          "Stack enterprise : Spring Boot 3.4 (Java 23) + Next.js 16 + mobile Android offline. Intégration de 4 providers IA via Strategy Pattern pour flexibilité et optimisation des coûts. Cartographie interactive Leaflet, génération automatique de rapports PDF avec analyse thématique, et scheduler dynamique pour les tâches planifiées. Sécurité renforcée (JWT, RBAC, OWASP Top 10).",
         impact: [
           "214+ observations enrichies avec 3 niveaux d'analyse : sentiment (POSITIF/NEUTRE/NÉGATIF), confiance IA (0-1), profil de résilience automatisé",
           "Génération automatique de rapports narratifs IA : Thèmes dominants, Constats clés, Actions prioritaires, Recommandations court/moyen terme",
@@ -28,8 +68,8 @@ export const portfolioContent = {
           "Sécurité enterprise : JWT RBAC, audit trail complet, conformité OWASP Top 10, protection CSRF/XSS/injection SQL",
         ],
         technologies: [
-          "Spring Boot 3.5",
-          "Java 25",
+          "Spring Boot 3.4",
+          "Java 23",
           "PostgreSQL 16",
           "Flyway",
           "Claude AI (Haiku 4.5)",
@@ -427,6 +467,46 @@ export const portfolioContent = {
   en: {
     projects: [
       {
+        id: "csweb-community",
+        title: "CSWeb Community Platform",
+        subtitle: "Open Source Modernization of Official CSPro Web Server",
+        client: "Personal Open Source Project — Production in West Africa",
+        year: "2024-2025",
+        category: "Open Source • Beta Production",
+        description:
+          "Open source platform modernizing CSWeb (official web server for CSPro census operations). Reduces setup time from 2-3 days to 5 minutes via Docker. Production-validated on 3 national censuses (Senegal, Gambia, Guinea) with 3.2M questionnaires processed in 6h instead of 48h.",
+        challenge:
+          "Vanilla CSWeb required 2-3 days of manual configuration, supported MySQL only, and processed data globally (48h for 3.2M questionnaires during Senegal RGPH5 census). Technical teams at African statistical institutes faced major deployment difficulties without modern documentation, creating a barrier to CSPro adoption in the region.",
+        solution:
+          "Creation of a Dockerized open source platform with automation CLI, multi-database architecture (PostgreSQL, MySQL, SQL Server) optimized for analytics, selective dictionary breakout (individual processing instead of global), webhooks for automated workflows, real-time monitoring, and comprehensive documentation. REST API with OAuth2 for third-party integrations. **Open source philosophy**: democratize access to modern census tools for all statistical institutes, eliminate technical and financial barriers, and build a community around CSPro in francophone Africa.",
+        impact: [
+          "⚡ 3.2 million questionnaires processed in 6h (vs 48h with vanilla CSWeb) during Senegal RGPH5 — 8x improvement",
+          "🚀 95% setup time reduction: 5 minutes instead of 2-3 days thanks to Docker",
+          "🌍 Production validated on 3 national censuses (Senegal, Gambia, Guinea)",
+          "🔓 Multi-database support: PostgreSQL, MySQL, SQL Server (vs MySQL only)",
+          "🎯 Selective breakout: dictionary-based processing instead of global (major performance gain)",
+          "📚 Comprehensive modern documentation with deployment guides for statistical institutes",
+          "🔌 Event-driven architecture with webhooks for workflow automation",
+          "🌐 Open source contribution to CSPro ecosystem — public demo: bounadrame.github.io/pg_csweb8_latest_2026",
+        ],
+        technologies: [
+          "Docker",
+          "PostgreSQL",
+          "MySQL",
+          "SQL Server",
+          "CSPro",
+          "CSWeb",
+          "OAuth2",
+          "REST API",
+          "CLI",
+          "Webhooks",
+          "Bash",
+          "Linux",
+        ],
+        color: "#3b82f6",
+        demoUrl: "https://bounadrame.github.io/pg_csweb8_latest_2026/",
+      },
+      {
         id: "kairos-sensemaking",
         title: "KATS — Kairos Terrain Sensemaking",
         subtitle:
@@ -439,7 +519,7 @@ export const portfolioContent = {
         challenge:
           "USAID (post-departure Senegal) needed to transform qualitative field evaluations from agricultural producers into actionable insights for decision-makers. Raw observations (text, audio, images) collected on mobile required contextualized semantic analysis, automatic classification into resilience profiles (RESILIENT/INTERMEDIATE/VULNERABLE), and intelligent narrative synthesis — all with offline-first, explainability, and mandatory human validation constraints.",
         solution:
-          "Complete development of enterprise-grade stack: Spring Boot 3.5 backend (Java 25) + JWT-secured REST API, multi-provider AI integration (Claude Haiku 4.5, Gemini Flash, OpenAI GPT-4o-mini, local Ollama) via Strategy Pattern, Next.js 16 frontend with Leaflet interactive mapping, and offline-first Android mobile. Advanced CSPro breakout management system via custom PHP webhooks, hot-configurable dynamic scheduler for dictionary-based scheduled jobs, and automatic PDF sensemaking report generation with thematic analysis (tri-gram word clouds, patterns, priority actions). Real-time log monitoring via SSE, backend-first FR/EN internationalization, and complete security audit (OWASP Top 10, HTTPS, RBAC).",
+          "Complete development of enterprise-grade stack: Spring Boot 3.4 backend (Java 23) + JWT-secured REST API, multi-provider AI integration (Claude Haiku 4.5, Gemini Flash, OpenAI GPT-4o-mini, local Ollama) via Strategy Pattern, Next.js 16 frontend with Leaflet interactive mapping, and offline-first Android mobile. Advanced CSPro breakout management system via custom PHP webhooks, hot-configurable dynamic scheduler for dictionary-based scheduled jobs, and automatic PDF sensemaking report generation with thematic analysis (tri-gram word clouds, patterns, priority actions). Real-time log monitoring via SSE, backend-first FR/EN internationalization, and complete security audit (OWASP Top 10, HTTPS, RBAC).",
         impact: [
           "214+ observations enriched with 3 analysis levels: sentiment (POSITIVE/NEUTRAL/NEGATIVE), AI confidence (0-1), automated resilience profile",
           "Automatic AI narrative report generation: Dominant themes, Key findings, Priority actions, Short/medium-term recommendations",
@@ -453,8 +533,8 @@ export const portfolioContent = {
           "Enterprise security: JWT RBAC, complete audit trail, OWASP Top 10 compliance, CSRF/XSS/SQL injection protection",
         ],
         technologies: [
-          "Spring Boot 3.5",
-          "Java 25",
+          "Spring Boot 3.4",
+          "Java 23",
           "PostgreSQL 16",
           "Flyway",
           "Claude AI (Haiku 4.5)",
