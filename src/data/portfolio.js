@@ -282,16 +282,6 @@ export const certifications = [
     skills: ["Docker", "Conteneurisation", "Docker Compose"],
     color: "#0db7ed",
   },
-  {
-    id: "leaflet",
-    title: "Cartographie avec Leaflet",
-    platform: "Udemy",
-    date: "2023",
-    duration: "Variable",
-    file: "udemy-leaflet.pdf",
-    skills: ["Leaflet", "Cartes interactives", "JavaScript"],
-    color: "#199900",
-  },
 ];
 
 export const testimonials = [
