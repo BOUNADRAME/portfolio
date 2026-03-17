@@ -13,7 +13,7 @@ export const personalInfo = {
 export const stats = [
   { value: "7+", label: "Années d'expérience" },
   { value: "18M", label: "Habitants recensés (PIGOR)" },
-  { value: "270M+", label: "FCFA économisés (SEDAS)" },
+  { value: "15+", label: "Projets livrés" },
   { value: "4", label: "Pays d'intervention" },
 ];
 
@@ -41,7 +41,6 @@ export const projects = [
       "Sécurité enterprise : JWT RBAC, audit trail complet, conformité OWASP Top 10, protection CSRF/XSS/injection SQL",
     ],
     technologies: ["Spring Boot 3.5", "Java 25", "PostgreSQL 16", "Flyway", "Claude AI (Haiku 4.5)", "Gemini Flash 2.0", "OpenAI GPT-4o-mini", "Ollama", "Next.js 16", "React 19", "TypeScript", "React Query", "Leaflet", "CSPro", "CSWeb", "Webhooks PHP", "Docker", "PDFBox 3.0", "JWT", "SSE", "Anthropic API"],
-    hasScreenshots: true,
     isConfidential: true,
     color: "#8b5cf6",
   },
@@ -62,7 +61,6 @@ export const projects = [
       "Tableau de bord temps réel pour les décideurs",
     ],
     technologies: ["Symfony 6.4", "API Platform 3.1", "PostgreSQL", "Flutter", "JWT", "TailwindCSS", "PhpSpreadsheet", "DomPDF"],
-    hasScreenshots: true,
     isConfidential: true,
     color: "#06b6d4",
   },
@@ -78,12 +76,11 @@ export const projects = [
     solution: "Conception et développement d'une plateforme complète intégrant l'export multi-formats (CSV, Excel, XML-SDMX, Stata, SPSS), la cartographie interactive des 14 régions du Sénégal, des dashboards temps réel, un système documentaire S3, et un module IA de requêtes en langage naturel.",
     impact: [
       "Plateforme unique en Afrique francophone pour la diffusion SDMX 3.0",
-      "Économie estimée de 270M+ FCFA par rapport à un développement externe",
+      "Développement interne à coût maîtrisé vs sous-traitance externe",
       "Positionnement de l'ANSD comme institution pionnière continentale",
       "Solution exportable vers d'autres pays de la sous-région",
     ],
     technologies: ["Spring Boot 3.2", "Java 21", "PostgreSQL", "Redis", "Next.js 15", "React 19", "TypeScript", "Docker", "MinIO S3", "Llama 3"],
-    hasScreenshots: true,
     color: "#338dff",
   },
   {
@@ -103,7 +100,6 @@ export const projects = [
       "Système adopté par d'autres pays de la sous-région",
     ],
     technologies: ["Symfony", "jQuery", "SQL Server", "CSWeb", "Docker", "PostgreSQL"],
-    hasScreenshots: false,
     isConfidential: true,
     color: "#10b981",
   },
@@ -123,7 +119,6 @@ export const projects = [
       "Événement constitutionnel national mené avec succès",
     ],
     technologies: ["Spring Boot", "PostgreSQL", "Next.js", "CSPro", "Docker"],
-    hasScreenshots: false,
     isConfidential: true,
     color: "#f59e0b",
   },
@@ -144,7 +139,6 @@ export const projects = [
       "Déploiement Docker pour une maintenance simplifiée",
     ],
     technologies: ["Java", "Spring Boot", "Microservices", "REST API", "LDAP", "Docker", "Telus", "Marxim"],
-    hasScreenshots: false,
     color: "#10b981",
   },
   {
@@ -164,7 +158,6 @@ export const projects = [
       "Digitalisation de la chaîne agricole sénégalaise",
     ],
     technologies: ["Spring Boot", "Redis", "WebSocket", "Next.js 15", "TypeScript", "Docker"],
-    hasScreenshots: false,
     color: "#8b5cf6",
   },
   {
@@ -185,7 +178,6 @@ export const projects = [
       "Temps de chargement divisé par 2, requêtes SQL réduites de 100+ à 15",
     ],
     technologies: ["Symfony 6.4", "PHP 8", "API Platform 3.4", "JWT", "MySQL 8", "Twig", "Bootstrap 5", "jQuery", "TCPDF", "Docker", "VPS Contabo"],
-    hasScreenshots: false,
     color: "#f97316",
   },
   {
@@ -204,7 +196,6 @@ export const projects = [
       "Coordination temps réel entre usagers et forces de l'ordre",
     ],
     technologies: ["Spring Boot", "Angular", "WebSocket", "Géolocalisation"],
-    hasScreenshots: false,
     color: "#ef4444",
   },
 ];
