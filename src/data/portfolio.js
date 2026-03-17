@@ -80,7 +80,7 @@ export const projects = [
       "Positionnement de l'ANSD comme institution pionnière continentale",
       "Solution exportable vers d'autres pays de la sous-région",
     ],
-    technologies: ["Spring Boot 3.2", "Java 21", "PostgreSQL", "Redis", "Next.js 15", "React 19", "TypeScript", "Docker", "MinIO S3", "Llama 3"],
+    technologies: ["Spring Boot 3.2", "Java 21", "PostgreSQL", "Redis", "Next.js 15", "React 19", "TypeScript", "Leaflet", "Docker", "MinIO S3", "Llama 3"],
     color: "#338dff",
   },
   {
@@ -118,7 +118,7 @@ export const projects = [
       "Infrastructure sécurisée avec audit trail complet",
       "Événement constitutionnel national mené avec succès",
     ],
-    technologies: ["Spring Boot", "PostgreSQL", "Next.js", "CSPro", "Docker"],
+    technologies: ["Spring Boot", "PostgreSQL", "Next.js", "Leaflet", "CSPro", "Docker"],
     isConfidential: true,
     color: "#f59e0b",
   },
