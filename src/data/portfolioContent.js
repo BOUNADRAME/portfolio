@@ -9,13 +9,13 @@ export const portfolioContent = {
         year: "2024-2025",
         category: "Open Source • Beta Production",
         description:
-          "Plateforme open source de modernisation de CSWeb (serveur web officiel de CSPro pour les recensements). Réduit le temps de setup de 2-3 jours à 5 minutes via Docker. Retour d'expérience validé en production sur plusieurs recensements nationaux en Afrique de l'Ouest avec des gains de performance majeurs (exemple : 3.2M questionnaires traités en 6h au lieu de 48h).",
+          "Plateforme open source de modernisation de CSWeb (serveur web officiel de CSPro pour les recensements). Réduit le temps de setup de 2-3 jours à 5 minutes via Docker. Retour d'expérience validé en production sur plusieurs recensements nationaux en Afrique de l'Ouest.",
         challenge:
           "Le CSWeb vanilla nécessitait 2-3 jours de configuration manuelle, supportait uniquement MySQL, et traitait les données globalement (48h pour 3.2M questionnaires lors du recensement Sénégal RGPH5). Les équipes techniques des instituts statistiques africains rencontraient des difficultés majeures de déploiement sans documentation moderne, créant une barrière à l'adoption de CSPro dans la région.",
         solution:
           "Création d'une plateforme Dockerisée open source avec CLI d'automatisation, architecture multi-bases (PostgreSQL, MySQL, SQL Server) optimisée pour l'analytique, breakout sélectif par dictionnaire (traitement individuel au lieu de global), webhooks pour workflows automatisés, monitoring temps réel, et documentation exhaustive. API REST avec OAuth2 pour intégrations tierces. **Philosophie open source** : démocratiser l'accès aux outils de recensement modernes pour tous les instituts statistiques, éliminer les barrières techniques et financières, et créer une communauté autour de CSPro en Afrique francophone.",
         impact: [
-          "⚡ 3.2 millions de questionnaires traités en 6h (vs 48h avec CSWeb vanilla) lors du RGPH5 Sénégal — amélioration de 8x",
+          "⚡ Gains de performance majeurs en production (traitement et breakout optimisés)",
           "🚀 Temps de setup réduit de 95% : 5 minutes au lieu de 2-3 jours grâce à Docker",
           "🌍 Validé en production sur plusieurs recensements nationaux en Afrique de l'Ouest",
           "🔓 Support multi-bases : PostgreSQL, MySQL, SQL Server (vs MySQL uniquement)",
@@ -474,13 +474,13 @@ export const portfolioContent = {
         year: "2024-2025",
         category: "Open Source • Beta Production",
         description:
-          "Open source platform modernizing CSWeb (official web server for CSPro census operations). Reduces setup time from 2-3 days to 5 minutes via Docker. Production experience validated across multiple national censuses in West Africa with major performance gains (example: 3.2M questionnaires processed in 6h instead of 48h).",
+          "Open source platform modernizing CSWeb (official web server for CSPro census operations). Reduces setup time from 2-3 days to 5 minutes via Docker. Production experience validated across multiple national censuses in West Africa.",
         challenge:
           "Vanilla CSWeb required 2-3 days of manual configuration, supported MySQL only, and processed data globally (48h for 3.2M questionnaires during Senegal RGPH5 census). Technical teams at African statistical institutes faced major deployment difficulties without modern documentation, creating a barrier to CSPro adoption in the region.",
         solution:
           "Creation of a Dockerized open source platform with automation CLI, multi-database architecture (PostgreSQL, MySQL, SQL Server) optimized for analytics, selective dictionary breakout (individual processing instead of global), webhooks for automated workflows, real-time monitoring, and comprehensive documentation. REST API with OAuth2 for third-party integrations. **Open source philosophy**: democratize access to modern census tools for all statistical institutes, eliminate technical and financial barriers, and build a community around CSPro in francophone Africa.",
         impact: [
-          "⚡ 3.2 million questionnaires processed in 6h (vs 48h with vanilla CSWeb) during Senegal RGPH5 — 8x improvement",
+          "⚡ Major performance gains in production (optimized processing and breakout)",
           "🚀 95% setup time reduction: 5 minutes instead of 2-3 days thanks to Docker",
           "🌍 Production validated across multiple national censuses in West Africa",
           "🔓 Multi-database support: PostgreSQL, MySQL, SQL Server (vs MySQL only)",
