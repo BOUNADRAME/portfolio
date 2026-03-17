@@ -214,12 +214,12 @@ export const expertise = [
   {
     category: "Backend",
     icon: "Server",
-    skills: ["Java 21", "Spring Boot 3.x", "Symfony", "Django", "Python", "Node.js"],
+    skills: ["Java 23", "Spring Boot 3.x", "Symfony", "Python", "Node.js"],
   },
   {
     category: "Frontend",
     icon: "Monitor",
-    skills: ["React", "Next.js 15", "Angular", "TypeScript", "Tailwind CSS"],
+    skills: ["React", "Next.js 16", "TypeScript", "Tailwind CSS"],
   },
   {
     category: "Bases de Données",
@@ -234,7 +234,7 @@ export const expertise = [
   {
     category: "Cartographie & SIG",
     icon: "MapPin",
-    skills: ["Leaflet", "ArcGIS", "OpenLayers", "PostGIS", "Géolocalisation"],
+    skills: ["Leaflet", "OpenLayers", "PostGIS", "Géolocalisation"],
   },
 ];
 
