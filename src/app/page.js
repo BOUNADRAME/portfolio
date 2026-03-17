@@ -46,6 +46,7 @@ function Navbar() {
   const links = [
     { href: '#projets', label: t.projects },
     { href: '#expertise', label: t.expertise },
+    { href: 'https://bounadrame.github.io/pg_csweb8_latest_2026/', label: t.contributions, external: true },
     { href: '#parcours', label: t.journey },
     { href: '#contact', label: t.contact },
   ];
@@ -59,7 +60,12 @@ function Navbar() {
 
         <div className="hidden lg:flex gap-8 flex-1 justify-center">
           {links.map(l => (
-            <a key={l.href} href={l.href} className="text-sm text-dark-300 hover:text-white transition-colors duration-300">
+            <a
+              key={l.href}
+              href={l.href}
+              className="text-sm text-dark-300 hover:text-white transition-colors duration-300"
+              {...(l.external && { target: '_blank', rel: 'noopener noreferrer' })}
+            >
               {l.label}
             </a>
           ))}
@@ -87,7 +93,13 @@ function Navbar() {
       {open && (
         <div className="md:hidden px-6 pb-4 space-y-3 bg-dark-950/95 border-b border-white/5">
           {links.map(l => (
-            <a key={l.href} href={l.href} onClick={() => setOpen(false)} className="block text-dark-300 hover:text-white transition-colors">
+            <a
+              key={l.href}
+              href={l.href}
+              onClick={() => setOpen(false)}
+              className="block text-dark-300 hover:text-white transition-colors"
+              {...(l.external && { target: '_blank', rel: 'noopener noreferrer' })}
+            >
               {l.label}
             </a>
           ))}

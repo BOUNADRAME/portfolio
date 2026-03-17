@@ -3,6 +3,7 @@ export const translations = {
     nav: {
       projects: 'Projets',
       expertise: 'Expertise',
+      contributions: 'Contributions',
       journey: 'Parcours',
       contact: 'Contact',
       contactMe: 'Me contacter',
@@ -75,6 +76,7 @@ export const translations = {
     nav: {
       projects: 'Projects',
       expertise: 'Expertise',
+      contributions: 'Contributions',
       journey: 'Journey',
       contact: 'Contact',
       contactMe: 'Contact me',
