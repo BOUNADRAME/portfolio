@@ -56,16 +56,12 @@ export const portfolioContent = {
         solution:
           "Stack enterprise Spring Boot 3.4 + Next.js 16 + mobile Android offline-first. Architecture multi-provider IA (Strategy Pattern) pour optimisation des coûts. Cartographie Leaflet, génération automatique de rapports PDF, scheduler dynamique. Sécurité renforcée (JWT, RBAC, OWASP Top 10).",
         impact: [
-          "Nombreuses observations enrichies avec 3 niveaux d'analyse : sentiment (POSITIF/NEUTRE/NÉGATIF), confiance IA (0-1), profil de résilience automatisé",
-          "Génération automatique de rapports narratifs IA : Thèmes dominants, Constats clés, Actions prioritaires, Recommandations court/moyen terme",
-          "Analyse multi-modale : texte brut + transcription audio (clavier/voix FR/EN) + images terrain via Claude Vision API",
-          "Optimisation significative des coûts IA via bascule stratégique Claude → Gemini Flash selon les besoins",
-          "Cartographie interactive filtrable : GPS, sentiment, profil, genre, classe d'âge, statut social, événements/sessions/sites",
-          "Architecture offline-first + sync idempotente CSPro → PostgreSQL via webhooks custom (zéro crontab manuel)",
-          "Scheduler dynamique : gestion de 10+ jobs breakout configurables à chaud (cron, activation, paramètres) via REST API",
-          "Monitoring avancé : logs temps réel SSE avec parsing Symfony, filtres niveau/recherche, rotation auto 7j",
-          "Support multi-provider IA : switch Claude/Gemini/OpenAI/Ollama en 1 variable (.env) grâce au Strategy Pattern",
-          "Sécurité enterprise : JWT RBAC, audit trail complet, conformité OWASP Top 10, protection CSRF/XSS/injection SQL",
+          "Analyse terrain enrichie : sentiment, confiance IA, profils de résilience automatisés",
+          "Génération automatique de rapports narratifs IA pour décideurs",
+          "Analyse multi-modale : texte, audio, images via Claude Vision API",
+          "Optimisation significative des coûts IA (architecture multi-provider)",
+          "Cartographie interactive filtrable et architecture offline-first",
+          "Sécurité enterprise : JWT RBAC, conformité OWASP Top 10",
         ],
         technologies: [
           "Spring Boot 3.4",
@@ -107,7 +103,7 @@ export const portfolioContent = {
         solution:
           "Plateforme web Symfony 6.4 + API Platform couplée à une app mobile Flutter offline-first. Synchronisation automatique des données terrain via API REST sécurisée. Import/export Excel, génération de rapports PDF et tableau de bord statistique pour pilotage en temps réel.",
         impact: [
-          "11 modules d'activités terrain couverts (Supervision, Sensibilisation, Dialogue Communautaire, Enquête, Formation...)",
+          "11 modules d'activités terrain couverts (supervision, sensibilisation, enquêtes, formations...)",
           "Application mobile Flutter offline-first pour les zones à faible connectivité",
           "Workflow de validation multi-étapes avec audit trail complet",
           "Import/export Excel pour tous les types d'activités",
@@ -521,16 +517,12 @@ export const portfolioContent = {
         solution:
           "Enterprise stack: Spring Boot 3.4 + Next.js 16 + offline-first Android mobile. Multi-provider AI architecture (Strategy Pattern) for cost optimization. Leaflet mapping, automatic PDF report generation, dynamic scheduler. Enhanced security (JWT, RBAC, OWASP Top 10).",
         impact: [
-          "Numerous observations enriched with 3 analysis levels: sentiment (POSITIVE/NEUTRAL/NEGATIVE), AI confidence (0-1), automated resilience profile",
-          "Automatic AI narrative report generation: Dominant themes, Key findings, Priority actions, Short/medium-term recommendations",
-          "Multi-modal analysis: raw text + audio transcription (keyboard/voice FR/EN) + field images via Claude Vision API",
-          "Significant AI cost optimization via strategic Claude → Gemini Flash switch based on needs",
-          "Filterable interactive mapping: GPS, sentiment, profile, gender, age class, social status, events/sessions/sites",
-          "Offline-first architecture + idempotent CSPro → PostgreSQL sync via custom webhooks (zero manual crontab)",
-          "Dynamic scheduler: 10+ breakout jobs hot-configurable (cron, activation, parameters) via REST API",
-          "Advanced monitoring: real-time SSE logs with Symfony parsing, level/search filters, 7-day auto-rotation",
-          "Multi-provider AI support: Claude/Gemini/OpenAI/Ollama switch in 1 variable (.env) thanks to Strategy Pattern",
-          "Enterprise security: JWT RBAC, complete audit trail, OWASP Top 10 compliance, CSRF/XSS/SQL injection protection",
+          "Enriched field analysis: sentiment, AI confidence, automated resilience profiles",
+          "Automatic AI narrative report generation for decision-makers",
+          "Multi-modal analysis: text, audio, images via Claude Vision API",
+          "Significant AI cost optimization (multi-provider architecture)",
+          "Filterable interactive mapping and offline-first architecture",
+          "Enterprise security: JWT RBAC, OWASP Top 10 compliance",
         ],
         technologies: [
           "Spring Boot 3.4",
