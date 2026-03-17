@@ -26,7 +26,7 @@ export const translations = {
     projects: {
       sectionLabel: 'Portfolio',
       title: 'Projets Majeurs',
-      subtitle: 'Découvrez mes réalisations qui ont impacté des millions de personnes',
+      subtitle: 'Systèmes critiques pour institutions publiques et organisations internationales',
       challenge: 'Défi',
       solution: 'Solution',
       impact: 'Impact Mesurable',
@@ -99,7 +99,7 @@ export const translations = {
     projects: {
       sectionLabel: 'Portfolio',
       title: 'Major Projects',
-      subtitle: 'Discover my achievements that have impacted millions of people',
+      subtitle: 'Critical systems for public institutions and international organizations',
       challenge: 'Challenge',
       solution: 'Solution',
       impact: 'Measurable Impact',

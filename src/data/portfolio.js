@@ -12,8 +12,8 @@ export const personalInfo = {
 
 export const stats = [
   { value: "7+", label: "Années d'expérience" },
-  { value: "18M", label: "Habitants recensés (PIGOR)" },
   { value: "15+", label: "Projets livrés" },
+  { value: "20+", label: "Technologies" },
   { value: "4", label: "Pays d'intervention" },
 ];
 

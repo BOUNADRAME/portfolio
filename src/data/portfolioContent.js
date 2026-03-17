@@ -50,7 +50,7 @@ export const portfolioContent = {
         year: "Fév. — Mars 2026",
         category: "IA & Data Science Terrain",
         description:
-          "Plateforme IA d'analyse terrain multi-modale (texte, audio, images) pour l'USAID. Collecte mobile offline, analyse automatique de sentiment et génération de rapports PDF de résilience pour les décideurs. Intégration de 4 providers IA (Claude, Gemini, OpenAI, Ollama) avec optimisation significative des coûts.",
+          "Plateforme IA multi-modale d'analyse terrain pour l'USAID. Analyse automatique de sentiment et génération de rapports de résilience pour décideurs. Architecture multi-provider IA optimisée (Claude, Gemini, OpenAI, Ollama).",
         challenge:
           "Transformer les évaluations terrain qualitatives de producteurs agricoles en insights actionnables pour l'USAID. Besoin d'analyser automatiquement des observations multi-modales, classer les profils de résilience et générer des synthèses narratives, tout en respectant les contraintes d'offline-first et de validation humaine.",
         solution:
@@ -515,7 +515,7 @@ export const portfolioContent = {
         year: "Feb. — Mar. 2026",
         category: "AI & Field Data Science",
         description:
-          "AI platform for multi-modal field analysis (text, audio, images) for USAID. Offline mobile collection, automatic sentiment analysis and PDF resilience report generation for decision-makers. Integration of 4 AI providers (Claude, Gemini, OpenAI, Ollama) with significant cost optimization.",
+          "Multi-modal AI platform for field analysis for USAID. Automatic sentiment analysis and resilience report generation for decision-makers. Optimized multi-provider AI architecture (Claude, Gemini, OpenAI, Ollama).",
         challenge:
           "USAID (post-departure Senegal) needed to transform qualitative field evaluations from agricultural producers into actionable insights for decision-makers. Raw observations (text, audio, images) collected on mobile required contextualized semantic analysis, automatic classification into resilience profiles (RESILIENT/INTERMEDIATE/VULNERABLE), and intelligent narrative synthesis — all with offline-first, explainability, and mandatory human validation constraints.",
         solution:
