@@ -25,7 +25,7 @@ export const projects = [
     client: "STATINFO (Sénégal) — Projet USAID Post-Départ",
     year: "Fév. — Mars 2026",
     category: "IA & Data Science Terrain",
-    description: "Système intelligent d'analyse sémantique des observations terrain avec enrichissement IA multi-modal (texte + audio + images). Collecte mobile offline-first via CSPro, analyse de sentiment par IA générative (Claude Haiku 4.5), profils de résilience automatisés, et génération dynamique de rapports de sensemaking PDF pour les décideurs USAID. Architecture cloud multi-provider IA avec gestion avancée des breakouts CSPro via webhooks.",
+    description: "Système intelligent d'analyse sémantique des observations terrain avec enrichissement IA multi-modal (texte + audio + images). Collecte mobile offline-first via CSPro, analyse de sentiment par IA générative (Claude Haiku 4.5), profils de résilience automatisés, et génération dynamique de rapports de sensemaking PDF pour les décideurs USAID. WebMapping avec suivi sur carte interactive Leaflet (GPS, sentiment, profils). Architecture cloud multi-provider IA avec gestion avancée des breakouts CSPro via webhooks.",
     challenge: "L'USAID (post-départ Sénégal) avait besoin de transformer les évaluations terrain qualitatives des producteurs agricoles en insights actionnables pour les décideurs. Les observations brutes (texte, audio, images) collectées sur mobile nécessitaient une analyse sémantique contextualisée, une classification automatique en profils de résilience (RESILIENT/INTERMÉDIAIRE/VULNERABLE), et une synthèse narrative intelligente — le tout avec des contraintes d'offline-first, d'explicabilité, et de validation humaine obligatoire.",
     solution: "Développement complet d'une stack enterprise-grade : backend Spring Boot 3.5 (Java 25) + API REST sécurisée JWT, intégration multi-provider IA (Claude Haiku 4.5, Gemini Flash, OpenAI GPT-4o-mini, Ollama local) via Strategy Pattern, frontend Next.js 16 avec cartographie interactive Leaflet, et mobile Android offline-first. Système avancé de gestion des breakouts CSPro via webhooks PHP custom, scheduler dynamique configurable à chaud pour jobs planifiés par dictionnaire, et génération automatique de rapports de sensemaking PDF avec analyse thématique (nuages de mots tri-grammes, patterns, actions prioritaires). Monitoring logs temps réel via SSE, internationalisation backend-first FR/EN, et audit de sécurité complet (OWASP Top 10, HTTPS, RBAC).",
     impact: [
@@ -73,7 +73,7 @@ export const projects = [
     client: "ANSD — Sénégal",
     year: "2025",
     category: "Open Data",
-    description: "Plateforme SaaS de nouvelle génération pour la diffusion de données statistiques, conforme aux standards internationaux SDMX 3.0. Interopérable avec la Banque Mondiale, le FMI, l'OCDE et Eurostat. Unique en Afrique francophone.",
+    description: "Plateforme SaaS de nouvelle génération pour la diffusion de données statistiques, conforme aux standards internationaux SDMX 3.0. Interopérable avec la Banque Mondiale, le FMI, l'OCDE et Eurostat. WebMapping avec cartographie interactive Leaflet des 14 régions du Sénégal. Unique en Afrique francophone.",
     challenge: "L'ANSD avait besoin d'une plateforme moderne pour diffuser ses données statistiques dans un format standardisé, accessible au grand public comme aux chercheurs et institutions internationales.",
     solution: "Conception et développement d'une plateforme complète intégrant l'export multi-formats (CSV, Excel, XML-SDMX, Stata, SPSS), la cartographie interactive des 14 régions du Sénégal, des dashboards temps réel, un système documentaire S3, et un module IA de requêtes en langage naturel.",
     impact: [
@@ -114,7 +114,7 @@ export const projects = [
     client: "INS Guinée — Mission UNFPA",
     year: "2025",
     category: "Infrastructure Nationale",
-    description: "Configuration de l'infrastructure et développement du système de suivi en temps réel du référendum constitutionnel guinéen du 21 septembre 2025. Événement national majeur nécessitant une fiabilité et une disponibilité absolues.",
+    description: "Configuration de l'infrastructure et développement du système de suivi en temps réel du référendum constitutionnel guinéen du 21 septembre 2025. WebMapping avec suivi sur carte interactive Leaflet (résultats par région/préfecture). Événement national majeur nécessitant une fiabilité et une disponibilité absolues.",
     challenge: "Mettre en place une infrastructure capable de traiter et diffuser les résultats électoraux en temps réel pour un événement constitutionnel majeur, avec des exigences critiques de sécurité et de haute disponibilité.",
     solution: "Configuration des serveurs de production avec haute disponibilité et disaster recovery. Développement d'un backend Spring Boot pour le traitement des flux massifs et d'un dashboard Next.js pour la visualisation par région/préfecture. Déploiement d'une application mobile de remontée de données.",
     impact: [
