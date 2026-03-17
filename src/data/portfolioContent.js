@@ -52,9 +52,9 @@ export const portfolioContent = {
         description:
           "Plateforme IA multi-modale d'analyse terrain pour l'USAID. Analyse automatique de sentiment et génération de rapports de résilience pour décideurs. Architecture multi-provider IA optimisée (Claude, Gemini, OpenAI, Ollama).",
         challenge:
-          "Transformer les évaluations terrain qualitatives de producteurs agricoles en insights actionnables pour l'USAID. Besoin d'analyser automatiquement des observations multi-modales, classer les profils de résilience et générer des synthèses narratives, tout en respectant les contraintes d'offline-first et de validation humaine.",
+          "Transformer les évaluations terrain en insights actionnables pour l'USAID. Analyser automatiquement des observations multi-modales et générer des synthèses narratives avec contraintes offline-first et validation humaine.",
         solution:
-          "Stack enterprise : Spring Boot 3.4 (Java 23) + Next.js 16 + mobile Android offline. Intégration de 4 providers IA via Strategy Pattern pour flexibilité et optimisation des coûts. Cartographie interactive Leaflet, génération automatique de rapports PDF avec analyse thématique, et scheduler dynamique pour les tâches planifiées. Sécurité renforcée (JWT, RBAC, OWASP Top 10).",
+          "Stack enterprise Spring Boot 3.4 + Next.js 16 + mobile Android offline-first. Architecture multi-provider IA (Strategy Pattern) pour optimisation des coûts. Cartographie Leaflet, génération automatique de rapports PDF, scheduler dynamique. Sécurité renforcée (JWT, RBAC, OWASP Top 10).",
         impact: [
           "Nombreuses observations enrichies avec 3 niveaux d'analyse : sentiment (POSITIF/NEUTRE/NÉGATIF), confiance IA (0-1), profil de résilience automatisé",
           "Génération automatique de rapports narratifs IA : Thèmes dominants, Constats clés, Actions prioritaires, Recommandations court/moyen terme",
@@ -232,12 +232,12 @@ export const portfolioContent = {
         description:
           "Système de gestion complet du 5ème Recensement Général de la Population et de l'Habitat (RGPH-5) du Sénégal. Participation active à l'Enquête Post-Censitaire (EPC) et développement des modules de gestion couvrant recrutement, commissions, paiements, collecte et exploitation statistique.",
         challenge:
-          "Gérer le recensement de 18 millions d'habitants nécessitait un système robuste capable de coordonner 15 000+ agents de terrain, traiter des volumes massifs de données en temps réel, et assurer la fiabilité des résultats à l'échelle nationale.",
+          "Gérer un recensement national nécessitait un système robuste capable de coordonner des milliers d'agents de terrain, traiter des volumes massifs de données en temps réel, et assurer la fiabilité des résultats à l'échelle nationale.",
         solution:
           "Développement de la majorité des modules critiques de la plateforme : recrutement, commissions, paiements, préparation des données, rebasing, intégration NINEA. Participation à l'EPC (Enquête Post-Censitaire) pour la validation des données. Système de suivi temps réel de la collecte avec tableau de bord pour les décideurs.",
         impact: [
-          "18 millions d'habitants recensés avec succès",
-          "15 000+ agents de terrain coordonnés en temps réel",
+          "Recensement national mené avec succès",
+          "Milliers d'agents de terrain coordonnés en temps réel",
           "Participation à l'EPC pour validation des données",
           "Développement des modules critiques en interne",
           "Système adopté par d'autres pays de la sous-région",
@@ -517,9 +517,9 @@ export const portfolioContent = {
         description:
           "Multi-modal AI platform for field analysis for USAID. Automatic sentiment analysis and resilience report generation for decision-makers. Optimized multi-provider AI architecture (Claude, Gemini, OpenAI, Ollama).",
         challenge:
-          "USAID (post-departure Senegal) needed to transform qualitative field evaluations from agricultural producers into actionable insights for decision-makers. Raw observations (text, audio, images) collected on mobile required contextualized semantic analysis, automatic classification into resilience profiles (RESILIENT/INTERMEDIATE/VULNERABLE), and intelligent narrative synthesis — all with offline-first, explainability, and mandatory human validation constraints.",
+          "Transform field evaluations into actionable insights for USAID. Automatically analyze multi-modal observations and generate narrative syntheses with offline-first and human validation constraints.",
         solution:
-          "Complete development of enterprise-grade stack: Spring Boot 3.4 backend (Java 23) + JWT-secured REST API, multi-provider AI integration (Claude Haiku 4.5, Gemini Flash, OpenAI GPT-4o-mini, local Ollama) via Strategy Pattern, Next.js 16 frontend with Leaflet interactive mapping, and offline-first Android mobile. Advanced CSPro breakout management system via custom PHP webhooks, hot-configurable dynamic scheduler for dictionary-based scheduled jobs, and automatic PDF sensemaking report generation with thematic analysis (tri-gram word clouds, patterns, priority actions). Real-time log monitoring via SSE, backend-first FR/EN internationalization, and complete security audit (OWASP Top 10, HTTPS, RBAC).",
+          "Enterprise stack: Spring Boot 3.4 + Next.js 16 + offline-first Android mobile. Multi-provider AI architecture (Strategy Pattern) for cost optimization. Leaflet mapping, automatic PDF report generation, dynamic scheduler. Enhanced security (JWT, RBAC, OWASP Top 10).",
         impact: [
           "Numerous observations enriched with 3 analysis levels: sentiment (POSITIVE/NEUTRAL/NEGATIVE), AI confidence (0-1), automated resilience profile",
           "Automatic AI narrative report generation: Dominant themes, Key findings, Priority actions, Short/medium-term recommendations",
@@ -696,12 +696,12 @@ export const portfolioContent = {
         description:
           "Complete management system for Senegal's 5th General Population and Housing Census (RGPH-5). Active participation in the Post-Enumeration Survey (PES) and development of management modules covering recruitment, commissions, payments, collection and statistical analysis.",
         challenge:
-          "Managing the census of 18 million inhabitants required a robust system capable of coordinating 15,000+ field agents, processing massive data volumes in real time, and ensuring nationwide result reliability.",
+          "Managing a national census required a robust system capable of coordinating thousands of field agents, processing massive data volumes in real time, and ensuring nationwide result reliability.",
         solution:
           "Development of most critical platform modules: recruitment, commissions, payments, data preparation, rebasing, NINEA integration. Participation in PES (Post-Enumeration Survey) for data validation. Real-time collection tracking system with decision-maker dashboard.",
         impact: [
-          "18 million inhabitants successfully censused",
-          "15,000+ field agents coordinated in real time",
+          "National census successfully conducted",
+          "Thousands of field agents coordinated in real time",
           "Participation in PES for data validation",
           "Critical modules developed internally",
           "System adopted by other sub-regional countries",
