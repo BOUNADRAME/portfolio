@@ -39,7 +39,7 @@ export const portfolioContent = {
           "Linux",
         ],
         color: "#3b82f6",
-        demoUrl: "https://bounadrame.github.io/pg_csweb8_latest_2026/",
+        demoUrl: "https://bounadrame.github.io/csweb-community/",
       },
       {
         id: "kairos-sensemaking",
@@ -490,7 +490,7 @@ export const portfolioContent = {
           "Linux",
         ],
         color: "#3b82f6",
-        demoUrl: "https://bounadrame.github.io/pg_csweb8_latest_2026/",
+        demoUrl: "https://bounadrame.github.io/csweb-community/",
       },
       {
         id: "kairos-sensemaking",
