@@ -178,7 +178,7 @@ function Hero() {
             {/* Stats en ligne */}
             <div className="flex overflow-x-auto justify-center lg:justify-start gap-2 sm:gap-3 md:gap-4 mb-6 sm:mb-10 animate-slide-up pb-2 scrollbar-hide px-4 sm:px-2 lg:px-0 -mx-2 sm:mx-0" style={{ animationDelay: '0.3s' }}>
               {[
-                { value: "7+", label: t.stats.experience },
+                { value: "8", label: t.stats.experience },
                 { value: "10+", label: t.stats.projects },
                 { value: "15+", label: t.stats.technologies },
                 { value: "4", label: t.stats.countries },

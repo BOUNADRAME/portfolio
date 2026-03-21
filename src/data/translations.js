@@ -56,7 +56,7 @@ export const translations = {
     timeline: {
       sectionLabel: 'Parcours',
       title: 'Mon Parcours',
-      subtitle: '7+ années à concevoir des solutions innovantes pour des institutions majeures',
+      subtitle: '8 années à concevoir des solutions innovantes pour des institutions majeures',
     },
     contact: {
       sectionLabel: 'Contact',
@@ -129,7 +129,7 @@ export const translations = {
     timeline: {
       sectionLabel: 'Journey',
       title: 'My Journey',
-      subtitle: '7+ years designing innovative solutions for major institutions',
+      subtitle: '8 years designing innovative solutions for major institutions',
     },
     contact: {
       sectionLabel: 'Contact',

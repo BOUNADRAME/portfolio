@@ -4,7 +4,7 @@ import GoogleAnalytics from '../components/GoogleAnalytics'
 
 export const metadata = {
   title: 'Bouna Dramé — Architecte Full Stack | Expert Systèmes Statistiques SDMX 3.0',
-  description: '7+ ans d\'expérience en architecture de systèmes d\'information pour institutions publiques. Expert SDMX 3.0, recensements nationaux (18M+ habitants), et plateformes cloud-native. Consultant international (Sénégal, Guinée, Gambie, Maroc).',
+  description: '8 ans d\'expérience en architecture de systèmes d\'information pour institutions publiques. Expert SDMX 3.0, recensements nationaux (18M+ habitants), et plateformes cloud-native. Consultant international (Sénégal, Guinée, Gambie, Maroc).',
   keywords: 'Bouna Dramé, développeur full stack, architecte logiciel, SDMX 3.0, systèmes statistiques, recensement, RGPH-5, PIGOR, SEDAS, Open Data, ANSD, Spring Boot, Next.js, microservices, census, consultant international, Dakar, Sénégal',
   authors: [{ name: 'Bouna Dramé' }],
   creator: 'Bouna Dramé',
@@ -28,7 +28,7 @@ export const metadata = {
   },
   openGraph: {
     title: 'Bouna Dramé — Architecte Full Stack | Expert Systèmes Statistiques',
-    description: '7+ ans d\'expérience | 10+ projets à impact national | Expert SDMX 3.0 & recensements | Consultant international',
+    description: '8 ans d\'expérience | 10+ projets à impact national | Expert SDMX 3.0 & recensements | Consultant international',
     type: 'website',
     locale: 'fr_FR',
     alternateLocale: ['en_US'],

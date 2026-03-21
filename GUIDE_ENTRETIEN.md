@@ -697,7 +697,7 @@ dans votre grille salariale ?"
 **Si vraiment pressé de donner un chiffre :**
 
 ```
-"Basé sur mon expertise SDMX 3.0 et mes 7+ ans d'expérience,
+"Basé sur mon expertise SDMX 3.0 et mes 8 ans d'expérience,
 je vise une fourchette de 65-85K€ annuel brut.
 
 Mais je reste ouvert à discuter selon l'ensemble du package
@@ -1096,7 +1096,7 @@ pour des pratiques saines long-terme."
 
 ```
 "Bonjour, je suis Bouna Dramé, Architecte Full Stack Senior
-avec 7+ ans d'expérience en systèmes d'information critiques.
+avec 8 ans d'expérience en systèmes d'information critiques.
 
 MON EXPERTISE UNIQUE :
 Je suis spécialisé en SDMX 3.0, le standard international

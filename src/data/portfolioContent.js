@@ -6,8 +6,8 @@ export const portfolioContent = {
         title: "CSWeb Community Platform",
         subtitle: "Modernisation Open Source du Serveur Web Officiel CSPro",
         client: "Open Source — Production Afrique de l'Ouest",
-        year: "2025-2026 (beta en cours)",
-        category: "Open Source • Beta Production",
+        year: "2025-2026",
+        category: "Open Source",
         description:
           "Plateforme open source de modernisation de CSWeb (serveur web officiel de CSPro pour les recensements). Réduit le temps de setup de 2-3 jours à 5 minutes via Docker. Retour d'expérience validé en production sur plusieurs recensements nationaux en Afrique de l'Ouest.",
         challenge:
@@ -457,8 +457,8 @@ export const portfolioContent = {
         title: "CSWeb Community Platform",
         subtitle: "Open Source Modernization of Official CSPro Web Server",
         client: "Open Source — Production West Africa",
-        year: "2025-2026 (beta ongoing)",
-        category: "Open Source • Beta Production",
+        year: "2025-2026",
+        category: "Open Source",
         description:
           "Open source platform modernizing CSWeb (official web server for CSPro census operations). Reduces setup time from 2-3 days to 5 minutes via Docker. Production experience validated across multiple national censuses in West Africa.",
         challenge:

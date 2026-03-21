@@ -7,7 +7,7 @@ export const personalInfo = {
   phone: "(+221) 77 156 44 30",
   linkedin: "https://linkedin.com/in/bounafode",
   github: "https://github.com/bounafode",
-  bio: "Plus de 7 ans d'expérience dans la conception de systèmes d'information pour les institutions publiques et organisations internationales. Expert en plateformes statistiques SDMX 3.0 et en architectures cloud-native. Consultant international ayant opéré en Guinée, Gambie et au Maroc.",
+  bio: "8 ans d'expérience dans la conception de systèmes d'information pour les institutions publiques et organisations internationales. Expert en plateformes statistiques SDMX 3.0 et en architectures cloud-native. Consultant international ayant opéré en Guinée, Gambie et au Maroc.",
 };
 
 export const stats = [
