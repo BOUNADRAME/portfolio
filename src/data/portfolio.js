@@ -6,7 +6,7 @@ export const personalInfo = {
   email: "bounafode@gmail.com",
   phone: "(+221) 77 156 44 30",
   linkedin: "https://linkedin.com/in/bounafode",
-  github: "https://github.com/bounafode",
+  github: "https://github.com/bounadrame",
   bio: "8 ans d'expérience dans la conception de systèmes d'information pour les institutions publiques et organisations internationales. Expert en plateformes statistiques SDMX 3.0 et en architectures cloud-native. Consultant international ayant opéré en Guinée, Gambie et au Maroc.",
 };
 
@@ -21,13 +21,17 @@ export const projects = [
   {
     id: "kairos-sensemaking",
     title: "KATS — Kairos Terrain Sensemaking",
-    subtitle: "Plateforme IA d'Analyse Sémantique Terrain & Rapports de Résilience",
+    subtitle:
+      "Plateforme IA d'Analyse Sémantique Terrain & Rapports de Résilience",
     client: "STATINFO (Sénégal) — Projet USAID Post-Départ",
     year: "Fév. — Mars 2026",
     category: "IA & Data Science Terrain",
-    description: "Système intelligent d'analyse sémantique des observations terrain avec enrichissement IA multi-modal (texte + audio + images). Collecte mobile offline-first via CSPro, analyse de sentiment par IA générative (Claude Haiku 4.5), profils de résilience automatisés, et génération dynamique de rapports de sensemaking PDF pour les décideurs USAID. WebMapping avec suivi sur carte interactive Leaflet (GPS, sentiment, profils). Architecture cloud multi-provider IA avec gestion avancée des breakouts CSPro via webhooks.",
-    challenge: "L'USAID (post-départ Sénégal) avait besoin de transformer les évaluations terrain qualitatives des producteurs agricoles en insights actionnables pour les décideurs. Les observations brutes (texte, audio, images) collectées sur mobile nécessitaient une analyse sémantique contextualisée, une classification automatique en profils de résilience (RESILIENT/INTERMÉDIAIRE/VULNERABLE), et une synthèse narrative intelligente — le tout avec des contraintes d'offline-first, d'explicabilité, et de validation humaine obligatoire.",
-    solution: "Développement complet d'une stack enterprise-grade : backend Spring Boot 3.5 (Java 25) + API REST sécurisée JWT, intégration multi-provider IA (Claude Haiku 4.5, Gemini Flash, OpenAI GPT-4o-mini, Ollama local) via Strategy Pattern, frontend Next.js 16 avec cartographie interactive Leaflet, et mobile Android offline-first. Système avancé de gestion des breakouts CSPro via webhooks PHP custom, scheduler dynamique configurable à chaud pour jobs planifiés par dictionnaire, et génération automatique de rapports de sensemaking PDF avec analyse thématique (nuages de mots tri-grammes, patterns, actions prioritaires). Monitoring logs temps réel via SSE, internationalisation backend-first FR/EN, et audit de sécurité complet (OWASP Top 10, HTTPS, RBAC).",
+    description:
+      "Système intelligent d'analyse sémantique des observations terrain avec enrichissement IA multi-modal (texte + audio + images). Collecte mobile offline-first via CSPro, analyse de sentiment par IA générative (Claude Haiku 4.5), profils de résilience automatisés, et génération dynamique de rapports de sensemaking PDF pour les décideurs USAID. WebMapping avec suivi sur carte interactive Leaflet (GPS, sentiment, profils). Architecture cloud multi-provider IA avec gestion avancée des breakouts CSPro via webhooks.",
+    challenge:
+      "L'USAID (post-départ Sénégal) avait besoin de transformer les évaluations terrain qualitatives des producteurs agricoles en insights actionnables pour les décideurs. Les observations brutes (texte, audio, images) collectées sur mobile nécessitaient une analyse sémantique contextualisée, une classification automatique en profils de résilience (RESILIENT/INTERMÉDIAIRE/VULNERABLE), et une synthèse narrative intelligente — le tout avec des contraintes d'offline-first, d'explicabilité, et de validation humaine obligatoire.",
+    solution:
+      "Développement complet d'une stack enterprise-grade : backend Spring Boot 3.5 (Java 25) + API REST sécurisée JWT, intégration multi-provider IA (Claude Haiku 4.5, Gemini Flash, OpenAI GPT-4o-mini, Ollama local) via Strategy Pattern, frontend Next.js 16 avec cartographie interactive Leaflet, et mobile Android offline-first. Système avancé de gestion des breakouts CSPro via webhooks PHP custom, scheduler dynamique configurable à chaud pour jobs planifiés par dictionnaire, et génération automatique de rapports de sensemaking PDF avec analyse thématique (nuages de mots tri-grammes, patterns, actions prioritaires). Monitoring logs temps réel via SSE, internationalisation backend-first FR/EN, et audit de sécurité complet (OWASP Top 10, HTTPS, RBAC).",
     impact: [
       "214+ observations enrichies avec 3 niveaux d'analyse : sentiment (POSITIF/NEUTRE/NÉGATIF), confiance IA (0-1), profil de résilience automatisé",
       "Génération automatique de rapports narratifs IA : Thèmes dominants, Constats clés, Actions prioritaires, Recommandations court/moyen terme",
@@ -40,7 +44,29 @@ export const projects = [
       "Support multi-provider IA : switch Claude/Gemini/OpenAI/Ollama en 1 variable (.env) grâce au Strategy Pattern",
       "Sécurité enterprise : JWT RBAC, audit trail complet, conformité OWASP Top 10, protection CSRF/XSS/injection SQL",
     ],
-    technologies: ["Spring Boot 3.5", "Java 25", "PostgreSQL 16", "Flyway", "Claude AI (Haiku 4.5)", "Gemini Flash 2.0", "OpenAI GPT-4o-mini", "Ollama", "Next.js 16", "React 19", "TypeScript", "React Query", "Leaflet", "CSPro", "CSWeb", "Webhooks PHP", "Docker", "PDFBox 3.0", "JWT", "SSE", "Anthropic API"],
+    technologies: [
+      "Spring Boot 3.5",
+      "Java 25",
+      "PostgreSQL 16",
+      "Flyway",
+      "Claude AI (Haiku 4.5)",
+      "Gemini Flash 2.0",
+      "OpenAI GPT-4o-mini",
+      "Ollama",
+      "Next.js 16",
+      "React 19",
+      "TypeScript",
+      "React Query",
+      "Leaflet",
+      "CSPro",
+      "CSWeb",
+      "Webhooks PHP",
+      "Docker",
+      "PDFBox 3.0",
+      "JWT",
+      "SSE",
+      "Anthropic API",
+    ],
     isConfidential: true,
     color: "#8b5cf6",
   },
@@ -51,16 +77,28 @@ export const projects = [
     client: "WVLO — World Vision Liaison Office, Sénégal",
     year: "Oct. 2025 — Fév. 2026",
     category: "Santé Publique",
-    description: "Système complet de suivi des activités terrain du Projet WVLO, couvrant la planification, l'exécution et la validation des activités de santé communautaire à travers les districts sanitaires et postes de santé. Plateforme web + application mobile Flutter offline-first.",
-    challenge: "Coordonner les activités de santé communautaire à travers plusieurs districts sanitaires avec des agents en zones à connectivité limitée. Les processus manuels rendaient impossible le suivi centralisé en temps réel.",
-    solution: "Plateforme web Symfony 6.4 + API Platform couplée à une app mobile Flutter offline-first. 11 modules opérationnels, workflow de validation multi-niveaux, import/export Excel, rapports PDF et dashboard statistique.",
+    description:
+      "Système complet de suivi des activités terrain du Projet WVLO, couvrant la planification, l'exécution et la validation des activités de santé communautaire à travers les districts sanitaires et postes de santé. Plateforme web + application mobile Flutter offline-first.",
+    challenge:
+      "Coordonner les activités de santé communautaire à travers plusieurs districts sanitaires avec des agents en zones à connectivité limitée. Les processus manuels rendaient impossible le suivi centralisé en temps réel.",
+    solution:
+      "Plateforme web Symfony 6.4 + API Platform couplée à une app mobile Flutter offline-first. 11 modules opérationnels, workflow de validation multi-niveaux, import/export Excel, rapports PDF et dashboard statistique.",
     impact: [
       "11 modules d'activités terrain couverts",
       "App mobile Flutter offline-first pour zones à faible connectivité",
       "Workflow de validation multi-étapes avec audit trail complet",
       "Tableau de bord temps réel pour les décideurs",
     ],
-    technologies: ["Symfony 6.4", "API Platform 3.1", "PostgreSQL", "Flutter", "JWT", "TailwindCSS", "PhpSpreadsheet", "DomPDF"],
+    technologies: [
+      "Symfony 6.4",
+      "API Platform 3.1",
+      "PostgreSQL",
+      "Flutter",
+      "JWT",
+      "TailwindCSS",
+      "PhpSpreadsheet",
+      "DomPDF",
+    ],
     isConfidential: true,
     color: "#06b6d4",
   },
@@ -71,16 +109,31 @@ export const projects = [
     client: "ANSD — Sénégal",
     year: "2025",
     category: "Open Data",
-    description: "Plateforme SaaS de nouvelle génération pour la diffusion de données statistiques, conforme aux standards internationaux SDMX 3.0. Interopérable avec la Banque Mondiale, le FMI, l'OCDE et Eurostat. WebMapping avec cartographie interactive Leaflet des 14 régions du Sénégal. Unique en Afrique francophone.",
-    challenge: "L'ANSD avait besoin d'une plateforme moderne pour diffuser ses données statistiques dans un format standardisé, accessible au grand public comme aux chercheurs et institutions internationales.",
-    solution: "Conception et développement d'une plateforme complète intégrant l'export multi-formats (CSV, Excel, XML-SDMX, Stata, SPSS), la cartographie interactive des 14 régions du Sénégal, des dashboards temps réel, un système documentaire S3, et un module IA de requêtes en langage naturel.",
+    description:
+      "Plateforme SaaS de nouvelle génération pour la diffusion de données statistiques, conforme aux standards internationaux SDMX 3.0. Interopérable avec la Banque Mondiale, le FMI, l'OCDE et Eurostat. WebMapping avec cartographie interactive Leaflet des 14 régions du Sénégal. Unique en Afrique francophone.",
+    challenge:
+      "L'ANSD avait besoin d'une plateforme moderne pour diffuser ses données statistiques dans un format standardisé, accessible au grand public comme aux chercheurs et institutions internationales.",
+    solution:
+      "Conception et développement d'une plateforme complète intégrant l'export multi-formats (CSV, Excel, XML-SDMX, Stata, SPSS), la cartographie interactive des 14 régions du Sénégal, des dashboards temps réel, un système documentaire S3, et un module IA de requêtes en langage naturel.",
     impact: [
       "Plateforme unique en Afrique francophone pour la diffusion SDMX 3.0",
       "Développement interne à coût maîtrisé vs sous-traitance externe",
       "Positionnement de l'ANSD comme institution pionnière continentale",
       "Solution exportable vers d'autres pays de la sous-région",
     ],
-    technologies: ["Spring Boot 3.2", "Java 21", "PostgreSQL", "Redis", "Next.js 15", "React 19", "TypeScript", "Leaflet", "Docker", "MinIO S3", "Llama 3"],
+    technologies: [
+      "Spring Boot 3.2",
+      "Java 21",
+      "PostgreSQL",
+      "Redis",
+      "Next.js 15",
+      "React 19",
+      "TypeScript",
+      "Leaflet",
+      "Docker",
+      "MinIO S3",
+      "Llama 3",
+    ],
     color: "#338dff",
   },
   {
@@ -90,16 +143,26 @@ export const projects = [
     client: "ANSD — Sénégal",
     year: "2021-2024",
     category: "Recensement National",
-    description: "Système de gestion complet du 5ème Recensement Général de la Population et de l'Habitat du Sénégal, couvrant l'ensemble du processus : recrutement des agents, gestion des commissions, paiements, collecte et exploitation statistique.",
-    challenge: "Gérer le recensement de 18 millions d'habitants nécessitait un système robuste capable de coordonner 15 000+ agents de terrain, traiter des volumes massifs de données en temps réel, et assurer la fiabilité des résultats à l'échelle nationale.",
-    solution: "Développement de la majorité des modules critiques de la plateforme : recrutement, commissions, paiements, préparation des données, rebasing, intégration NINEA. Système de suivi temps réel de la collecte avec tableau de bord pour les décideurs.",
+    description:
+      "Système de gestion complet du 5ème Recensement Général de la Population et de l'Habitat du Sénégal, couvrant l'ensemble du processus : recrutement des agents, gestion des commissions, paiements, collecte et exploitation statistique.",
+    challenge:
+      "Gérer le recensement de 18 millions d'habitants nécessitait un système robuste capable de coordonner 15 000+ agents de terrain, traiter des volumes massifs de données en temps réel, et assurer la fiabilité des résultats à l'échelle nationale.",
+    solution:
+      "Développement de la majorité des modules critiques de la plateforme : recrutement, commissions, paiements, préparation des données, rebasing, intégration NINEA. Système de suivi temps réel de la collecte avec tableau de bord pour les décideurs.",
     impact: [
       "18 millions d'habitants recensés avec succès",
       "15 000+ agents de terrain coordonnés en temps réel",
       "Développement des modules critiques en interne",
       "Système adopté par d'autres pays de la sous-région",
     ],
-    technologies: ["Symfony", "jQuery", "SQL Server", "CSWeb", "Docker", "PostgreSQL"],
+    technologies: [
+      "Symfony",
+      "jQuery",
+      "SQL Server",
+      "CSWeb",
+      "Docker",
+      "PostgreSQL",
+    ],
     isConfidential: true,
     color: "#10b981",
   },
@@ -110,15 +173,25 @@ export const projects = [
     client: "INS Guinée — Mission UNFPA",
     year: "2025",
     category: "Infrastructure Nationale",
-    description: "Configuration de l'infrastructure et développement du système de suivi en temps réel du référendum constitutionnel guinéen du 21 septembre 2025. WebMapping avec suivi sur carte interactive Leaflet (résultats par région/préfecture). Événement national majeur nécessitant une fiabilité et une disponibilité absolues.",
-    challenge: "Mettre en place une infrastructure capable de traiter et diffuser les résultats électoraux en temps réel pour un événement constitutionnel majeur, avec des exigences critiques de sécurité et de haute disponibilité.",
-    solution: "Configuration des serveurs de production avec haute disponibilité et disaster recovery. Développement d'un backend Spring Boot pour le traitement des flux massifs et d'un dashboard Next.js pour la visualisation par région/préfecture. Déploiement d'une application mobile de remontée de données.",
+    description:
+      "Configuration de l'infrastructure et développement du système de suivi en temps réel du référendum constitutionnel guinéen du 21 septembre 2025. WebMapping avec suivi sur carte interactive Leaflet (résultats par région/préfecture). Événement national majeur nécessitant une fiabilité et une disponibilité absolues.",
+    challenge:
+      "Mettre en place une infrastructure capable de traiter et diffuser les résultats électoraux en temps réel pour un événement constitutionnel majeur, avec des exigences critiques de sécurité et de haute disponibilité.",
+    solution:
+      "Configuration des serveurs de production avec haute disponibilité et disaster recovery. Développement d'un backend Spring Boot pour le traitement des flux massifs et d'un dashboard Next.js pour la visualisation par région/préfecture. Déploiement d'une application mobile de remontée de données.",
     impact: [
       "Traitement et diffusion des résultats en temps réel",
       "Infrastructure sécurisée avec audit trail complet",
       "Événement constitutionnel national mené avec succès",
     ],
-    technologies: ["Spring Boot", "PostgreSQL", "Next.js", "Leaflet", "CSPro", "Docker"],
+    technologies: [
+      "Spring Boot",
+      "PostgreSQL",
+      "Next.js",
+      "Leaflet",
+      "CSPro",
+      "Docker",
+    ],
     isConfidential: true,
     color: "#f59e0b",
   },
@@ -129,16 +202,28 @@ export const projects = [
     client: "We Are Beebay — Maroc",
     year: "2024",
     category: "E-commerce",
-    description: "Refonte complète de la plateforme de distribution électronique pour Marjane et Electro Planete. Migration vers une architecture microservices moderne pour améliorer la scalabilité et la performance.",
-    challenge: "L'ancienne architecture monolithique limitait la scalabilité et la maintenance. Le système devait gérer des pics de charge importants tout en intégrant plusieurs systèmes tiers (Telus, Marxim) et en authentifiant 350+ utilisateurs.",
-    solution: "Conception et implémentation d'une nouvelle architecture microservices. Intégration des systèmes tiers via APIs REST, mise en place d'une authentification LDAP centralisée, et déploiement avec Docker pour une meilleure scalabilité.",
+    description:
+      "Refonte complète de la plateforme de distribution électronique pour Marjane et Electro Planete. Migration vers une architecture microservices moderne pour améliorer la scalabilité et la performance.",
+    challenge:
+      "L'ancienne architecture monolithique limitait la scalabilité et la maintenance. Le système devait gérer des pics de charge importants tout en intégrant plusieurs systèmes tiers (Telus, Marxim) et en authentifiant 350+ utilisateurs.",
+    solution:
+      "Conception et implémentation d'une nouvelle architecture microservices. Intégration des systèmes tiers via APIs REST, mise en place d'une authentification LDAP centralisée, et déploiement avec Docker pour une meilleure scalabilité.",
     impact: [
       "+100% de scalabilité grâce à l'architecture microservices",
       "Intégration réussie des systèmes Telus et Marxim",
       "350+ utilisateurs authentifiés via LDAP",
       "Déploiement Docker pour une maintenance simplifiée",
     ],
-    technologies: ["Java", "Spring Boot", "Microservices", "REST API", "LDAP", "Docker", "Telus", "Marxim"],
+    technologies: [
+      "Java",
+      "Spring Boot",
+      "Microservices",
+      "REST API",
+      "LDAP",
+      "Docker",
+      "Telus",
+      "Marxim",
+    ],
     color: "#10b981",
   },
   {
@@ -148,16 +233,26 @@ export const projects = [
     client: "ANSD — Sénégal",
     year: "2025",
     category: "AgriTech",
-    description: "Plateforme SaaS multi-tenant pour la digitalisation complète de la chaîne de valeur agricole sénégalaise, connectant producteurs, exportateurs et autorités publiques.",
-    challenge: "La chaîne de valeur agricole sénégalaise manquait d'outils numériques pour connecter les producteurs aux marchés internationaux et assurer la traçabilité des produits certifiés.",
-    solution: "Développement d'une marketplace agricole avec système de commandes temps réel, chat WebSocket pour la négociation, certification DVP pour les exportations, dashboards BI et cartographie interactive des producteurs et parcelles.",
+    description:
+      "Plateforme SaaS multi-tenant pour la digitalisation complète de la chaîne de valeur agricole sénégalaise, connectant producteurs, exportateurs et autorités publiques.",
+    challenge:
+      "La chaîne de valeur agricole sénégalaise manquait d'outils numériques pour connecter les producteurs aux marchés internationaux et assurer la traçabilité des produits certifiés.",
+    solution:
+      "Développement d'une marketplace agricole avec système de commandes temps réel, chat WebSocket pour la négociation, certification DVP pour les exportations, dashboards BI et cartographie interactive des producteurs et parcelles.",
     impact: [
       "500+ producteurs connectés aux marchés d'exportation",
       "Négociation en temps réel via chat WebSocket",
       "Traçabilité complète pour les cultures certifiées",
       "Digitalisation de la chaîne agricole sénégalaise",
     ],
-    technologies: ["Spring Boot", "Redis", "WebSocket", "Next.js 15", "TypeScript", "Docker"],
+    technologies: [
+      "Spring Boot",
+      "Redis",
+      "WebSocket",
+      "Next.js 15",
+      "TypeScript",
+      "Docker",
+    ],
     color: "#8b5cf6",
   },
   {
@@ -167,9 +262,12 @@ export const projects = [
     client: "Projet Personnel — Sénégal",
     year: "2022-2023",
     category: "PropTech",
-    description: "Application web de gestion immobilière utilisée par plusieurs agences au Sénégal. Digitalise l'ensemble du cycle locatif : locataires, contrats, encaissements, dépenses, arriérés, salaires, prêts et génération automatique de documents PDF.",
-    challenge: "Les agences immobilières sénégalaises géraient leur activité sur cahiers et tableurs, entraînant pertes d'informations, doublons et absence de visibilité globale. Des années de données historiques devaient être récupérées et des règles métier complexes (contrats multi-périodes, arriérés cumulés, cautions) modélisées.",
-    solution: "Conception et développement d'une application web complète couvrant tout le cycle locatif. Modèle relationnel à 30+ entités, système de rôles granulaire, génération PDF automatique (quittances, mises en demeure, lettres de relance), calcul automatique des arriérés, audit trail complet et API REST pour intégrations futures.",
+    description:
+      "Application web de gestion immobilière utilisée par plusieurs agences au Sénégal. Digitalise l'ensemble du cycle locatif : locataires, contrats, encaissements, dépenses, arriérés, salaires, prêts et génération automatique de documents PDF.",
+    challenge:
+      "Les agences immobilières sénégalaises géraient leur activité sur cahiers et tableurs, entraînant pertes d'informations, doublons et absence de visibilité globale. Des années de données historiques devaient être récupérées et des règles métier complexes (contrats multi-périodes, arriérés cumulés, cautions) modélisées.",
+    solution:
+      "Conception et développement d'une application web complète couvrant tout le cycle locatif. Modèle relationnel à 30+ entités, système de rôles granulaire, génération PDF automatique (quittances, mises en demeure, lettres de relance), calcul automatique des arriérés, audit trail complet et API REST pour intégrations futures.",
     impact: [
       "Zéro perte de données — accès en temps réel depuis n'importe quel appareil",
       "Migration réussie de l'historique complet, continuité d'activité sans rupture",
@@ -177,7 +275,19 @@ export const projects = [
       "Génération instantanée de documents légaux professionnels",
       "Temps de chargement divisé par 2, requêtes SQL réduites de 100+ à 15",
     ],
-    technologies: ["Symfony 6.4", "PHP 8", "API Platform 3.4", "JWT", "MySQL 8", "Twig", "Bootstrap 5", "jQuery", "TCPDF", "Docker", "VPS Contabo"],
+    technologies: [
+      "Symfony 6.4",
+      "PHP 8",
+      "API Platform 3.4",
+      "JWT",
+      "MySQL 8",
+      "Twig",
+      "Bootstrap 5",
+      "jQuery",
+      "TCPDF",
+      "Docker",
+      "VPS Contabo",
+    ],
     color: "#f97316",
   },
   {
@@ -187,9 +297,12 @@ export const projects = [
     client: "Gendarmerie Nationale — Sénégal",
     year: "2023",
     category: "Sécurité Publique",
-    description: "Plateforme de remontée d'incidents de circulation routière en temps réel avec communication instantanée entre usagers et commissariats.",
-    challenge: "Améliorer les temps de réponse de la Gendarmerie Nationale face aux incidents routiers grâce à un système de signalement et de coordination en temps réel.",
-    solution: "Communication WebSocket bidirectionnelle entre usagers et commissariats, géolocalisation automatique des incidents, interface de commandement pour intervention rapide, et dashboard temps réel pour les autorités.",
+    description:
+      "Plateforme de remontée d'incidents de circulation routière en temps réel avec communication instantanée entre usagers et commissariats.",
+    challenge:
+      "Améliorer les temps de réponse de la Gendarmerie Nationale face aux incidents routiers grâce à un système de signalement et de coordination en temps réel.",
+    solution:
+      "Communication WebSocket bidirectionnelle entre usagers et commissariats, géolocalisation automatique des incidents, interface de commandement pour intervention rapide, et dashboard temps réel pour les autorités.",
     impact: [
       "Amélioration significative des temps d'intervention",
       "Géolocalisation automatique des incidents",
@@ -204,7 +317,15 @@ export const expertise = [
   {
     category: "IA & Machine Learning",
     icon: "Brain",
-    skills: ["Claude AI", "Gemini", "OpenAI", "Ollama", "NLP", "Sentiment Analysis", "Multi-Provider Architecture"],
+    skills: [
+      "Claude AI",
+      "Gemini",
+      "OpenAI",
+      "Ollama",
+      "NLP",
+      "Sentiment Analysis",
+      "Multi-Provider Architecture",
+    ],
   },
   {
     category: "Systèmes Statistiques",
@@ -224,12 +345,26 @@ export const expertise = [
   {
     category: "Bases de Données",
     icon: "Database",
-    skills: ["PostgreSQL", "MySQL", "SQL Server", "Redis", "PostGIS", "Firebase"],
+    skills: [
+      "PostgreSQL",
+      "MySQL",
+      "SQL Server",
+      "Redis",
+      "PostGIS",
+      "Firebase",
+    ],
   },
   {
     category: "DevOps & Infra",
     icon: "Cloud",
-    skills: ["Docker", "Docker Compose", "Git", "Prometheus", "Grafana", "MinIO S3"],
+    skills: [
+      "Docker",
+      "Docker Compose",
+      "Git",
+      "Prometheus",
+      "Grafana",
+      "MinIO S3",
+    ],
   },
   {
     category: "Cartographie & SIG",
@@ -241,7 +376,8 @@ export const expertise = [
 export const certifications = [
   {
     id: "nextjs-typescript",
-    title: "Maîtrisez Next.js 14 avec TypeScript, React Query, Prisma et NextAuth",
+    title:
+      "Maîtrisez Next.js 14 avec TypeScript, React Query, Prisma et NextAuth",
     platform: "Udemy",
     instructor: "Farid Rehila",
     date: "Mai 2024",
